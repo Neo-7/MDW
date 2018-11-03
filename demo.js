@@ -1,7 +1,7 @@
 
 
     // navigation
-        var navLink = $('.sideNavigation a');
+        var navLink = document.querySelectorAll('.sideNavigation a');
 
         for (var i = 0; i < navLink.length; i++) {
             navLink[i].addEventListener('click', function(event) {
@@ -13,16 +13,55 @@
 
                 document.querySelector('#SectionTitle').innerHTML = navName;
 
+                // menu active
                 for (var i = 0; i < navLink.length; i++){
                     navLink[i].classList.remove('active');
                 }
+                
                 this.classList.add('active');
 
                 // title change
                 document.querySelector('title').innerHTML = navName + ' - Material';
-                
+
+                // page change
+                var pageLocation   = '' + sectionTarget + '/' + navValue + '.html';
+                var content_div = document.getElementById('middleContent');
+
+                function LoadPage(){
+                    var xmlHttp = new XMLHttpRequest();
+
+                    xmlHttp.onreadystatechange = function() {
+                        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+                            content_div.innerHTML = xmlHttp.responseText;
+                        }
+                    };
+
+                    xmlHttp.open("GET", pageLocation, true);
+                    xmlHttp.send(null);
+                }
+
+                // Main - run tests
+                LoadPage();
+
+                // close menu
+                navCtrl();
             });
         }
+
+        // navigation close
+            function navCtrl(){
+                var navSection = document.querySelector('.nav');
+                var navBackDrop = document.querySelector('.nav-backdrop');
+
+                if(navSection.classList.contains('open')){
+                    navSection.classList.remove('open');
+                    navBackDrop.classList.remove('navOpen');
+                }
+                else{
+                    navSection.classList.add('open');
+                    navBackDrop.classList.add('navOpen');
+                }
+            }
 
 
 /*
