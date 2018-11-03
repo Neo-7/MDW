@@ -1,31 +1,29 @@
-
-
-    // navigation
-        var navLink = $('.sideNavigation a');
-
-        for (var i = 0; i < navLink.length; i++) {
-            navLink[i].addEventListener('click', function(event) {
-                var sectionTarget = this.parentNode.parentNode.getAttribute('data-navsection');
-                //console.log(sectionTarget);
-
-                var navName = this.innerHTML;
-                var navValue = this.getAttribute('data-id');
-
-                document.querySelector('#SectionTitle').innerHTML = navName;
-
-                for (var i = 0; i < navLink.length; i++){
-                    navLink[i].classList.remove('active');
-                }
-                this.classList.add('active');
-
-                // title change
-                document.querySelector('title').innerHTML = navName + ' - Material';
-                
-            });
-        }
-
-
 /*
+jQuery(document).ready(function($){
+   
+});
+
+$(document).ready(function() {
+    //$('main').load('about.html');
+});
+*/
+
+    // page navigation
+        // $('.pageLink').on('click', function(){
+        //     var pageName = $(this).attr('data-id');
+        //     $('main').load( pageName + '.html');
+
+        //     $('.pageLink').attr('data-active', 'false');
+        //     $(this).attr('data-active', 'true');
+
+        //     if(pageName != 'about'){
+        //         $('title').html(pageName + ' - Material')
+        //     }
+        //     else{
+        //         $('title').html('Material')
+        //     }
+        // });
+
     // navigation
         $('.sideNavigation a').on('click', function(){
             var sectionTarget = $(this).parents('.sideNavigation').attr('data-navsection');
@@ -121,6 +119,3 @@
         });
 
 
-
-
-*/
