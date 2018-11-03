@@ -48,7 +48,7 @@
             });
         }
 
-        // navigation close
+        // navigation control
             function navCtrl(){
                 var navSection = document.querySelector('.nav');
                 var navBackDrop = document.querySelector('.nav-backdrop');

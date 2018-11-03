@@ -3,7 +3,7 @@
     var rippleSection = document.querySelectorAll('[data-ripple="true"]');
 
     for (var i = 0; i < rippleSection.length; i++) {
-        rippleSection[i].onclick = function(e){
+        rippleSection[i].addEventListener('click', function(e){
             var eleRippleBG = window.getComputedStyle(this).getPropertyValue("background-color");
             var eleRippleColor = window.getComputedStyle(this).getPropertyValue("color");
             var rippleColor;
@@ -32,5 +32,5 @@
             setTimeout(function () {
                 rippleDiv.parentElement.removeChild(rippleDiv);
             }, 1500);
-        }
+        });
     }
