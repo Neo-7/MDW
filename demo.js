@@ -8,10 +8,10 @@
                 var sectionTarget = this.parentNode.parentNode.getAttribute('data-navsection');
                 //console.log(sectionTarget);
 
-                var navName = this.innerHTML;
+                var navName = this.textContent;
                 var navValue = this.getAttribute('data-id');
 
-                document.querySelector('#SectionTitle').innerHTML = navName;
+                document.getElementById('SectionTitle').innerHTML = navName;
 
                 // menu active
                 for (var i = 0; i < navLink.length; i++){
@@ -62,6 +62,26 @@
                     navBackDrop.classList.add('navOpen');
                 }
             }
+
+    // page scroll
+        var lastScrollTop = 0;
+
+        function pageScroll(){
+            var st = document.documentElement.scrollTop;
+            var pageContainer = document.getElementById('container');
+
+            if (st > lastScrollTop){
+                pageContainer.classList.add('scrolled');
+            } else {
+                pageContainer.classList.remove('scrolled');
+            }
+            lastScrollTop = st;
+        }
+
+    // theme section
+        document.querySelector('.theme').addEventListener('click', function(event) {
+
+        });
 
 
 /*
