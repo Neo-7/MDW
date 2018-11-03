@@ -1,0 +1,48 @@
+
+// button toggle
+    .mat-button-toggle{
+        border: 1px solid $text-lighter;
+    }
+
+    .mat-button-toggle button{
+        border-left: 1px solid $text-lighter;
+    }
+
+    .mat-button-toggle button:not(.toggle-active):hover{
+        background-color: $color-light;
+    }
+
+    .mat-button-toggle .toggle-active{
+        background-color: $text-light;
+    }
+
+
+// theme
+    .mat-button-toggle{
+        background: $color-white;
+    }
+
+    //dark
+        // [data-theme="red"] .mat-button-toggle{
+        //     background: #303030;
+        //     border-color: rgba(255,255,255,0.45);
+        // }
+
+        // [data-theme="red"] .mat-button-toggle button{
+        //     border-color: rgba(255,255,255,0.45)
+        // }
+
+        // [data-theme="red"] .mat-button-toggle button:not(.toggle-active):hover{
+        //     background-color: rgba(0,0,0,.1);
+        // }
+
+        // [data-theme="red"] .mat-button-toggle .toggle-active{
+        //     background-color: #212121;
+        // }
+
+        // [data-theme="red"] .mat-button-raised,
+        // [data-theme="red"] .mat-button-flat,
+        // [data-theme="red"] .mat-icon-button{
+        //     background: #424242;
+        //     color: rgba(255, 255, 255, 0.7);
+        // }

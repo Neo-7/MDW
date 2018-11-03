@@ -1,0 +1,68 @@
+//darken( $base-color, 10% )
+//lighten( $base-color, 10% )
+
+// common white 
+    body{
+        background-color: $color-light;
+        color: $text-dark;
+    }
+
+    .white-bg{
+        background: $color-white;
+        color: $text-dark;
+    }
+
+    .dark-bg{
+        background: $color-dark;
+        color: $color-white;
+    }
+
+    .color-white{
+        background: $color-white;
+        color: $text-dark;
+    }
+    
+    // overlay 
+    .overlay-container,
+    .overlay-menu{
+        background: $color-white;
+        color: $text-dark;
+    }
+
+    // card 
+    .mat-card{
+        background: $color-white;
+        color: $text-dark;
+    }
+
+    .text-light{
+        color: $text-light;
+    }
+
+    .icon-light{
+        color: $text-lighter;
+    }
+
+// warn 
+    .warn-bg{
+        background-color: $warn-color;
+        color: $color-white;
+    }
+
+    .warn-border{
+        border-color: $warn-color;
+        transition: 0.3s;
+    }
+
+    .warn-color{
+        color: $warn-color;
+    }
+
+    [data-bg="warn"]{
+        background-color: $warn-color;
+        color: $color-white;
+    }
+
+    [data-color="color"]{
+        color: $warn-color;
+    }

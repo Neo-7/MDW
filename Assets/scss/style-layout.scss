@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*  css width size 
+
+xs		(max-width: 599px)				                :: 		Upto Mobile Portrait
+gt-xs	(min-width: 600px)						        :: 		From Mobile landscape
+sm		(min-width: 600px) and (max-width: 839px)	    :: 		Mobile Landscape Only
+gt-sm	(min-width: 840px)					            :: 		From Tablet Portrait
+md		(min-width: 840px) and (max-width: 1024px)      :: 		Tablet Portrait Only
+gt-md	(min-width: 1024px)						        :: 		From Tablet Landscape
+lg		(min-width: 1024px) and (max-width: 1599px)     :: 		Tablet Landscape Only & desktop
+xl		(min-width: 1600px)							    :: 		From Larger Desktop
+
+*/
+
+    [class*="col-"]{
+        min-height: 1px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .col-xs-4 { width: 100%; }
+    .col-xs-3 { width: 75%; }
+    .col-xs-2 { width: 50%; }
+    .col-xs-1 { width: 25%; }
+
+@media screen and (min-width: 600px){
+    [class*="col-"]{
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .col-sm-12 { width: 100%; }
+    .col-sm-11 { width: 91.66667%; }
+    .col-sm-10 { width: 83.33333%; }
+    .col-sm-9 { width: 75%; }
+    .col-sm-8 { width: 66.66667%; }
+    .col-sm-7 { width: 58.33333%; }
+    .col-sm-6 { width: 50%; }
+    .col-sm-5 { width: 41.66667%; }
+    .col-sm-4 { width: 33.33333%; }
+    .col-sm-3 { width: 25%; }
+    .col-sm-2 { width: 16.66667%; }
+    .col-sm-1 { width: 8.33333%; }
+}
+
+@media screen and (min-width: 840px){
+    [class*="col-"]{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .col-md-12 { width: 100%; }
+    .col-md-11 { width: 91.66667%; }
+    .col-md-10 { width: 83.33333%; }
+    .col-md-9 { width: 75%; }
+    .col-md-8 { width: 66.66667%; }
+    .col-md-7 { width: 58.33333%; }
+    .col-md-6 { width: 50%; }
+    .col-md-5 { width: 41.66667%; }
+    .col-md-4 { width: 33.33333%; }
+    .col-md-3 { width: 25%; }
+    .col-md-2 { width: 16.66667%; }
+    .col-md-1 { width: 8.33333%; }
+}
+
+@media screen and (min-width: 1024px){
+    .col-lg-12 { width: 100%; }
+    .col-lg-11 { width: 91.66667%; }
+    .col-lg-10 { width: 83.33333%; }
+    .col-lg-9 { width: 75%; }
+    .col-lg-8 { width: 66.66667%; }
+    .col-lg-7 { width: 58.33333%; }
+    .col-lg-6 { width: 50%; }
+    .col-lg-5 { width: 41.66667%; }
+    .col-lg-4 { width: 33.33333%; }
+    .col-lg-3 { width: 25%; }
+    .col-lg-2 { width: 16.66667%; }
+    .col-lg-1 { width: 8.33333%; }
+}
+
+@media screen and (min-width: 1600px) {
+    .col-xl-12 { width: 100%; }
+    .col-xl-11 { width: 91.66667%; }
+    .col-xl-10 { width: 83.33333%; }
+    .col-xl-9 { width: 75%; }
+    .col-xl-8 { width: 66.66667%; }
+    .col-xl-7 { width: 58.33333%; }
+    .col-xl-6 { width: 50%; }
+    .col-xl-5 { width: 41.66667%; }
+    .col-xl-4 { width: 33.33333%; }
+    .col-xl-3 { width: 25%; }
+    .col-xl-2 { width: 16.66667%; }
+    .col-xl-1 { width: 8.33333%; }
+}
+
+
+    .row{
+        min-height: 1px;
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .section-row {
+        height: auto;
+        width: 100%;
+        position: relative;
+    }
+
+    .layout-fill {
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+        height: 100%;
+    }
+
+/* flex */
+    .fx{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .fx-hctr{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+    }
+
+    .fx-vctr{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+            align-items: center;
+          place-content: center;
+    }
+
+    .fx-ctr{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+            align-items: center;
+          place-content: center;
+        justify-content: center;
+    }
+    
+    .fx-rit{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: flex-end;
+            align-items: center;
+    }
+
+    .fx-lft{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: flex-start;
+            align-items: center;
+    }
+
+    .fx-grow{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+                box-flex: 1;
+        -webkit-flex-grow: 1;
+                flex-grow: 1;
+    }
+
+    .fx-col{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fx-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fx-row-w{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-flow: row wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+    }
+
+    .fx-row-full{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        place-content: center space-between;
+        align-items: center;
+    }
+
+    .spacer{
+        flex: 1 1 auto;
+    }
+
+/* hide and show elements */
+    .hide {
+        display: none;
+    }
+    .show {
+        display: inline-block;
+    }
+
+    /* xs */
+    @media screen and (max-width:599px) {
+        .hide-xs {
+            display: none;
+        }
+        .show-xs {
+            display: inline-block;
+        }
+    }
+
+    /* sm */
+    @media screen and (min-width:600px) {
+        .hide-sm {
+            display: none;
+        }
+        .show-sm {
+            display: inline-block;
+        }
+    }
+
+    /* md */
+    @media screen and (max-width:839px) {
+        .hide-lt-md {
+            display: none;
+        }
+        .show-lt-md {
+            display: inline-block;
+        }
+    }
+
+    @media screen and (min-width:840px) {
+        .hide-md {
+            display: none;
+        }
+        .show-md {
+            display: inline-block;
+        }
+    }
+
+    /* lg */
+    @media screen and (max-width:1023px) {
+        .hide-lt-lg {
+            display: none;
+        }
+        .show-lt-lg {
+            display: inline-block;
+        }
+    }
+
+    @media screen and (min-width:1024px) {
+        .hide-lg {
+            display: none;
+        }
+        .show-lg {
+            display: inline-block;
+        }
+    }

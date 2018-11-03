@@ -1,0 +1,121 @@
+
+// form fields
+    /* checkbox */
+        /* primary color */
+        .mat-checkbox[data-color="primary"] input:hover ~ .mat-icon,
+        .mat-radio[data-color="primary"] input:hover ~ .mat-icon,
+        .mat-switch[data-color="primary"] input:hover ~ .switch .switch-overlay{
+            //background-color: rgba(0,188,212,0.04);
+            background-color: rgba($primary-color, 0.04);
+        }
+
+        .mat-checkbox[data-color="primary"] input:focus ~ .mat-icon,
+        .mat-radio[data-color="primary"] input:focus ~ .mat-icon,
+        .mat-switch[data-color="primary"] input:focus ~ .switch .switch-overlay{
+            // background-color: rgba(0,188,212,0.07);
+            background-color: rgba($primary-color, 0.07);
+        }
+
+        .mat-checkbox[data-color="primary"] input:active ~ .mat-icon:after,
+        .mat-radio[data-color="primary"] input:active ~ .mat-icon:after,
+        .mat-switch[data-color="primary"] input:active ~ .switch .switch-overlay:before{
+            transform: scale(1);
+            //background-color: rgba(0,188,212,0.14);
+            background-color: rgba($primary-color, 0.14);
+        }
+
+        /* accent color */
+        .mat-checkbox[data-color="accent"] input:hover ~ .mat-icon,
+        .mat-radio[data-color="accent"] input:hover ~ .mat-icon,
+        .mat-switch[data-color="accent"] input:hover ~ .switch .switch-overlay{
+            //background-color: rgba(248,64,129,0.04);
+            background-color: rgba($accent-color, 0.04);
+        }
+
+        .mat-checkbox[data-color="accent"] input:focus ~ .mat-icon,
+        .mat-radio[data-color="accent"] input:focus ~ .mat-icon,
+        .mat-switch[data-color="accent"] input:focus ~ .switch .switch-overlay{
+            //background-color: rgba(248,64,129,0.07);
+            background-color: rgba($accent-color, 0.07);
+        }
+
+        .mat-checkbox[data-color="accent"] input:active ~ .mat-icon:after,
+        .mat-radio[data-color="accent"] input:active ~ .mat-icon:after,
+        .mat-switch[data-color="accent"] input:active ~ .switch .switch-overlay:before{
+            transform: scale(1);
+            //background-color: rgba(248,64,129,0.14);
+            background-color: rgba($accent-color, 0.14);
+        }
+
+        /* not:checked */
+        .mat-checkbox input:not(:checked):hover ~ .mat-icon,
+        .mat-radio input:not(:checked):hover ~ .mat-icon,
+        .mat-switch input:not(:checked):hover ~ .switch .switch-overlay{
+            //background-color: rgba(0,0,0,0.04);
+            background-color: rgba($color-black, 0.04);
+        }
+
+        .mat-checkbox input:not(:checked):focus ~ .mat-icon,
+        .mat-radio input:not(:checked):focus ~ .mat-icon,
+        .mat-switch input:not(:checked):focus ~ .switch .switch-overlay{
+            //background-color: rgba(0,0,0,0.07);
+            background-color: rgba($color-black, 0.07);
+        }
+
+        .mat-checkbox input:not(:checked):active ~ .mat-icon:after,
+        .mat-radio input:not(:checked):active ~ .mat-icon:after,
+        .mat-switch input:not(:checked):active ~ .switch .switch-overlay:before{
+            transform: scale(1);
+            //background-color: rgba(0,0,0,0.14);
+            background-color: rgba($color-black, 0.14);
+        }
+
+        /* default */
+        .mat-checkbox input:not(:checked) ~ .mat-icon,
+        .mat-radio input:not(:checked) ~ .mat-icon{
+            //color: #606060;
+            //color: $text-light;
+            color: lighten( $color-black, 38% );
+        }
+
+        .mat-checkbox input:disabled ~ .mat-icon,
+        .mat-radio input:disabled ~ .mat-icon{
+            //color: #8d8d8d;
+            //color: $text-lighter;
+            color: lighten( $color-black, 56% );
+        }
+
+    /* switch */
+            /* primary */
+            .mat-switch[data-color="primary"] .switch-thumb{
+                background-color: $primary-color;
+            }
+
+           .mat-switch[data-color="primary"] .switch{
+               //background-color: #B2EBF2;
+               background-color: rgba($primary-color, 0.5);
+           }
+
+            /* accent */
+            .mat-switch[data-color="accent"] .switch-thumb{
+                background-color: $accent-color;
+            }
+
+            .mat-switch[data-color="accent"] .switch{
+                background-color: $accent-light;
+            }
+
+            /* default */
+            .switch:before{
+                background-color: lighten( $color-black, 68% );
+            }
+
+            /* :checked */
+            .mat-switch input:not(:checked) ~ .switch .switch-thumb{
+                background-color: $color-white;
+            }
+
+            /* :disabled */
+            .mat-switch input:disabled ~ .switch{
+                opacity: 0.5;
+            }

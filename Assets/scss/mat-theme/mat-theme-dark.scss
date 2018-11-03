@@ -1,0 +1,70 @@
+//darken( $base-color, 10% )
+//lighten( $base-color, 10% )
+
+// common white
+    body{
+        background-color: rgb(48, 48, 48);
+        color: $color-white;
+    }
+
+    .white-bg{
+        background: #262626;
+        color: rgba($color-white, 0.7);
+    }
+
+    /*
+    .dark-bg{
+        background: $color-dark;
+        color: $color-white;
+    }
+    */
+
+    .color-white{
+        background: #262626;
+        color: rgba($color-white, 0.7);
+    }
+    
+    // overlay 
+    .overlay-container,
+    .overlay-menu{
+        background: $color-dark;
+        color: rgba($color-white, 0.7);
+    }
+
+    // card 
+    .mat-card{
+        background: $color-dark;
+        color: rgba($color-white, 0.7);
+    }
+
+    .text-dark{
+        color: rgba($color-dark, 0.87);
+    }
+
+    .text-light{
+        color: rgba($color-dark, 0.7);
+    }
+
+// warn 
+    .warn-bg{
+        background-color: $warn-color;
+        color: $color-white;
+    }
+
+    .warn-border{
+        border-color: $warn-color;
+        transition: 0.3s;
+    }
+
+    .warn-color{
+        color: $warn-color;
+    }
+
+    [data-bg="warn"]{
+        background-color: $warn-color;
+        color: $color-white;
+    }
+
+    [data-color="warn"]{
+        color: $warn-color;
+    }

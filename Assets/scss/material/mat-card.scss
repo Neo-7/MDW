@@ -1,0 +1,66 @@
+
+/* card */
+    /* card - section */
+        .md-card{
+            margin-right: 16px;
+            margin-left: 16px;
+            margin-bottom: 16px;
+
+            box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+            border-radius: 3px;
+
+            transition: 0.3s;
+        }
+
+        .md-card:first-child{
+            margin-top: 16px;
+        }
+
+    /* card - content */
+        .card-content{
+            overflow: hidden;
+        }
+
+        .card-content > div{
+            /*
+            margin-top: 8px;
+            */
+        }
+
+    /* card - active */
+        .md-card[data-expand="false"] .card-content{
+            max-height: 0px;
+            transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .md-card[data-expand="true"] .card-content{
+            max-height: 1000px;
+            transition: max-height 0.45s cubic-bezier(1, 0, 1, 1);
+        }
+
+        .md-card[data-expand="false"] {
+            margin-bottom: 0;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .md-card[data-expand="false"] ~ .card-mini[data-expand="false"] {
+            border-radius: 0;
+        }
+
+        .md-card[data-expand="false"] ~ .card-mini:last-child{
+            border-radius: 0 0 3px 3px;
+        }
+
+        .md-card[data-expand="true"]{
+            border-radius: 3px;
+            margin-top: 16px;
+        }
+        
+    /* active arrow rotatre */
+        .accordionToggle{
+            transition: 0.45s;
+        }
+
+        .md-card[data-expand="false"] .accordionToggle{
+            transform: rotate(180deg);
+        }

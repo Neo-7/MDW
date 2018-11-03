@@ -1,0 +1,20 @@
+
+    .mat-input,
+    .mat-select {
+        border-bottom: 1px solid lighten( $color-black, 80% );
+    }
+
+    .mat-assist:before {
+        background: rgba($color-black,.45);
+    }
+
+    .mat-select ~ .mat-assist:after {
+        border-top: 5px solid rgba($color-black,.47);
+    }
+
+    .input-suffix input:not(:disabled):hover,
+    .input-suffix button:not(:disabled):hover,
+    .input-suffix input:focus,
+    .input-suffix button:focus{
+        background: rgba($color-black,.1);
+    }

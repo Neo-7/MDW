@@ -1,0 +1,23 @@
+    
+/* material menu */
+    .mat-menu{
+        min-width: 112px;
+        max-width: 280px;
+        position: fixed;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        max-height: calc(100vh - 48px);
+        border-radius: 3px;
+        background: #fff;
+
+        transition: transform 0.3s;
+        transform: scale(0);
+    }
+
+    .mat-overlay.opened .mat-menu{
+        transform: scale(1);
+    }
+
+    
+
+   

@@ -1,0 +1,10 @@
+
+// panel
+    .mat-panel{
+        background-color: #fff;
+        color: rgba(0,0,0,.87);
+    }
+
+    .mat-panel[data-expand="true"] .panel-toolbar{
+        background-color: rgba(0,0,0,.087);
+    }

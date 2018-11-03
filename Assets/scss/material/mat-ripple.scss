@@ -1,0 +1,42 @@
+
+/* Ripple effect */
+    [data-ripple="true"] {
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ripple {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 100%;
+        -webkit-animation: ripple 1.6s;
+        animation: ripple 1.6s;
+    }
+
+    @-webkit-keyframes ripple {  
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 0.15;
+        }
+        100% {
+            -webkit-transform: scale(40);
+            transform: scale(40);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ripple { 
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 0.15;
+        }
+        100% {
+            -webkit-transform: scale(40);
+            transform: scale(40);
+            opacity: 0;
+        }
+    }

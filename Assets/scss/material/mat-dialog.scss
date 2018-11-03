@@ -1,0 +1,53 @@
+    
+/* material dialog */
+    .mat-dialog{
+        position: relative;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+
+        transition: transform 0.3s, opacity 0.3s;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    .mat-overlay.opened .mat-dialog{
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    /* dialog title */
+        .dialog-title{
+            min-height: 48px;
+        }
+
+        .dialog-title h2{
+            margin: 0;
+        }
+
+        .dialog-close {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+        }
+    
+    /* dialog content */
+        .dialog-content{
+            overflow: auto;
+        }
+
+
+    @media screen and (max-width:839px){
+        .mat-dialog{
+            height: 100%;
+            width: 100%;
+        } 
+    }
+
+    @media screen and (min-width:840px){
+        .mat-dialog{
+            max-width: 80vw;
+            max-height: calc(100vh - 128px);
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+    }

@@ -1,0 +1,79 @@
+
+// color scheme
+    $color-light: #f5f5f5;
+    $color-white: #fff;
+    $color-black: #000;
+    $color-dark: #424242;
+    $color-darker: #303030;
+
+    $text-dark : rgba(0,0,0,.87);
+    $text-light: rgba(0,0,0,.67);
+    $text-lighter: rgba(0,0,0,.47);
+
+    $primary-color: #263238;
+    $primary-text: $color-white;
+    $primary-light: #263238;
+
+    $accent-color: #FF4081;
+    $accent-text: $color-white;
+    $accent-light: #F8BBD0;
+
+    $warn-color: #f44336;
+
+// this theme
+    [data-bg="primary"]{
+        background-color: $primary-color;
+        color: $primary-text;
+        transition: 0.3s;
+    }
+
+    [data-color="primary"]{
+        color: $primary-color;
+        transition: 0.3s;
+    }
+
+    [data-bg="accent"]{
+        background-color: $accent-color;
+        color: $accent-text;
+        transition: 0.3s;
+    }
+
+    [data-bg="accent-light"]{
+        background-color: $accent-light;
+    }
+
+    [data-color="accent"]{
+        color: $accent-color;
+        transition: 0.3s;
+    }
+
+// imports
+    // general
+    @import '../mat-theme/mat-theme';
+
+    // material :: bottomsheet
+    @import '../mat-theme/mat-buttonsheet';
+
+    // material :: button toggle
+    @import '../mat-theme/mat-button-toggle';
+
+    // material :: button
+    @import '../mat-theme/mat-button';
+
+    // material :: form fields
+    @import '../mat-theme/mat-form-fields';
+
+    // material :: input
+    @import '../mat-theme/mat-input';
+
+    // material :: menu
+    @import '../mat-theme/mat-menu';
+
+    // material :: panel
+    @import '../mat-theme/mat-panel';
+
+    // material :: tab
+    @import '../mat-theme/mat-tab';
+
+    // material :: toolbar
+    @import '../mat-theme/mat-toolbar';

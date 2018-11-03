@@ -1,0 +1,101 @@
+
+// :disabled
+    button[class*="mat-button"]:disabled,
+    [class*="mat-icon-button"]:disabled
+    .mat-fab:disabled,
+    .mat-fab-mini:disabled,
+    button[class*="color-"]:disabled{
+        color: rgba($color-black,.3);
+        border-color: rgba($color-black,.25);
+    }
+
+    button.mat-button-raised:disabled,
+    button.mat-button-flat:disabled,
+    button.mat-icon-button:disabled,
+    button.mat-fab:disabled,
+    button.mat-fab-mini:disabled{
+        background: rgba($color-black,.15);
+    }
+
+
+// theme
+    .mat-button-text,
+    .mat-button-stroked,
+    .mat-icon-button-mini {
+        background: none;
+        color: $text-dark;
+    }
+
+    .mat-button-raised,
+    .mat-button-flat,
+    .mat-icon-button,
+    .mat-fab,
+    .mat-fab-mini{
+        background: $color-white;
+        color: $text-dark;
+    }
+
+    //dark
+        // [data-theme="red"] .mat-button-text,
+        // [data-theme="red"] .mat-button-stroked,
+        // [data-theme="red"] .mat-icon-button-mini {
+        //     background: none;
+        //     color: rgba(255, 255, 255, 0.7);
+        // }
+
+        // [data-theme="red"] .mat-button-raised,
+        // [data-theme="red"] .mat-button-flat,
+        // [data-theme="red"] .mat-icon-button{
+        //     background: #424242;
+        //     color: rgba(255, 255, 255, 0.7);
+        // }
+
+    // bg change
+    .mat-button-raised.color-primary,
+    .mat-button-flat.color-primary,
+    .mat-icon-button.color-primary,
+    .mat-fab.color-primary,
+    .mat-fab-mini.color-primary{
+        background-color: $primary-color;
+        color: $primary-text;
+    }
+
+    .mat-button-raised.color-accent,
+    .mat-button-flat.color-accent,
+    .mat-icon-button.color-accent,
+    .mat-fab.color-accent,
+    .mat-fab-mini.color-accent{
+        background-color: $accent-color;
+        color: $accent-text;
+    }
+
+    .mat-button-raised.color-warn,
+    .mat-button-flat.color-warn,
+    .mat-icon-button.color-warn,
+    .mat-fab.color-warn,
+    .mat-fab-mini.color-warn{
+        background-color: $warn-color;
+        color: $color-white;
+    }
+
+    // color | border change
+    .mat-button-text.color-primary,
+    .mat-button-stroked.color-primary,
+    .mat-icon-button-mini.color-primary{
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+
+    .mat-button-text.color-accent,
+    .mat-button-stroked.color-accent,
+    .mat-icon-button-mini.color-accent{
+        color: $accent-color;
+        border-color: $accent-color;
+    }
+
+    .mat-button-text.color-warn,
+    .mat-button-stroked.color-warn,
+    .mat-icon-button-mini.color-warn{
+        color: $warn-color;
+        border-color: $warn-color;
+    }

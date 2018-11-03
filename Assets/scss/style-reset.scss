@@ -1,0 +1,49 @@
+
+/* reset */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        min-width: 320px;
+        margin: 0;
+        line-height: 1.42857143;
+        letter-spacing: 0.0425em;
+        overscroll-behavior-y: contain;
+
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+
+    a img, button, a {
+        border: 0;
+        cursor: pointer;
+        color: inherit;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: 0;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+/* border-box */
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }

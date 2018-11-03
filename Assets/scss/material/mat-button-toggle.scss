@@ -1,0 +1,65 @@
+
+/* button toggle */
+    .mat-button-toggle{
+        display: inline-flex;
+        border: 1px solid #c4c4c4;
+        border-radius: 2px;
+    }
+
+    .mat-button-toggle button{
+        height: 46px;
+        width: 47px;
+        padding: 0;
+        background: none;
+        border-left: 1px solid #c4c4c4;
+        transition: 0.3s;
+    }
+
+    .mat-button-toggle button:not(.toggle-active):hover{
+        background-color: #f5f5f5;
+    }
+
+    .mat-button-toggle button:first-child{
+        border: 0;
+    }
+
+    .mat-button-toggle .toggle-active{
+        background-color: #e0e0e0;
+    }
+
+/* :disabled */
+    .mat-button-toggle button:disabled{
+        color: #a7a7a7;
+        cursor: default;
+    }
+
+
+/* theme */
+    .mat-button-toggle{
+        background: #fff;
+    }
+
+    /*dark */
+        [data-theme="red"] .mat-button-toggle{
+            background: #303030;
+            border-color: rgba(255,255,255,0.45);
+        }
+
+        [data-theme="red"] .mat-button-toggle button{
+            border-color: rgba(255,255,255,0.45)
+        }
+
+        [data-theme="red"] .mat-button-toggle button:not(.toggle-active):hover{
+            background-color: rgba(0,0,0,.1);
+        }
+
+        [data-theme="red"] .mat-button-toggle .toggle-active{
+            background-color: #212121;
+        }
+
+        [data-theme="red"] .mat-button-raised,
+        [data-theme="red"] .mat-button-flat,
+        [data-theme="red"] .mat-icon-button{
+            background: #424242;
+            color: rgba(255, 255, 255, 0.7);
+        }
