@@ -1,90 +1,13 @@
-
-
-    // navigation
-        var navLink = document.querySelectorAll('.sideNavigation a');
-
-        for (var i = 0; i < navLink.length; i++) {
-            navLink[i].addEventListener('click', function(event) {
-                var sectionTarget = this.parentNode.parentNode.getAttribute('data-navsection');
-                //console.log(sectionTarget);
-
-                var navName = this.textContent;
-                var navValue = this.getAttribute('data-id');
-
-                document.getElementById('SectionTitle').innerHTML = navName;
-
-                // menu active
-                for (var i = 0; i < navLink.length; i++){
-                    navLink[i].classList.remove('active');
-                }
-                
-                this.classList.add('active');
-
-                // title change
-                document.querySelector('title').innerHTML = navName + ' - Material';
-
-                // page change
-                var pageLocation   = '' + sectionTarget + '/' + navValue + '.html';
-                var content_div = document.getElementById('middleContent');
-
-                function LoadPage(){
-                    var xmlHttp = new XMLHttpRequest();
-
-                    xmlHttp.onreadystatechange = function() {
-                        if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
-                            content_div.innerHTML = xmlHttp.responseText;
-                        }
-                    };
-
-                    xmlHttp.open("GET", pageLocation, true);
-                    xmlHttp.send(null);
-                }
-
-                // Main - run tests
-                LoadPage();
-
-                // close menu
-                navCtrl();
-            });
-        }
-
-        // navigation control
-            function navCtrl(){
-                var navSection = document.querySelector('.nav');
-                var navBackDrop = document.querySelector('.nav-backdrop');
-
-                if(navSection.classList.contains('open')){
-                    navSection.classList.remove('open');
-                    navBackDrop.classList.remove('navOpen');
-                }
-                else{
-                    navSection.classList.add('open');
-                    navBackDrop.classList.add('navOpen');
-                }
-            }
-
-    // page scroll
-        var lastScrollTop = 0;
-
-        function pageScroll(){
-            var st = document.documentElement.scrollTop;
-            var pageContainer = document.getElementById('container');
-
-            if (st > lastScrollTop){
-                pageContainer.classList.add('scrolled');
-            } else {
-                pageContainer.classList.remove('scrolled');
-            }
-            lastScrollTop = st;
-        }
-
-    // theme section
-        document.querySelector('.theme').addEventListener('click', function(event) {
-
-        });
-
-
 /*
+jQuery(document).ready(function($){
+   
+});
+
+$(document).ready(function() {
+    //$('main').load('about.html');
+});
+*/
+
     // navigation
         $('.sideNavigation a').on('click', function(){
             var sectionTarget = $(this).parents('.sideNavigation').attr('data-navsection');
@@ -180,6 +103,3 @@
         });
 
 
-
-
-*/
