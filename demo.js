@@ -4,8 +4,7 @@
 
         for(var i = 0; i < sideNavigation.length; i++){
             sideNavigation[i].onclick = function() {
-                var sectionTarget = this.parentNode.parentNode.getAttribute('data-navsection'),
-                    navName = this.textContent,
+                var navName = this.textContent,
                     navValue = this.getAttribute('data-id');
 
                 // menu active state
@@ -20,18 +19,22 @@
 
                 // bind page
                     document.getElementById('SectionTitle').innerText = navName;
-
-                    req = new XMLHttpRequest();
+                    
+                    // removed because no js runs inside
+                    /*
+                    xhttp = new XMLHttpRequest();
                     var src = '' + sectionTarget + '/' + navValue + '.html';
-
-                    req.onreadystatechange = function (e) {
-                        if (req.readyState == 4 && req.status == 200) {               
-                            document.getElementById('middleContent').innerHTML = req.responseText;
+                      
+                    xhttp.onreadystatechange = function () {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            document.getElementById('middleContent').innerHTML = xhttp.responseText;
                         }
                     }
-                    req.open("GET", src, true);
-                    req.setRequestHeader('Content-type', 'text/html');
-                    req.send();
+                    xhttp.open("GET", src, true);
+                    xhttp.setRequestHeader('Content-type', 'text/html');
+                    xhttp.send();
+                    */
+                    $('#middleContent').load('demo/' + navValue + '.html');
 
                 // mobile side nav close
                     navCtrl();
@@ -67,6 +70,25 @@
             }
             lastScrollTop = st;
         }
+
+    // demo try
+        var demotoggle = document.querySelectorAll('.demo-toggle');
+        for(var i = 0; i < demotoggle.length; i++){
+            demotoggle[i].onclick = function(){
+                alert('hi');
+            }
+        }
+        
+
+        // $('body').on('click', '.demo-toggle', function(){
+        //     var sectionContainer = $(this).parents('.demo-section');
+        //     if($(sectionContainer).hasClass('active')){
+        //         $(sectionContainer).classList.remove('active');
+        //     }
+        //     else{
+        //         $(sectionContainer).classList.add('active');
+        //     }
+        // });
 
 
 /*

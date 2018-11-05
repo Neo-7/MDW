@@ -1,0 +1,73 @@
+
+<!-- intro -->
+    <div class="row">
+        <p class="text-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        </p>
+
+        <div class="row demo-container fx-ctr">
+            
+            <div class="col-xs-4 col-sm-8 col-md-6 col-lg-6 fx-ctr fx-col">
+                <h1 class="row text-heading fx-ctr">Independent Toggle</h1>
+
+                <div class="mat-button-toggle" data-type="independent">
+                    <button data-ripple="true">
+                        <i class="material-icons icon">format_italic</i>
+                    </button>
+                    
+                    <button data-ripple="true">
+                        <i class="material-icons icon">format_bold</i>
+                    </button>
+
+                    <button data-ripple="true">
+                        <i class="material-icons icon">format_underline</i>
+                    </button>
+
+                    <button data-ripple="true" disabled>
+                        <i class="material-icons icon">format_color_text</i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-xs-4 col-sm-8 col-md-6 col-lg-6 fx-ctr fx-col">
+                <h1 class="row text-heading fx-ctr">Toggle</h1>
+                
+                <div class="mat-button-toggle" data-type="single">
+                    <button data-ripple="true">
+                        <i class="material-icons icon">format_align_left</i>
+                    </button>
+                    
+                    <button data-ripple="true">
+                        <i class="material-icons icon">format_align_center</i>
+                    </button>
+
+                    <button data-ripple="true">
+                        <i class="material-icons icon">format_align_right</i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+<!-- script -->
+    <script>
+        // open bottomsheet
+            $('.mat-button-toggle button').on('click', function(){
+                matButtonToggle($(this));
+            });
+
+            /*
+                $('.mat-button-toggle button').on('click', function(){
+                    var toggleParent = $(this).parent();
+
+                    if(toggleParent.attr('data-type') == 'independent'){
+                        $(this).toggleClass('toggle-active');
+                    }
+                    else{
+                        toggleParent.children().removeClass('toggle-active');
+                        $(this).addClass('toggle-active');
+                    }
+                });
+            */
+    </script>

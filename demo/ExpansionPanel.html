@@ -1,0 +1,363 @@
+
+
+<!-- intro -->
+    <div class="row">
+        <p class="text-body">
+            The BottomSheet are views that come up from the bottom of the screen, 
+            elevated over the main content. This UX pattern is intended for mobile devices only.
+        </p>
+
+        <div class="row demo-container fx-ctr">
+
+            <div class="col-xs-3">
+                <div class="row fx-col mat-tab">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+                
+                <!-- middle content -->
+                    <div class="row">
+                        <!-- panel one -->
+                        <div class="white-bg mat-panel" data-expand="false">
+                            <div class="panel-toolbar fx-vctr padding-0-16">
+                                <span class="width-auto text-body-2strong">Input Fields</span>
+
+                                <span class="spacer"></span>
+
+                                <a class="material-icons icon32 expandAllTabs" data-expandAll="false">settings_ethernet</a>
+                                <a class="material-icons icon32 accordionToggle">arrow_upward</a>
+                            </div>
+
+                            <div class="panel-content">
+                                <div class="fx-row-w width100 padding-8">
+                                    <div class="row padding-16-0">
+                                        <span class="row align-left text-heading padding-8-16">TextBox</span>
+
+                                        <!-- textbox -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container"><!-- input | select container -->
+                                                <input type="text" class="mat-input" data-error="false" /><!-- input -->
+                                                <label>Input TextBox</label><!-- placeholder -->
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span><!-- error message -->
+                                            </div>
+                                        </div>
+
+                                        <!-- Mandatory textbox -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container">
+                                                <input type="text" class="mat-input" data-error="false" />
+                                                <label>Mandatory TextBox <em class="warn-color">*</em></label><!-- Mandatory textbox label -->
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- textbox error message -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container">
+                                                <input type="text" class="mat-input" data-error="true" /><!-- error msg true -->
+                                                <label>TextBox Error Message</label>
+                                                <span class="warn-color error-msg">Error Message</span><!-- error message -->
+                                                <span class="mat-assist"></span>
+                                                <!-- data-error="true" | data-error="false" -->
+                                            </div>
+                                        </div>
+
+                                        <!-- textbox suffix : search -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container mat-suffix">
+                                                <input type="text" class="mat-input" data-error="false" />
+                                                <label>Input TextBox with Search</label>
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span>
+
+                                                <span class="input-suffix suffix-one" data-ripple="true"><!-- suffix section -->
+                                                    <i class="material-icons">search</i><!-- suffix icon :: search  -->
+                                                    <input type="button" value="search" /><!-- suffix button -->
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- textbox suffix : go -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container mat-suffix">
+                                                <input type="text" class="mat-input" data-error="false" />
+                                                <label>Input TextBox with Go</label>
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span>
+
+                                                <span class="input-suffix suffix-one" data-ripple="true">
+                                                    <i class="material-icons">arrow_forward</i><!-- suffix icon :: go -->
+                                                    <input type="button" value="go" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row padding-16-0">
+                                        <span class="row align-left text-heading padding-8-16">SelectBox</span>
+
+                                        <!-- selectbox -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container">
+                                                <select class="mat-select" data-error="false"><!-- selectbox -->
+                                                    <option value="" disabled="" selected=""></option><!-- Mandatory first option -->
+                                                    <option value="01">Option one</option>
+                                                    <option value="02">Option two</option>
+                                                </select>
+
+                                                <label>Selectbox</label>
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mandatory selectbox -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container">
+                                                <select class="mat-select" data-error="false">
+                                                    <option value="" disabled="" selected=""></option>
+                                                    <option value="01">Option one</option>
+                                                    <option value="02">Option two</option>
+                                                </select>
+                                                <label>Mandatory selectbox<em class="warn-color">*</em></label><!-- Mandatory selectbox label -->
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- selectbox error message -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-input-container">
+                                                <select class="mat-select" data-error="true">
+                                                    <option value="" disabled="" selected=""></option>
+                                                    <option value="01">Option one</option>
+                                                    <option value="02">Option two</option>
+                                                </select>
+
+                                                <label>Selectbox Error Message</label>
+                                                <span class="mat-assist"></span>
+                                                <span class="warn-color error-msg">Error Message</span><!-- error message -->
+                                                <!-- data-error="true" | data-error="false" -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- panel two -->
+                        <div class="white-bg mat-panel" data-expand="true">
+                            <div class="panel-toolbar fx-vctr padding-0-16">
+                                <span class="width-auto text-body-2strong">Form Fields</span>
+
+                                <span class="spacer"></span>
+
+                                <a class="material-icons icon32 accordionToggle">arrow_upward</a>
+                            </div>
+
+                            <div class="panel-content">
+                                <div class="fx-row-w width100 padding-8">
+                                    <div class="row padding-16-0">
+                                        <span class="row align-left text-heading padding-8-16">CheckBox</span>
+
+                                        <!-- checkbox -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <div class="mat-checkbox" data-color="accent">
+                                                    <input id="checkbox-checkbox" type="checkbox" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+
+                                                <label for="checkbox-checkbox" class="text-body">Checkbox Control</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- checkbox : primary -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <div class="mat-checkbox" data-color="primary">
+                                                    <input id="checkbox-checkbox3" type="checkbox" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+
+                                                <label for="checkbox-checkbox3" class="text-body">Checkbox Primary</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- checkbox - two -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <label for="checkbox-checkbox2" class="text-body">Checkbox align right</label>
+
+                                                <span class="spacer"></span>
+
+                                                <div class="mat-checkbox" data-color="accent">
+                                                    <input id="checkbox-checkbox2" type="checkbox" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- checkbox : primary - two -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <label for="checkbox-checkbox4" class="text-body">Checkbox align right</label>
+
+                                                <span class="spacer"></span>
+
+                                                <div class="mat-checkbox" data-color="primary">
+                                                    <input id="checkbox-checkbox4" type="checkbox" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row padding-16-0">
+                                        <span class="row align-left text-heading padding-8-16">Switch</span>
+
+                                        <!-- Switch -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <div class="mat-switch" data-color="accent">
+                                                    <input id="checkbox-switch" type="checkbox" />
+
+                                                    <span class="switch">
+                                                        <span class="switch-overlay">
+                                                            <span class="switch-thumb"></span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <label for="checkbox-switch" class="text-body padding-0-8">Switch</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Switch : primary -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <div class="mat-switch" data-color="primary">
+                                                    <input id="checkbox-switch2" type="checkbox" />
+
+                                                    <span class="switch">
+                                                        <span class="switch-overlay">
+                                                            <span class="switch-thumb"></span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+
+                                                <label for="checkbox-switch2" class="text-body padding-0-8">Switch Primary</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Switch -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <label for="checkbox-switch3" class="text-body padding-0-8">Switch</label>
+
+                                                <span class="spacer"></span>
+
+                                                <div class="mat-switch" data-color="accent">
+                                                    <input id="checkbox-switch3" type="checkbox" />
+
+                                                    <span class="switch">
+                                                        <span class="switch-overlay">
+                                                            <span class="switch-thumb"></span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Switch : primary -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <label for="checkbox-switch4" class="text-body padding-0-8">Switch Primary</label>
+
+                                                <span class="spacer"></span>
+
+                                                <div class="mat-switch" data-color="primary">
+                                                    <input id="checkbox-switch4" type="checkbox" />
+
+                                                    <span class="switch">
+                                                        <span class="switch-overlay">
+                                                            <span class="switch-thumb"></span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row padding-16-0">
+                                        <span class="row align-left text-heading padding-8-16">Radio Button</span>
+
+                                        <!-- Radio Button -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <div class="mat-radio" data-color="accent">
+                                                    <input id="radio-radio" type="radio" name="radioGroup1" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+
+                                                <label for="radio-radio" class="text-body">Radio Control</label>
+                                            </div>
+
+                                            <div class="mat-form-fields">
+                                                <div class="mat-radio" data-color="accent">
+                                                    <input id="radio-radio1" type="radio" name="radioGroup1" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+
+                                                <label for="radio-radio1" class="text-body">Radio Control</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- radio : primary -->
+                                        <div class="xs-4 sm-6 md-4 lg-3">
+                                            <div class="mat-form-fields">
+                                                <div class="mat-radio" data-color="primary">
+                                                    <input id="radio-radio3" type="radio" name="radioGroup" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+
+                                                <label for="radio-radio3" class="text-body">Radio Primary</label>
+                                            </div>
+
+                                            <div class="mat-form-fields">
+                                                <div class="mat-radio" data-color="primary">
+                                                    <input id="radio-radio4" type="radio" name="radioGroup" />
+                                                    <span class="mat-icon"></span>
+                                                </div>
+
+                                                <label for="radio-radio4" class="text-body">Radio Primary</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- panel two -->
+                        <div class="white-bg mat-panel" data-expand="false">
+                            <div class="panel-toolbar fx-vctr padding-0-16">
+                                <span class="width-auto text-body-2strong">section heading</span>
+
+                                <span class="spacer"></span>
+
+                                <a class="material-icons icon32 accordionToggle">arrow_upward</a>
+                            </div>
+
+                            <div class="panel-content">
+                                <div class="fx-row-w width100 padding-8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  
