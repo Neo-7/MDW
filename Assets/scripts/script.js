@@ -4,35 +4,40 @@
 
     for (var i = 0; i < rippleEffect.length; i++) {
         rippleEffect[i].addEventListener('click', function(e) {
-            var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-                rippleColor;
+            // background color
+                var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+                    eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                    rippleColor;
 
-            if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-                rippleColor = eleRippleColor
-            }
-            else{
-                rippleColor = 'rgb(255,255,255)'
-            }
+                if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
+                    rippleColor = eleRippleColor
+                }
+                else{
+                    rippleColor = 'rgb(255,255,255)'
+                }
 
-            var ripple = document.createElement('div');
-            ripple.className = 'ripple';
+            // create ripple
+                var ripple = document.createElement('div');
+                    ripple.className = 'ripple';
 
-            var rect = this.getBoundingClientRect(),
-                x = e.clientX - rect.left;
-                y = e.clientY - rect.top;
+            // ripple position
+                var rect = this.getBoundingClientRect(),
+                    x = e.clientX - rect.left;
+                    y = e.clientY - rect.top;
 
-            //console.log(e.clientX, rect.left);
-            
-            ripple.style.left = x + 'px';
-            ripple.style.top  = y + 'px';
-            ripple.style.background = rippleColor;
+                //console.log(e.clientX, rect.left);
+                
+                ripple.style.left = x + 'px';
+                ripple.style.top  = y + 'px';
+                ripple.style.background = rippleColor;
 
-            this.appendChild(ripple);
+            // append ripple
+                this.appendChild(ripple);
 
-            setTimeout(function() {
-                ripple.parentNode.removeChild(ripple);
-            }, 900);
+            // remove ripple
+                setTimeout(function() {
+                    ripple.parentNode.removeChild(ripple);
+                }, 900);
         });
     }
 
@@ -64,8 +69,9 @@
 
             // prepend overlay
                 var menuOverlayBackdrop = document.createElement('div');
-                    menuOverlayBackdrop.className = 'ripple';
+                    menuOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop backdrop-nocolor';
                 eltar.insertBefore(menuOverlayBackdrop, menutarget);
+                enableOverlayClose();
 
             // change menu position based on height and width
                 if( elx + tarw <= wwth &&  wht - ely >= wht / 2 ){
@@ -97,7 +103,7 @@
                 menutarget.style.top = ely + 'px';
                 menutarget.style.left = elx + 'px';
                 menutarget.style.bottom = ely2 + 'px';
-                menutarget.style.transformOrigin = transOrigin,
+                menutarget.style.transformOrigin = transOrigin;
                 menutarget.style.maxHeight = menuHeight + 'px';
 
             // remove body scroll
@@ -108,78 +114,52 @@
         });
     }
 
+// material :: overlay close
+    // on backdrop click
+        function enableOverlayClose(){
+            document.querySelector('.overlay-backdrop').addEventListener('click', function(e){
+                var backdrop = document.querySelector('.overlay-backdrop');
 
+                this.parentNode.classList.remove('opened');
+                document.body.style.overflow = '';
 
+                setTimeout(function(){
+                    backdrop.nextElementSibling.removeAttribute('style');
+                    backdrop.parentNode.removeChild(backdrop);
+                }, 300);
+            });
+        }
+    
+    // by passed function
+        function overlayClose(){
+            document.querySelector('.mat-overlay.opened').classList.remove('opened');
+            document.body.style.overflow = '';
 
-
+            setTimeout(function(){
+                var backdrop = document.querySelector('.overlay-backdrop');
+                
+                backdrop.nextElementSibling.removeAttribute('style');
+                backdrop.parentNode.removeChild(backdrop);
+            }, 300);
+        }
+        
 
 
 
 
 /*
+    // by passed function
+        function overlayClose(){
+            $('.mat-overlay.opened').removeClass('opened');
+            $('body').css({overflow: 'auto'})
+            
+            setTimeout(function() {
+                $('.mat-overlay').children().removeAttr('style');
+                $('.mat-overlay .overlay-backdrop').remove();
+            }, 300);
+        }
 
-    function matMenuOverlayVisible(thisTarget){
-        // get x, y, height & width values
-        elx = thisTarget.position().left;
-        ely = thisTarget.position().top;
-        elw = thisTarget.width();
-        elh = thisTarget.height();
+*/
 
-        eltar = $('[data-menuid=' + thisTarget.attr('data-menu') + ']');
-        menutarget = eltar.children('.mat-menu');
-        tarw = menutarget.width();
-        tarh = menutarget.height();
 
-        wwth = $(window).width();
-        wht = $(window).height();
 
-        ely2 = 'auto';
-
-        // console.log(elx,ely,elw,elh,eltar,tarw,tarh,wwth,wht);
-        
-        // change menu position based on height and width
-            if( elx + tarw <= wwth &&  wht - ely >= wht / 2 ){
-                menuHeight = wht - ely - 16;
-                transOrigin = 'top left';
-            }
-            else if ( elx + tarw >= wwth && wht - ely >= wht / 2){
-                menuHeight = wht - ely - 16;
-                elx = elx - tarw + elw;
-                transOrigin = 'top right';
-            }
-            else if( elx + tarw >= wwth && wht - ely <= wht / 2 ){
-                elx = elx - tarw + elw;
-                ely2 = wht - ely - elh;
-                menuHeight = wht - ely2 - 16;
-                ely = 'auto'
-                
-                transOrigin = 'bottom right';
-            }
-            else if ( ely + tarh >= wht && wht - ely <= wht / 2 ){
-                ely2 = wht - ely - elh;
-                menuHeight = wht - ely2 - 16;
-                ely = 'auto'
-
-                transOrigin = 'bottom left';
-            }
-
-        // append overlay backdrop
-            parent.insertBefore(el, parent.firstChild);
-            $(eltar).prepend('<div class="hw100 fixed tl overlay-backdrop backdrop-nocolor"></div>');
-
-        // assign target width height to overlay wrapper
-            $(menutarget).css({
-                top: ely,
-                left: elx,
-                bottom: ely2,
-                'transform-origin': transOrigin,
-                'max-height': menuHeight
-            })
-
-        // remove body scroll
-            $('body').css({overflow: 'hidden'})
-
-        // overlay menu open animation
-            $(eltar).addClass('opened');
-    }
-    */
