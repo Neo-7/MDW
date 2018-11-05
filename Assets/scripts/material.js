@@ -143,23 +143,26 @@
             }, 300);
         }
         
+// material :: bottom sheet
+    var bottomSheet = document.querySelectorAll('[data-bottomsheet]');
 
+    for (var i = 0; i < bottomSheet.length; i++){
+        bottomSheet[i].addEventListener('click', function(e) {
+            eltar = document.querySelector('[data-bottomsheetid=' + this.getAttribute('data-bottomsheet') + ']');
+            bstarget = eltar.childNodes[1];
 
+            // prepend overlay
+                var bsOverlayBackdrop = document.createElement('div');
+                    bsOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop';
 
+                eltar.insertBefore(bsOverlayBackdrop, bstarget);
+                enableOverlayClose();
 
-/*
-    // by passed function
-        function overlayClose(){
-            $('.mat-overlay.opened').removeClass('opened');
-            $('body').css({overflow: 'auto'})
-            
-            setTimeout(function() {
-                $('.mat-overlay').children().removeAttr('style');
-                $('.mat-overlay .overlay-backdrop').remove();
-            }, 300);
-        }
+            // remove body scroll
+                document.body.style.overflow = 'hidden';
 
-*/
-
-
+            // overlay menu open animation
+                eltar.classList.add('opened');
+        });
+    }
 

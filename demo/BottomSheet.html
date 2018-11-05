@@ -14,17 +14,17 @@
             <div class="mat-overlay" data-bottomsheetid="BSmenu1">
                 <div class="mat-bottomsheet mat-elevation-z16">
                     <div class="md-list">
-                        <a class="md-list-item">
+                        <a class="md-list-item" onclick="overlayClose();">
                             <span class="text-body-2strong padding-0-16">Title</span>
                             <span class="text-caption padding-0-16">Description</span>
                         </a>
 
-                        <a class="md-list-item">
+                        <a class="md-list-item" onclick="overlayClose();">
                             <span class="text-body-2strong padding-0-16">Title</span>
                             <span class="text-caption padding-0-16">Description</span>
                         </a>
 
-                        <a class="md-list-item">
+                        <a class="md-list-item" onclick="overlayClose();">
                             <span class="text-body-2strong padding-0-16">Title</span>
                             <span class="text-caption padding-0-16">Description</span>
                         </a>
@@ -79,24 +79,24 @@
 <!-- demo -->
 
 
-
-<!-- script 
+<!-- script -->
     <script>
-        // open bottomsheet
-            $('.open-bs').on('click', function(){
-                bottomsheetEnable($(this));
-            });
+        var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
+        //var materialjs = "../Assets/scripts/material.js";
+        $.getScript(materialjs);
 
-        // close bottomsheet
-            $('.mat-bottomsheet a').on('click', function(){
-                overlayClose();
-            });
-    </script>
-    -->
-
-    <script>
-        var urlChat = "../Assets/scripts/script.js";
-        $.getScript(urlChat);
+        var demotoggle = document.querySelectorAll('.demo-toggle');
+        for(var i = 0; i < demotoggle.length; i++){
+            demotoggle[i].onclick = function(){
+                var sectionContainer = this.parentNode;
+                if(sectionContainer.classList.contains('active')){
+                    sectionContainer.classList.remove('active');
+                }
+                else{
+                    sectionContainer.classList.add('active');
+                }
+            }
+        }
     </script>
 
 
