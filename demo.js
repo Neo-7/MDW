@@ -71,13 +71,6 @@
             lastScrollTop = st;
         }
 
-    // demo try
-        var demotoggle = document.querySelectorAll('.demo-toggle');
-        for(var i = 0; i < demotoggle.length; i++){
-            demotoggle[i].onclick = function(){
-                alert('hi');
-            }
-        }
         
 
         // $('body').on('click', '.demo-toggle', function(){
