@@ -89,10 +89,10 @@
 
                 // css update
                     if(themeID == 'dark'){
-                        themeLinkID.setAttribute('link', '');
+                        themeLinkID.setAttribute('href', '');
                     }
                     else{
-                        themeLinkID.setAttribute('link', 'Assets/css/theme/theme-'+themeID+'.css');
+                        themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+themeID+'.css');
                     }
 
                 // close menu
