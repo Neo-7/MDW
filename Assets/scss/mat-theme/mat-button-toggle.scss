@@ -1,48 +1,31 @@
 
 // button toggle
     .mat-button-toggle{
-        border: 1px solid $text-lighter;
+        background: $color-white;
+        border: 1px solid rgba($color-black, 0.12);
     }
 
-    .mat-button-toggle button{
-        border-left: 1px solid $text-lighter;
+    .mat-button-toggle label{
+        border-left: 1px solid rgba($color-black, 0.12);
     }
 
-    .mat-button-toggle button:not(.toggle-active):hover{
+    .mat-button-toggle input:not(:checked):hover ~ i{
         background-color: $color-light;
     }
 
-    .mat-button-toggle .toggle-active{
-        background-color: $text-light;
+    .mat-button-toggle input:not(:checked):focus ~ i{
+        background-color: rgba($color-black, 0.12);
     }
 
-
-// theme
-    .mat-button-toggle{
-        background: $color-white;
+    .mat-button-toggle input:not(:checked):active ~ i{
+        background-color: rgba($color-black, 0.12);
     }
 
-    //dark
-        // [data-theme="red"] .mat-button-toggle{
-        //     background: #303030;
-        //     border-color: rgba(255,255,255,0.45);
-        // }
+    .mat-button-toggle input:checked ~ i{
+        background-color: rgba($color-black, 0.12);
+    }
 
-        // [data-theme="red"] .mat-button-toggle button{
-        //     border-color: rgba(255,255,255,0.45)
-        // }
-
-        // [data-theme="red"] .mat-button-toggle button:not(.toggle-active):hover{
-        //     background-color: rgba(0,0,0,.1);
-        // }
-
-        // [data-theme="red"] .mat-button-toggle .toggle-active{
-        //     background-color: #212121;
-        // }
-
-        // [data-theme="red"] .mat-button-raised,
-        // [data-theme="red"] .mat-button-flat,
-        // [data-theme="red"] .mat-icon-button{
-        //     background: #424242;
-        //     color: rgba(255, 255, 255, 0.7);
-        // }
+/* :disabled */
+    .mat-button-toggle input:disabled ~ i{
+        color: rgba($color-black, 0.25);
+    }

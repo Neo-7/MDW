@@ -17,17 +17,17 @@
                     </label>
 
                     <label data-ripple="true">
-                        <input type="checkbox" value="01" />
+                        <input type="checkbox" value="02" />
                         <i class="material-icons">format_bold</i>
                     </label>
 
                     <label data-ripple="true">
-                        <input type="checkbox" value="01" />
+                        <input type="checkbox" value="03" />
                         <i class="material-icons">format_underline</i>
                     </label>
 
                     <label data-ripple="true">
-                        <input type="checkbox" value="01" />
+                        <input type="checkbox" value="04" disabled />
                         <i class="material-icons">format_color_text</i>
                     </label>
                 </div>
@@ -48,7 +48,7 @@
                     </label>
 
                     <label data-ripple="true">
-                        <input type="radio" name="radioGroupOne" value="03" />
+                        <input type="radio" name="radioGroupOne" value="03" disabled />
                         <i class="material-icons">format_align_right</i>
                     </label>
                 </div>
@@ -61,7 +61,7 @@
     <script>
         var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
         $.getScript(materialjs);
-        
+
         var demotoggle = document.querySelectorAll('.demo-toggle');
         for(var i = 0; i < demotoggle.length; i++){
             demotoggle[i].onclick = function(){

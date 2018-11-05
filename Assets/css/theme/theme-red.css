@@ -36,15 +36,20 @@ body { background-color: #424242; color: rgba(255, 255, 255, 0.87); }
 
 .mat-bottomsheet { background: #303030; color: rgba(255, 255, 255, 0.7); }
 
-.mat-button-toggle { border: 1px solid rgba(255, 255, 255, 0.47); }
+.mat-button-toggle { background: #303030; border: 1px solid rgba(255, 255, 255, 0.12); }
 
-.mat-button-toggle button { border-left: 1px solid rgba(255, 255, 255, 0.47); }
+.mat-button-toggle label { border-left: 1px solid rgba(255, 255, 255, 0.12); }
 
-.mat-button-toggle button:not(.toggle-active):hover { background-color: #424242; }
+.mat-button-toggle input:not(:checked):hover ~ i { background-color: #424242; }
 
-.mat-button-toggle .toggle-active { background-color: rgba(255, 255, 255, 0.67); }
+.mat-button-toggle input:not(:checked):focus ~ i { background-color: rgba(255, 255, 255, 0.12); }
 
-.mat-button-toggle { background: #303030; }
+.mat-button-toggle input:not(:checked):active ~ i { background-color: rgba(255, 255, 255, 0.12); }
+
+.mat-button-toggle input:checked ~ i { background-color: rgba(255, 255, 255, 0.12); }
+
+/* :disabled */
+.mat-button-toggle input:disabled ~ i { color: rgba(255, 255, 255, 0.25); }
 
 button[class*="mat-button"]:disabled, [class*="mat-icon-button"]:disabled .mat-fab:disabled, .mat-fab-mini:disabled, button[class*="color-"]:disabled { color: rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.25); }
 
