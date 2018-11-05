@@ -6,7 +6,7 @@
         border-radius: 2px;
     }
 
-    .mat-button-toggle button{
+    .mat-button-toggle label{
         height: 46px;
         width: 47px;
         padding: 0;
@@ -15,20 +15,39 @@
         transition: 0.3s;
     }
 
-    .mat-button-toggle button:not(.toggle-active):hover{
+    .mat-button-toggle input{
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        margin: 0;
+        z-index: 3;
+    }
+
+    .mat-button-toggle i{
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        line-height: 46px;
+    }
+
+    .mat-button-toggle label:not(.toggle-active):hover{
         background-color: #f5f5f5;
     }
 
-    .mat-button-toggle button:first-child{
+    .mat-button-toggle label:first-child{
         border: 0;
     }
 
-    .mat-button-toggle .toggle-active{
+    .mat-button-toggle input:checked ~ i{
         background-color: #e0e0e0;
     }
 
 /* :disabled */
-    .mat-button-toggle button:disabled{
+    .mat-button-toggle label:disabled{
         color: #a7a7a7;
         cursor: default;
     }

@@ -100,55 +100,7 @@
             }
         }
 
-
-        /*
-
-        $('.pageTheme a').on('click', function(){
-            var themeID = $(this).attr('data-theme');
-
-            $('.pageTheme a').classList.remove('active');
-            $(this).classList.add('active')
-
-            // bind css
-                if(themeID == 'dark'){
-                    $('#themeLink').remove();
-                }
-                else{
-                    $('#themeLink').remove();
-                    $('head').append('<link id="themeLink" href="Assets/css/theme/theme-'+themeID+'.css" rel="stylesheet" />');
-                }
-            
-            overlayClose();
-        });
-    */
-
-
-
 /*
-    // theme section
-        $('.theme').on('click', function(){
-            //overlayMenuEnable($(this));
-            matMenuOverlayVisible($(this));
-        });
-
-    // page theme change
-        $('.pageTheme a').on('click', function(){
-            var themeID = $(this).attr('data-theme');
-
-            $('.pageTheme a').classList.remove('active');
-            $(this).classList.add('active')
-
-            // bind css
-                if(themeID == 'dark'){
-                    $('#themeLink').remove();
-                }
-                else{
-                    $('#themeLink').remove();
-                    $('head').append('<link id="themeLink" href="Assets/css/theme/theme-'+themeID+'.css" rel="stylesheet" />');
-                }
-            
-            overlayClose();
-        });
 
     // demo section
         $('body').on('click', '.demo-toggle', function(){
