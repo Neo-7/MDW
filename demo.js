@@ -73,10 +73,12 @@
 
     // page theme change
         var themeLink = document.querySelectorAll('.pageTheme a');
+        var metaThemeColor = document.querySelector("meta[name=theme-color]");
 
         for(var i = 0; i < themeLink.length; i++){
             themeLink[i].onclick = function(){
                 var themeID = this.getAttribute('data-theme');
+                var themeColor = this.getAttribute('data-themeColor');
                 var themeLinkID = document.getElementById('themeLink');
                 //backdrop.parentNode.removeChild(backdrop);
                 
@@ -94,6 +96,9 @@
                     else{
                         themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+themeID+'.css');
                     }
+
+                // update theme color
+                    metaThemeColor.setAttribute("content", themeColor);
 
                 // close menu
                     overlayClose();
