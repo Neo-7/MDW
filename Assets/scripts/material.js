@@ -13,7 +13,7 @@
                     rippleColor = eleRippleColor
                 }
                 else{
-                    rippleColor = 'rgb(255,255,255)'
+                    rippleColor = '#fff'
                 }
 
             // create ripple
@@ -37,7 +37,7 @@
             // remove ripple
                 setTimeout(function() {
                     ripple.parentNode.removeChild(ripple);
-                }, 900);
+                }, 1400);
         });
     }
 
