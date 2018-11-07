@@ -51,7 +51,7 @@
                 elh = thisTarget.offsetHeight,
 
                 eltar = document.querySelector('[data-menuid=' + thisTarget.getAttribute('data-menu') + ']'),
-                menutarget = eltar.children[1],
+                menutarget = eltar.children[0],
                 tarw = menutarget.offsetWidth,
                 tarh = menutarget.offsetHeight,
 
@@ -113,7 +113,7 @@
 // material :: bottom sheet
     function bottomSheet(thisTarget){
         eltar = document.querySelector('[data-bottomsheetid=' + thisTarget.getAttribute('data-bottomsheet') + ']');
-        bstarget = eltar.children[1];
+        bstarget = eltar.children[0];
 
         // prepend overlay
             var bsOverlayBackdrop = document.createElement('div');
@@ -167,17 +167,18 @@
 
         //console.log(tab, curTab, tabChild);
 
-        for (i = 0; i < tabChild.length; i++) {
-            if( tabChild[i].getAttribute('data-tabid') < curTab){
-                tabChild[i].setAttribute('data-tabstatus', 'prev');
+        // tab change
+            for (i = 0; i < tabChild.length; i++) {
+                if( tabChild[i].getAttribute('data-tabid') < curTab){
+                    tabChild[i].setAttribute('data-tabstatus', 'prev');
+                }
+                else if( tabChild[i].getAttribute('data-tabid') == curTab ){
+                    tabChild[i].setAttribute('data-tabstatus', 'active');
+                }
+                else if( tabChild[i].getAttribute('data-tabid') > curTab ){
+                    tabChild[i].setAttribute('data-tabstatus', 'next');
+                }
             }
-            else if( tabChild[i].getAttribute('data-tabid') == curTab ){
-                tabChild[i].setAttribute('data-tabstatus', 'active');
-            }
-            else if( tabChild[i].getAttribute('data-tabid') > curTab ){
-                tabChild[i].setAttribute('data-tabstatus', 'next');
-            }
-        }
     }
 
 
