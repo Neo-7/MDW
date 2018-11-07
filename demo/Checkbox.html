@@ -89,3 +89,22 @@
             </div>
         </div>
     </div>
+
+<!-- script -->
+    <script>
+        var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
+        $.getScript(materialjs);
+
+        var demotoggle = document.querySelectorAll('.demo-toggle');
+        for(var i = 0; i < demotoggle.length; i++){
+            demotoggle[i].onclick = function(){
+                var sectionContainer = this.parentNode;
+                if(sectionContainer.classList.contains('active')){
+                    sectionContainer.classList.remove('active');
+                }
+                else{
+                    sectionContainer.classList.add('active');
+                }
+            }
+        }
+    </script>
