@@ -51,7 +51,7 @@
                 elh = thisTarget.offsetHeight,
 
                 eltar = document.querySelector('[data-menuid=' + thisTarget.getAttribute('data-menu') + ']'),
-                menutarget = eltar.childNodes[1],
+                menutarget = eltar.children[1],
                 tarw = menutarget.offsetWidth,
                 tarh = menutarget.offsetHeight,
 
@@ -110,6 +110,25 @@
             eltar.classList.add('opened');
     }
 
+// material :: bottom sheet
+    function bottomSheet(thisTarget){
+        eltar = document.querySelector('[data-bottomsheetid=' + thisTarget.getAttribute('data-bottomsheet') + ']');
+        bstarget = eltar.children[1];
+
+        // prepend overlay
+            var bsOverlayBackdrop = document.createElement('div');
+                bsOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop';
+
+            eltar.insertBefore(bsOverlayBackdrop, bstarget);
+            enableOverlayClose();
+        
+        // remove body scroll
+            document.body.style.overflow = 'hidden';
+
+        // overlay menu open animation
+            eltar.classList.add('opened');
+    }
+
 // material :: overlay close
     // on backdrop click
         function enableOverlayClose(){
@@ -139,22 +158,26 @@
             }, 300);
         }
         
-// material :: bottom sheet
-    function bottomSheet(thisTarget){
-        eltar = document.querySelector('[data-bottomsheetid=' + thisTarget.getAttribute('data-bottomsheet') + ']');
-        bstarget = eltar.childNodes[1];
+// material :: tab
+    function tabNavigation(thisTarget){
+        var tab = thisTarget.parentNode.parentNode.parentNode.parentNode,
+            curTab = thisTarget.value,
+            tabContainer = tab.children[1],
+            tabChild = tabContainer.children;
 
-        // prepend overlay
-            var bsOverlayBackdrop = document.createElement('div');
-                bsOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop';
+        //console.log(tab, curTab, tabChild);
 
-            eltar.insertBefore(bsOverlayBackdrop, bstarget);
-            enableOverlayClose();
-        
-        // remove body scroll
-            document.body.style.overflow = 'hidden';
-
-        // overlay menu open animation
-            eltar.classList.add('opened');
+        for (i = 0; i < tabChild.length; i++) {
+            if( tabChild[i].getAttribute('data-tabid') < curTab){
+                tabChild[i].setAttribute('data-tabstatus', 'prev');
+            }
+            else if( tabChild[i].getAttribute('data-tabid') == curTab ){
+                tabChild[i].setAttribute('data-tabstatus', 'active');
+            }
+            else if( tabChild[i].getAttribute('data-tabid') > curTab ){
+                tabChild[i].setAttribute('data-tabstatus', 'next');
+            }
+        }
     }
+
 

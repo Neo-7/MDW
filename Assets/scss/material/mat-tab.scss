@@ -1,10 +1,23 @@
 
+// tab
+    .mat-tab{
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
 /* tab header */
     .mat-tab-header{
-        top: 0;
-        //border-bottom: 1px solid #ccc;
-        z-index: 2;
         min-height: 56px;
+        width: 100%;
+        top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
     }
 
     .mat-tab-header.sticky{
@@ -16,6 +29,12 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
     .mat-tab-header li{
@@ -27,41 +46,64 @@
         white-space: nowrap;
     }
 
-    .mat-tab-header li.w100{
-        min-width: 100px;
-    }
+        .mat-tab-header li.w100{
+            min-width: 100px;
+        }
 
-    .mat-tab-header li.w120{
-        min-width: 120px;
-    }
+        .mat-tab-header li.w120{
+            min-width: 120px;
+        }
 
-    .mat-tab-header li.w140{
-        min-width: 140px;
-    }
+        .mat-tab-header li.w140{
+            min-width: 140px;
+        }
 
-    .mat-tab-header li.w160{
-        min-width: 160px;
-    }
+        .mat-tab-header li.w160{
+            min-width: 160px;
+        }
 
-    .mat-tab-header li.w180{
-        min-width: 180px;
+        .mat-tab-header li.w180{
+            min-width: 180px;
+        }
+        
+    .mat-tab-header input{
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        margin: 0;
+        z-index: 3;
+    }
+    
+    .mat-tab-header li > span{
+        padding: 0 32px;
+        font: 500 14px/24px 'Roboto',sans-serif;
     }
     
     .mat-tab .tab-bar {
         height: 3px;
         width: 100%;
         bottom: -3px;
+        position: absolute;
         left: 0;
         border-radius: 3px 3px 0 0;
         transition: 0.3s;
     }
 
-    .mat-tab-header li.active .tab-bar{
+    .mat-tab-header input:checked ~ .tab-bar{
         transform: translateY(-3px);
     }
 
 /* tab content */
     .mat-tab-container{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        overflow: hidden;
         transition: height .5s cubic-bezier(.35,0,.25,1);
     }
 

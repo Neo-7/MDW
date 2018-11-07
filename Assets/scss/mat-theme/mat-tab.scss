@@ -1,9 +1,9 @@
 
 // tab
-    .mat-tab-header li.active{
+    .mat-tab-header input:checked ~ span{
         color: $accent-color;
     }
 
-    .mat-tab-header .tab-bar{
+    .mat-tab-header input:checked ~ .tab-bar{
         background-color: $accent-color;
     }

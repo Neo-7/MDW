@@ -8,29 +8,33 @@
         <div class="row demo-container fx-ctr">
 
             <div class="col-xs-3">
-                <div class="row fx-col mat-tab">
+
+                <div class="mat-tab">
                     <!-- tab header -->
-                    <div class="row mat-tab-header sticky">
-                        <ul class="fx-row scroll-x">
-                            <li class="w140 active" data-tabid="1" data-ripple="true">
-                                <span class="padding-0-32 text-body-2strong">Tab one</span>
-                                <em class="absolute tab-bar"></em>
+                    <div class="mat-tab-header">
+                        <ul>
+                            <li class="w140" data-ripple="true">
+                                <input type="radio" value="1" name="tabGroupOne" onclick="tabs(this);" checked />
+                                <span>Tab one</span>
+                                <em class="tab-bar"></em>
                             </li>
 
-                            <li class="w100" data-tabid="2" data-ripple="true">
-                                <span class="padding-0-32 text-body-2strong">Tab two</span>
-                                <em class="absolute tab-bar"></em>
+                            <li class="w100" data-ripple="true">
+                                <input type="radio" value="2" name="tabGroupOne" onclick="tabs(this);" disabled />
+                                <span>Tab two</span>
+                                <em class="tab-bar"></em>
                             </li>
 
-                            <li class="w180" data-tabid="3" data-ripple="true">
-                                <span class="padding-0-32 text-body-2strong">Tab three</span>
-                                <em class="absolute tab-bar"></em>
+                            <li class="w180" data-ripple="true">
+                                <input type="radio" value="3" name="tabGroupOne" onclick="tabs(this);" />
+                                <span>Tab three</span>
+                                <em class="tab-bar"></em>
                             </li>
                         </ul>
                     </div>
 
                     <!-- tab content -->
-                    <div class="relative scroll-hide flex mat-tab-container">
+                    <div class="mat-tab-container">
                         <div class="mat-tab-content" data-tabid="1" data-tabstatus="active">
                             <div class="mdTab-content">
                                 <div class="row tool-docs">
@@ -55,13 +59,13 @@
                             <div class="mdTab-content">
                                 <div class="row">
                                     <br><br><br>
-                                    3
                                     <br><br><br>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             
         </div>
@@ -70,8 +74,13 @@
 
 
 <script>
-    // material tab
-        $('.mat-tab-header li').on('click', function() {
-            tabNavigation($(this));
-        });
+    // js
+        var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
+        //var materialjs = "../Assets/scripts/material.js";
+        $.getScript(materialjs);
+
+    // tab
+        function tabs(thisTarget){
+            tabNavigation(thisTarget);
+        }
 </script>
