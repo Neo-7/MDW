@@ -107,12 +107,12 @@
 
             /* default */
             .switch:before{
-                background-color: lighten( $color-black, 68% );
+                background-color: lighten( $color-darker, 50% );
             }
 
             /* :checked */
             .mat-switch input:not(:checked) ~ .switch .switch-thumb{
-                background-color: $color-white;
+                background-color: $color-lighter;
             }
 
             /* :disabled */

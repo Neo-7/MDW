@@ -4,6 +4,8 @@
     $color-white: #fff;
     $color-black: #000;
     $color-dark: #424242;
+
+    $color-lighter: #fff;
     $color-darker: #303030;
 
     $text-dark : rgba(0,0,0,.87);
@@ -12,11 +14,11 @@
 
     $primary-color: #3F51B5;
     $primary-text: $color-white;
-    $primary-light: #3F51B5;
+    $primary-light: lighten( $primary-color, 20% );
 
     $accent-color: #FF9800;
     $accent-text: $text-dark;
-    $accent-light: #FFECB3;
+    $accent-light: lighten( $accent-color, 20% );
 
     $warn-color: #f44336;
 
