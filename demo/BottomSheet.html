@@ -9,7 +9,7 @@
         <div class="row demo-container fx-ctr">
             
             <button class="mat-button-raised color-primary open-bs" 
-                data-ripple="true" data-bottomsheet="BSmenu1">Bottom Sheet</button>
+                data-ripple="true" data-bottomsheet="BSmenu1" onclick="openBS(this);">Bottom Sheet</button>
 
             <div class="mat-overlay" data-bottomsheetid="BSmenu1">
                 <div class="mat-bottomsheet mat-elevation-z16">
@@ -81,22 +81,29 @@
 
 <!-- script -->
     <script>
-        var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
-        //var materialjs = "../Assets/scripts/material.js";
-        $.getScript(materialjs);
+        // js
+            //var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
+            var materialjs = "../Assets/scripts/material.js";
+            $.getScript(materialjs);
 
-        var demotoggle = document.querySelectorAll('.demo-toggle');
-        for(var i = 0; i < demotoggle.length; i++){
-            demotoggle[i].onclick = function(){
-                var sectionContainer = this.parentNode;
-                if(sectionContainer.classList.contains('active')){
-                    sectionContainer.classList.remove('active');
-                }
-                else{
-                    sectionContainer.classList.add('active');
+        // bottomsheet
+            function openBS(thisTarget){
+                bottomSheet(thisTarget);
+            }
+
+        // demo panel toggle
+            var demotoggle = document.querySelectorAll('.demo-toggle');
+            for(var i = 0; i < demotoggle.length; i++){
+                demotoggle[i].onclick = function(){
+                    var sectionContainer = this.parentNode;
+                    if(sectionContainer.classList.contains('active')){
+                        sectionContainer.classList.remove('active');
+                    }
+                    else{
+                        sectionContainer.classList.add('active');
+                    }
                 }
             }
-        }
     </script>
 
 

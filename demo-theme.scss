@@ -1,0 +1,37 @@
+
+/* reset */
+    header svg{
+        fill: $color-white;
+    }
+
+/* nav */
+    .nav-header{
+        border-bottom: 1px solid rgba($color-white, 0.3);
+    }
+
+    .nav a:not(.active):hover{
+        background-color: rgba($color-black, 0.07)
+    }
+
+    .nav .active{
+        background-color: rgba($accent-color,.12);
+        color: $accent-color;
+    }
+
+/* demo container */
+    .demo-container{
+        background-color: rgba($color-black,.07);
+    }
+
+/* demo - doc */
+    .demo-toggle i{
+        background: #fff;
+    }
+    
+/* demo : card */
+    .demo-card{
+        background: #fafafa;
+    }
+    [data-theme="red"] .demo-card{
+        background: #303030;
+    }

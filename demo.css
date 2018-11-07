@@ -215,7 +215,6 @@
         height: 40px;
         width: 40px;
         padding: 8px;
-        fill: #fff;
     }
 
     @media screen and (max-width:839px){
@@ -239,7 +238,6 @@
     }
 
     .nav-header{
-        border-bottom: 1px solid #ccc;
         top: -1px;
     }
 
@@ -275,10 +273,6 @@
             align-items: center;
         
         font: 500 14px/24px 'Roboto',sans-serif;
-    }
-
-    .nav .active{
-        background: rgba(0,0,0,.07);
     }
 
     @media screen and (max-width:1023px){
@@ -359,7 +353,6 @@
 /* demo container */
     .demo-container{
         min-height: 360px;
-        background-color: rgba(0,0,0,.07);
     }
 
     .demo-title{
@@ -377,7 +370,6 @@
 
     .demo-toggle i{
         border-radius: 24px;
-        background: #fff;
     }
     .demo-toggle i:before{
         content: "expand_more";
@@ -422,12 +414,6 @@
     }
 
 /* demo : card */
-    .demo-card{
-        background: #fafafa;
-    }
-    [data-theme="red"] .demo-card{
-        background: #303030;
-    }
 
 /* demo : buttons */
     .demo-buttons h1{

@@ -47,7 +47,7 @@
             <span class="spacer"></span>
 
             <div class="fx-vctr">
-                <a class="theme" data-menu="themeMenu">
+                <a class="theme" data-menu="themeMenu" onclick="openThemeSection(this);">
                     <i class="material-icons icon">palette</i>
                 </a>
 
@@ -294,11 +294,10 @@
     <script src="demo.js"></script>
 
     <script>
-        /*
-        $(window).on('load', function () {
-            
-        });
-        */
+        // theme change
+            function openThemeSection(thisTarget){
+                menu(thisTarget);
+            }
     </script>
 </body>
 </html>

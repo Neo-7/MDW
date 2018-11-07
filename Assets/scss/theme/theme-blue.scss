@@ -51,6 +51,9 @@
     // general
     @import '../mat-theme/mat-theme';
 
+    // material :: appbar
+    @import '../mat-theme/mat-appbar';
+
     // material :: bottomsheet
     @import '../mat-theme/mat-buttonsheet';
 
@@ -75,5 +78,6 @@
     // material :: tab
     @import '../mat-theme/mat-tab';
 
-    // material :: toolbar
-    @import '../mat-theme/mat-toolbar';
+
+    // demo theme
+    @import '../../../demo-theme';
