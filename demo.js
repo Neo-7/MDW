@@ -3,6 +3,7 @@
         var sideNavigation = document.querySelectorAll('.sideNavigation a');
 
         for(var i = 0; i < sideNavigation.length; i++){
+            console.log(sideNavigation.length);
             sideNavigation[i].onclick = function() {
                 var navName = this.textContent,
                     navValue = this.getAttribute('data-id');
@@ -21,30 +22,31 @@
                     document.getElementById('SectionTitle').innerText = navName;
                     
                     // removed because no js runs inside
-                    /*
-                    xhttp = new XMLHttpRequest();
-                    var src = '' + sectionTarget + '/' + navValue + '.html';
-                      
-                    xhttp.onreadystatechange = function () {
-                        if (xhttp.readyState == 4 && xhttp.status == 200) {
-                            document.getElementById('middleContent').innerHTML = xhttp.responseText;
-                        }
-                    }
-                    xhttp.open("GET", src, true);
-                    xhttp.setRequestHeader('Content-type', 'text/html');
-                    xhttp.send();
-                    */
+                    
+                    // xhttp = new XMLHttpRequest();
+                    // var src = '' + sectionTarget + '/' + navValue + '.html';
+                    
+                    // xhttp.onreadystatechange = function () {
+                    //     if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //         document.getElementById('middleContent').innerHTML = xhttp.responseText;
+                    //     }
+                    // }
+                    // xhttp.open("GET", src, true);
+                    // xhttp.setRequestHeader('Content-type', 'text/html');
+                    // xhttp.send();
+                    
                     $('#middleContent').load('demo/' + navValue + '.html');
 
                     // trigger ripple effect again
                         setTimeout(function(){
-                            //materialRipple();
+                            materialRipple();
                         }, 300);
                         
                 // mobile side nav close
                     navCtrl();
             }
         }
+
 
     // navigation control
         function navCtrl(){

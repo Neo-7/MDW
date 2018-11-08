@@ -42,7 +42,7 @@
         });
     }
     */
-    
+
     document.addEventListener('DOMContentLoaded', function() {
         materialRipple();
     }, false);
@@ -88,7 +88,7 @@
 
                 // remove ripple
                     setTimeout(function() {
-                        //ripple.parentNode.removeChild(ripple);
+                        ripple.parentNode.removeChild(ripple);
                     }, 1400);
             }
 
