@@ -36,6 +36,11 @@
                     */
                     $('#middleContent').load('demo/' + navValue + '.html');
 
+                    // trigger ripple effect again
+                        setTimeout(function(){
+                            //materialRipple();
+                        }, 300);
+                        
                 // mobile side nav close
                     navCtrl();
             }

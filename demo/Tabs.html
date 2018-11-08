@@ -14,19 +14,19 @@
                     <div class="mat-tab-header">
                         <ul>
                             <li data-ripple="true">
-                                <input type="radio" value="1" name="tabGroupOne" onclick="tabs(this);" checked />
+                                <input type="radio" id="tab1" value="1" name="tabGroupOne" onclick="tabs(this);" checked />
                                 <span>Tab title one</span>
                                 <em class="tab-bar"></em>
                             </li>
 
                             <li data-ripple="true">
-                                <input type="radio" value="2" name="tabGroupOne" onclick="tabs(this);" />
+                                <input type="radio" id="tab2" value="2" name="tabGroupOne" onclick="tabs(this);" />
                                 <span>Tab title two</span>
                                 <em class="tab-bar"></em>
                             </li>
 
                             <li data-ripple="true">
-                                <input type="radio" value="3" name="tabGroupOne" onclick="tabs(this);" />
+                                <input type="radio" id="tab3" value="3" name="tabGroupOne" onclick="tabs(this);" />
                                 <span>Tab title three</span>
                                 <em class="tab-bar"></em>
                             </li>
@@ -40,6 +40,7 @@
                                 <div class="text-center">
                                     <br><br><br>
                                     1
+                                    <label for="tab2">Go To Tab 2</label>
                                     <br><br><br>
                                 </div>
                             </div>
@@ -75,11 +76,6 @@
 
 
 <script>
-    // js
-        var materialjs = "//neo-7.github.io/material-design-web/Assets/scripts/material.js";
-        //var materialjs = "../Assets/scripts/material.js";
-        $.getScript(materialjs);
-
     // tab
         function tabs(thisTarget){
             tabNavigation(thisTarget);

@@ -15,6 +15,21 @@
         -webkit-animation: ripple 0.7s;
         animation: ripple 0.7s;
     }
+    /*
+        display: none;
+    }
+
+    [data-ripple="true"] .ripple:nth-child(1),
+    [data-ripple="true"] .ripple:nth-child(2),
+    [data-ripple="true"] .ripple:nth-child(3),
+    [data-ripple="true"] .ripple:nth-child(4),
+    [data-ripple="true"] .ripple:nth-child(5),
+    [data-ripple="true"] .ripple:nth-child(6),
+    [data-ripple="true"] .ripple:nth-child(7),
+    [data-ripple="true"] .ripple:nth-child(8){
+        display: block;
+    }
+    */
 
     @-webkit-keyframes ripple {  
         0% {
