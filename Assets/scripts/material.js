@@ -10,10 +10,10 @@
                     rippleColor;
 
                 if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-                    rippleColor = eleRippleColor
+                    rippleColor = eleRippleColor;
                 }
                 else{
-                    rippleColor = '#fff'
+                    rippleColor = 'rgba(255,255,255)';
                 }
 
             // create ripple
@@ -29,7 +29,7 @@
                 
                 ripple.style.left = x + 'px';
                 ripple.style.top  = y + 'px';
-                ripple.style.background = rippleColor;
+                ripple.style.backgroundColor = rippleColor;
 
             // append ripple
                 this.appendChild(ripple);

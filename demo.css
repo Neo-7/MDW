@@ -265,7 +265,6 @@
         margin: 4px 8px;
         padding: 8px;
         border-radius: 4px;
-        transition: 0.3s;
         
         display: -webkit-box;
         display: -ms-flexbox;
@@ -278,7 +277,7 @@
     @media screen and (max-width:1023px){
         .nav{
             z-index: 100;
-            transition: 0.45s;
+            transition: transform 0.45s;
             transform: translateX(-100%);
         }
 
