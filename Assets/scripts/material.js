@@ -1,61 +1,14 @@
 
 // ripple
-    /*
-    var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
-
-    for (var i = 0; i < rippleEffect.length; i++) {
-        rippleEffect[i].addEventListener('click', function(e) {
-            // background color
-                var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                    eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-                    rippleColor;
-
-                if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-                    rippleColor = eleRippleColor;
-                }
-                else{
-                    rippleColor = 'rgba(255,255,255)';
-                }
-
-            // create ripple
-                var ripple = document.createElement('div');
-                    ripple.className = 'ripple';
-
-            // ripple position
-                var rect = this.getBoundingClientRect(),
-                    x = e.clientX - rect.left;
-                    y = e.clientY - rect.top;
-
-                //console.log(e.clientX, rect.left);
-                
-                ripple.style.left = x + 'px';
-                ripple.style.top  = y + 'px';
-                ripple.style.backgroundColor = rippleColor;
-
-            // append ripple
-                this.appendChild(ripple);
-
-            // remove ripple
-                setTimeout(function() {
-                    ripple.parentNode.removeChild(ripple);
-                }, 1400);
-        });
-    }
-    */
-
     document.addEventListener('DOMContentLoaded', function() {
         materialRipple();
     }, false);
-    
-    //let md_module = (function() {
+
     function materialRipple(){
-        let rippleEffect = document.querySelectorAll('[data-ripple="true"]');
-        let mat_ripple = Array.prototype.slice.call(rippleEffect);
-        
-        mat_ripple.forEach(eachCB)
-        
-        function eachCB (item, index, array){
-            function mr(e) {
+        var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
+
+        for (let i = 0; i < rippleEffect.length; i++) {
+            rippleEffect[i].addEventListener('click', function(e) {
                 // background color
                     var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
                         eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
@@ -90,12 +43,10 @@
                     setTimeout(function() {
                         ripple.parentNode.removeChild(ripple);
                     }, 1400);
-            }
-
-            item.addEventListener("click", mr);
+            });
         }
-    }//)();
-
+    }
+    
 // material :: menu overlay
     function menu(thisTarget){
         // get x, y, height & width values

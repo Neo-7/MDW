@@ -1,4 +1,46 @@
 
+    // demo ripple
+        var rippleEffect = document.querySelectorAll('[data-demoripple="true"]');
+
+        for (let i = 0; i < rippleEffect.length; i++) {
+            rippleEffect[i].addEventListener('click', function(e) {
+                // background color
+                    var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+                        eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                        rippleColor;
+
+                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
+                        rippleColor = eleRippleColor;
+                    }
+                    else{
+                        rippleColor = 'rgba(255,255,255)';
+                    }
+
+                // create ripple
+                    var ripple = document.createElement('div');
+                        ripple.className = 'ripple';
+
+                // ripple position
+                    var rect = this.getBoundingClientRect(),
+                        x = e.clientX - rect.left;
+                        y = e.clientY - rect.top;
+
+                    //console.log(e.clientX, rect.left);
+                    
+                    ripple.style.left = x + 'px';
+                    ripple.style.top  = y + 'px';
+                    ripple.style.backgroundColor = rippleColor;
+
+                // append ripple
+                    this.appendChild(ripple);
+
+                // remove ripple
+                    setTimeout(function() {
+                        ripple.parentNode.removeChild(ripple);
+                    }, 1400);
+            });
+        }
+
     // navigation
         var sideNavigation = document.querySelectorAll('.sideNavigation a');
 
