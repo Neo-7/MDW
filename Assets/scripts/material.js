@@ -1,7 +1,7 @@
 
 // ripple
     document.addEventListener('DOMContentLoaded', function() {
-        materialRipple();
+        //materialRipple();
     }, false);
 
     function materialRipple(){
@@ -43,10 +43,10 @@
                     setTimeout(function() {
                         ripple.parentNode.removeChild(ripple);
                     }, 1400);
-            });
+            }, false);
         }
     }
-    
+
 // material :: menu overlay
     function menu(thisTarget){
         // get x, y, height & width values
