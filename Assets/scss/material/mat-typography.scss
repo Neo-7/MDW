@@ -1,6 +1,81 @@
 
-/* typography */
-     .text-headline{
+// typography
+
+    // heading
+        .mat-headline1{
+            font: 300 6rem/6rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-headline2{
+            font: 300 3.75rem/3.75rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-headline3{
+            font: 400 3rem/3rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-headline4{
+            font: 400 2.125rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-headline5{
+            font: 400 1.5rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-headline6{
+            font: 500 1.25rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+    // sub title
+        .mat-subtitle1{
+            font: 400 1rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-subtitle2{
+            font: 500 0.875rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+    // body
+        .mat-body1{
+            font: 400 1rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+        .mat-body2{
+            font: 400 0.875rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+    // button
+        .mat-button{
+            font: 500 0.875rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+            text-transform: uppercase;
+        }
+
+    // caption
+        .mat-caption{
+            font: 400 0.75rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+        }
+
+    // overline
+        .mat-overline{
+            font: 400 0.625rem/4rem 'Roboto',sans-serif;
+            //letter-spacing: 1rem;
+            text-transform: uppercase;
+        }
+
+/*
+    .text-headline{
         font: 400 32px/40px 'Roboto',sans-serif;
     }
 
@@ -43,3 +118,4 @@
     .text-caption-strong{
         font: 500 12px/20px 'Roboto',sans-serif;
     }
+*/
