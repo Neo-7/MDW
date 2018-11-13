@@ -121,14 +121,16 @@
         }
 
     // page theme change
+        
+
         var themeLink = document.querySelectorAll('.pageTheme a');
         var metaThemeColor = document.querySelector("meta[name=theme-color]");
+        var themeLinkID = document.getElementById('themeLink');
 
         for(var i = 0; i < themeLink.length; i++){
             themeLink[i].onclick = function(){
                 var themeID = this.getAttribute('data-theme');
                 var themeColor = this.getAttribute('data-themeColor');
-                var themeLinkID = document.getElementById('themeLink');
                 //backdrop.parentNode.removeChild(backdrop);
                 
                 // theme active
@@ -151,9 +153,43 @@
 
                 // close menu
                     overlayClose();
+
+                // sessionStorage
+                    sessionStorage.setItem("theme", themeID);
             }
         }
 
+        // onpage load
+            document.addEventListener('DOMContentLoaded', function() {
+                var currentTheme = sessionStorage.getItem("theme");
+
+                if(sessionStorage.getItem("theme") === null){
+                    // do nothing
+                }
+                else{
+                    var themeID = document.querySelector('[data-theme='+currentTheme+']');
+                    var themeColor = themeID.getAttribute('data-themeColor');
+                    
+                    // theme active
+                        for(var i = 0; i < themeLink.length; i++){
+                            themeLink[i].classList.remove('active');
+                        }
+
+                        themeID.classList.add('active');
+
+                    // css update
+                        if(currentTheme == 'dark'){
+                            themeLinkID.setAttribute('href', '');
+                        }
+                        else{
+                            themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+currentTheme+'.css');
+                        }
+
+                    // update theme color
+                        metaThemeColor.setAttribute("content", themeColor);
+                }
+            });
+               
 /*
 
     // demo section
