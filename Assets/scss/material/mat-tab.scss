@@ -120,14 +120,14 @@
         transition: 0.45s;
     }
 
-    .mat-tab-content[data-tabstatus="prev"] .mdTab-content{
+    .mat-tab-content[data-tabstatus="prev"] > .mdTab-content{
         transform: translateX(-100%);
     }
 
-    .mat-tab-content[data-tabstatus="next"] .mdTab-content{
+    .mat-tab-content[data-tabstatus="next"] > .mdTab-content{
         transform: translateX(100%);
     }
 
-    .mat-tab-content[data-tabstatus="active"] .mdTab-content{
+    .mat-tab-content[data-tabstatus="active"] > .mdTab-content{
         transform: translateX(0);
     }
