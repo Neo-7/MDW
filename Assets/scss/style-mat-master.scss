@@ -1,51 +1,55 @@
 
+// reset
+@import 'material/mat-reset';
 
-// overlay
+// bootstrap grid
+@import 'material/mat-bsGrid';
+
+
+// material :: overlay
 @import 'material/mat-overlay';
 
-// ripple
+// material :: ripple
 @import 'material/mat-ripple';
 
 
-
-
-// appbar
+// material :: appbar
 @import 'material/mat-appbar';
 
-// bottomsheet
+// material :: bottomsheet
 @import 'material/mat-bottomsheet';
 
-// input | select | textarea
+// material :: input | select | textarea
 @import 'material/mat-input';
 
-// checkbox | switch | radio button
+// material :: checkbox | switch | radio button
 @import 'material/mat-form-fields';
 
-// dialog
+// material :: dialog
 @import 'material/mat-dialog';
 
-// tab
+// material :: tab
 @import 'material/mat-tab';
 
 
 
-// button
+// material :: button
 @import 'material/mat-button';
 
-// button toggle
+// material :: button toggle
 @import 'material/mat-button-toggle';
 
-// devider
+// material :: devider
 @import 'material/mat-devider';
 
-// menu
+// material :: menu
 @import 'material/mat-menu';
 
-// panel
+// material :: panel
 @import 'material/mat-panel';
 
-// typography
+// material :: typography
 @import 'material/mat-typography';
 
-// icon
+// material :: icon
 @import 'material/mat-icon';

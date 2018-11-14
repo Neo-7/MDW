@@ -1,18 +1,12 @@
-@charset "utf-8";
-/* CSS Document */
-
-/*  css width size 
-
-xs		(max-width: 599px)				                :: 		Upto Mobile Portrait
-gt-xs	(min-width: 600px)						        :: 		From Mobile landscape
-sm		(min-width: 600px) and (max-width: 839px)	    :: 		Mobile Landscape Only
-gt-sm	(min-width: 840px)					            :: 		From Tablet Portrait
-md		(min-width: 840px) and (max-width: 1024px)      :: 		Tablet Portrait Only
-gt-md	(min-width: 1024px)						        :: 		From Tablet Landscape
-lg		(min-width: 1024px) and (max-width: 1599px)     :: 		Tablet Landscape Only & desktop
-xl		(min-width: 1600px)							    :: 		From Larger Desktop
-
-*/
+//  css width size 
+// xs		(max-width: 599px)				                :: 		Upto Mobile Portrait
+// gt-xs	(min-width: 600px)						        :: 		From Mobile landscape
+// sm		(min-width: 600px) and (max-width: 839px)	    :: 		Mobile Landscape Only
+// gt-sm	(min-width: 840px)					            :: 		From Tablet Portrait
+// md		(min-width: 840px) and (max-width: 1024px)      :: 		Tablet Portrait Only
+// gt-md	(min-width: 1024px)						        :: 		From Tablet Landscape
+// lg		(min-width: 1024px) and (max-width: 1599px)     :: 		Tablet Landscape Only & desktop
+// xl		(min-width: 1600px)							    :: 		From Larger Desktop
 
     [class*="col-"]{
         min-height: 1px;
