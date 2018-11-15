@@ -29,8 +29,6 @@
                     var rect = this.getBoundingClientRect(),
                         x = e.clientX - rect.left;
                         y = e.clientY - rect.top;
-
-                    //console.log(e.clientX, rect.left);
                     
                     ripple.style.left = x + 'px';
                     ripple.style.top  = y + 'px';
@@ -65,10 +63,6 @@
                 wht = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
 
                 ely2 = 'auto';
-
-                // console.log(elx, ely, elw, elh);
-                // console.log(eltar, menutarget);
-                // console.log(tarw, tarh, wwth, wht);
 
         // prepend overlay
             var menuOverlayBackdrop = document.createElement('div');
@@ -171,8 +165,6 @@
             tabContainer = tab.children[1],
             tabChild = tabContainer.children;
 
-        //console.log(tab, curTab, tabChild);
-
         // tab change
             for (i = 0; i < tabChild.length; i++) {
                 if( tabChild[i].getAttribute('data-tabid') < curTab){
@@ -195,8 +187,6 @@
             panelList = panelContainer.children,
             panelContent = thisTarget.parentNode.nextElementSibling,
             panelWrapper = panelContent.children[0];
-
-         console.log(panelContent);
 
         if( panelType == 'dependent'){
             if(thisPanel == 'expanded'){
