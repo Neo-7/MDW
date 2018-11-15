@@ -192,25 +192,37 @@
         var panelContainer = thisTarget.parentNode.parentNode.parentNode,
             thisPanel = thisTarget.parentNode.parentNode.getAttribute('data-panelstatus'),
             panelType = panelContainer.getAttribute('data-paneltype'),
-            panelList = panelContainer.children;
+            panelList = panelContainer.children,
+            panelContent = thisTarget.parentNode.nextElementSibling,
+            panelWrapper = panelContent.children[0];
 
-        // console.log(panelContainer);
-        // console.log(panelType);
-         console.log(panelList);
+         console.log(panelContent);
 
         if( panelType == 'dependent'){
             if(thisPanel == 'expanded'){
                 thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'condensed');
+                panelContent.style.height = 0 + "px";
             }
             else{
                 for( var i = 0; i < panelList.length; i++){
                     panelList[i].setAttribute('data-panelstatus', 'condensed');
+                    panelList[i].children[1].style.height = 0 + "px";
                     thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'expanded');
+                    panelContent.style.height = panelWrapper.clientHeight + "px";
                 }
             }
         }
         else{
 
+        }
+
+        function growDiv() {
+            //var growDiv = document.getElementById('grow');
+            if (panelContent.clientHeight) {
+                panelContent.style.height = 0;
+            } else {
+                panelContent.style.height = panelWrapper.clientHeight + "px";
+            }
         }
     }
 

@@ -38,7 +38,14 @@
 
     // panel - content
         .panel-content{
+            height: 0;
             overflow: hidden;
+
+            -moz-transition: height .45s, margin 0.45s;
+            -ms-transition: height .45s, margin 0.45s;
+            -o-transition: height .45s, margin 0.45s;
+            -webkit-transition: height .45s, margin 0.45s;
+            transition: height .45s, margin 0.45s;
         }
 
         .panel-content > div{
@@ -48,6 +55,7 @@
         }
 
     // panel - active
+        /*
         .mat-panel[data-panelstatus="condensed"] .panel-content{
             max-height: 0px;
             transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
@@ -57,6 +65,7 @@
             max-height: 3000px;
             transition: max-height 0.45s cubic-bezier(1, 0, 1, 1);
         }
+        */
 
         .mat-panel[data-panelstatus="condensed"] {
             margin-bottom: 0;
