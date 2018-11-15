@@ -512,9 +512,8 @@ button.mat-button-raised:disabled, button.mat-button-flat:disabled, button.mat-i
 
 .panel-content { height: 0; overflow: hidden; -moz-transition: height .45s, margin 0.45s; -ms-transition: height .45s, margin 0.45s; -o-transition: height .45s, margin 0.45s; -webkit-transition: height .45s, margin 0.45s; transition: height .45s, margin 0.45s; }
 
-.panel-content > div { /* margin-top: 8px; */ }
+.mat-panel[data-panelstatus="expanded"] .panel-content { height: auto; }
 
-/* .mat-panel[data-panelstatus="condensed"] .panel-content{ max-height: 0px; transition: max-height 0.45s cubic-bezier(0, 1, 0, 1); } .mat-panel[data-panelstatus="expanded"] .panel-content{ max-height: 3000px; transition: max-height 0.45s cubic-bezier(1, 0, 1, 1); } */
 .mat-panel[data-panelstatus="condensed"] { margin-bottom: 0; border-radius: 3px 3px 0 0; }
 
 .mat-panel[data-panelstatus="condensed"] ~ .mat-panel[data-expand="condensed"] { border-radius: 0; }

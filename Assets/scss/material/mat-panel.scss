@@ -48,25 +48,11 @@
             transition: height .45s, margin 0.45s;
         }
 
-        .panel-content > div{
-            /*
-            margin-top: 8px;
-            */
+        .mat-panel[data-panelstatus="expanded"] .panel-content{
+            height: auto;
         }
 
     // panel - active
-        /*
-        .mat-panel[data-panelstatus="condensed"] .panel-content{
-            max-height: 0px;
-            transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
-        }
-
-        .mat-panel[data-panelstatus="expanded"] .panel-content{
-            max-height: 3000px;
-            transition: max-height 0.45s cubic-bezier(1, 0, 1, 1);
-        }
-        */
-
         .mat-panel[data-panelstatus="condensed"] {
             margin-bottom: 0;
             border-radius: 3px 3px 0 0;

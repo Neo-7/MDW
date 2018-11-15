@@ -212,18 +212,17 @@
                 }
             }
         }
-        else{
-
-        }
-
-        function growDiv() {
-            //var growDiv = document.getElementById('grow');
-            if (panelContent.clientHeight) {
-                panelContent.style.height = 0;
-            } else {
+        else if( panelType == 'independent'){
+            if(thisPanel == 'expanded'){
+                thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'condensed');
+                panelContent.style.height = 0 + "px";
+            }
+            else{
+                thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'expanded');
                 panelContent.style.height = panelWrapper.clientHeight + "px";
             }
         }
+
     }
 
 
