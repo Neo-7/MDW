@@ -190,15 +190,24 @@
 // material :: expansion panel
     function panelNavigation(thisTarget){
         var panelContainer = thisTarget.parentNode.parentNode.parentNode,
+            thisPanel = thisTarget.parentNode.parentNode.getAttribute('data-panelstatus'),
             panelType = panelContainer.getAttribute('data-paneltype'),
             panelList = panelContainer.children;
 
         // console.log(panelContainer);
         // console.log(panelType);
-        // console.log(panelList);
+         console.log(panelList);
 
         if( panelType == 'dependent'){
-            
+            if(thisPanel == 'expanded'){
+                thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'condensed');
+            }
+            else{
+                for( var i = 0; i < panelList.length; i++){
+                    panelList[i].setAttribute('data-panelstatus', 'condensed');
+                    thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'expanded');
+                }
+            }
         }
         else{
 
