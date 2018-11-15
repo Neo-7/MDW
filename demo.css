@@ -263,7 +263,7 @@
 
     .nav li a{
         margin: 4px 8px;
-        padding: 8px;
+        padding: 9px 8px;
         border-radius: 4px;
         
         display: -webkit-box;
@@ -271,7 +271,7 @@
         display: flex;
             align-items: center;
         
-        font: 500 14px/24px 'Roboto',sans-serif;
+        transition: background-color 0.45s;
     }
 
     @media screen and (max-width:1023px){

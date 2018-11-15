@@ -45,7 +45,7 @@
         var sideNavigation = document.querySelectorAll('.sideNavigation a');
 
         for(var i = 0; i < sideNavigation.length; i++){
-            console.log(sideNavigation.length);
+            //console.log(sideNavigation.length);
             sideNavigation[i].onclick = function() {
                 var navName = this.textContent,
                     navValue = this.getAttribute('data-id');

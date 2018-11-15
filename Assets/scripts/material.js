@@ -187,4 +187,22 @@
             }
     }
 
+// material :: expansion panel
+    function panelNavigation(thisTarget){
+        var panelContainer = thisTarget.parentNode.parentNode.parentNode,
+            panelType = panelContainer.getAttribute('data-paneltype'),
+            panelList = panelContainer.children;
+
+        // console.log(panelContainer);
+        // console.log(panelType);
+        // console.log(panelList);
+
+        if( panelType == 'dependent'){
+            
+        }
+        else{
+
+        }
+    }
+
 

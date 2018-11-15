@@ -1,23 +1,79 @@
 
-<h1 class="mat-headline1">Headline 1</h1>
-<h2 class="mat-headline2">Headline 2</h2>
-<h3 class="mat-headline3">Headline 3</h3>
-<h4 class="mat-headline4">Headline 4</h4>
-<h5 class="mat-headline5">Headline 5</h5>
-<h6 class="mat-headline6">Headline 6</h6>
+<!-- intro -->
+    <div class="row">
+        <p class="mat-body1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        </p>
 
-<h6 class="mat-subtitle1">Subtitle 1</h6>
-<h6 class="mat-subtitle2">Subtitle 2</h6>
+        <div class="row demo-container fx-ctr text-center">
+            
+            <h1 class="mat-headline1">Aa</h1>
+            
+        </div>
+    </div>
 
-<p class="mat-body1">Body 1</p>
-<p class="mat-body2">Body 2</p>
+    <div class="row padding-32-0"><div class="row mat-devider"></div></div>
 
-<span class="mat-button">Button</span>
-<span class="mat-caption">Caption</span>
-<span class="mat-overline">Overline</span>
+<!-- doc -->
+    <div class="row demo-section">
+        <a class="width100 fx-ctr demo-toggle">
+            <span class="row padding-8-0 mat-headline4">Documentation</span>
+            <i class="mat-icon mat-elevation-z1" data-color="accent"></i>
+        </a>
+        
+        <a class="row padding-8-0" target="_blank">Material Design Guidelines</a>
 
-<style>
-    section#middleContent * {
-        width: 100%;
-    }
-</style>
+        <div class="demo-content">
+            <div class="row">
+                <h2 class="row mat-headline6">HTML</h2>
+
+                <div class="row typoSection">
+                    <h1 class="mat-headline1">Headline 1</h1>
+                    <h2 class="mat-headline2">Headline 2</h2>
+                    <h3 class="mat-headline3">Headline 3</h3>
+                    <h4 class="mat-headline4">Headline 4</h4>
+                    <h5 class="mat-headline5">Headline 5</h5>
+                    <h6 class="mat-headline6">Headline 6</h6>
+
+                    <h6 class="mat-subtitle1">Subtitle 1</h6>
+                    <h6 class="mat-subtitle2">Subtitle 2</h6>
+
+                    <p class="mat-body1">Body 1</p>
+                    <p class="mat-body2">Body 2</p>
+
+                    <span class="mat-button">Button</span>
+                    <span class="mat-caption">Caption</span>
+                    <span class="mat-overline">Overline</span>
+                </div>
+
+                <p class="text-body">
+                    class="mat-button-raised color-primary open-bs" 
+                        data-ripple="true" data-bottomsheet="BSmenu1"
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!-- style -->
+    <style>
+        .typoSection * {
+            width: 100%;
+        }
+    </style>
+
+<!-- script -->
+    <script>
+        // demo panel toggle
+            var demotoggle = document.querySelectorAll('.demo-toggle');
+            for(var i = 0; i < demotoggle.length; i++){
+                demotoggle[i].onclick = function(){
+                    var sectionContainer = this.parentNode;
+                    if(sectionContainer.classList.contains('active')){
+                        sectionContainer.classList.remove('active');
+                    }
+                    else{
+                        sectionContainer.classList.add('active');
+                    }
+                }
+            }
+    </script>

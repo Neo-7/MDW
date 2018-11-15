@@ -1,6 +1,6 @@
 
-/* panel */
-    /* panel - section */
+// panel
+    // panel - section
         .mat-panel{
             margin-right: 16px;
             margin-left: 16px;
@@ -16,15 +16,27 @@
             margin-top: 16px;
         }
 
-    /* toolbar */
-        .panel-toolbar{
-            height: 56px;
+    // header
+        .panel-header{
+            padding: 4px 16px;
             width: 100%;
-            background: rgba(0,0,0,.05);
-            transition: 0.3s;
+            display: flex;
+            align-items: center;
         }
 
-    /* panel - content */
+        .panel-header input{
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            margin: 0;
+            z-index: 3;
+        }
+
+    // panel - content
         .panel-content{
             overflow: hidden;
         }
@@ -35,41 +47,46 @@
             */
         }
 
-    /* panel - active */
-        .mat-panel[data-expand="false"] .panel-content{
+    // panel - active
+        .mat-panel[data-panelstatus="condensed"] .panel-content{
             max-height: 0px;
             transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
         }
 
-        .mat-panel[data-expand="true"] .panel-content{
+        .mat-panel[data-panelstatus="expanded"] .panel-content{
             max-height: 3000px;
             transition: max-height 0.45s cubic-bezier(1, 0, 1, 1);
         }
 
-        .mat-panel[data-expand="false"] {
+        .mat-panel[data-panelstatus="condensed"] {
             margin-bottom: 0;
             border-radius: 3px 3px 0 0;
         }
 
-        .mat-panel[data-expand="false"] ~ .mat-panel[data-expand="false"] {
+        .mat-panel[data-panelstatus="condensed"] ~ .mat-panel[data-expand="condensed"] {
             border-radius: 0;
         }
 
-        .mat-panel[data-expand="false"] ~ .mat-panel:last-child{
+        .mat-panel[data-panelstatus="condensed"] ~ .mat-panel:last-child{
             border-radius: 0 0 3px 3px;
         }
 
-        .mat-panel[data-expand="true"]{
+        .mat-panel:last-child {
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .mat-panel[data-panelstatus="expanded"]{
             border-radius: 3px;
             margin-top: 16px;
         }
         
-    /* active arrow rotatre */
+    // active arrow rotatre
         .accordionToggle{
             transition: 0.45s;
         }
 
-        .mat-panel[data-expand="false"] .accordionToggle{
+        .mat-panel[data-panelstatus="condensed"] .accordionToggle{
             transform: rotate(180deg);
         }
 
