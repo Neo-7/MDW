@@ -35,6 +35,15 @@
             margin: 0;
             z-index: 3;
         }
+    
+    // panel - arrow
+        .panel-arrow {
+            transition: transform 0.3s;
+        }
+
+        .mat-panel[data-panelstatus="expanded"] .panel-arrow {
+            transform: rotate(180deg);
+        }
 
     // panel - content
         .panel-content{

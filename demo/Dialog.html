@@ -1,35 +1,83 @@
 
+<!-- intro -->
+    <div class="row">
+        <p class="mat-body1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        </p>
 
-<a class="nav-link" data-dialog="company">Dialog</a>
+        <div class="row demo-container fx-ctr">
+            
+            <div class="mat-overlay opened" data-dialogid="" data-overlaytype="disabled">
+                <!--
+                <div class="hw100 fixed tl overlay-backdrop" data-overlaystatus="disabled"></div>
+                -->
 
-<!-- Dialog -->
-    <div class="mat-overlay" data-dialogid="company">
-        <div class="white-bg fx-col mat-elevation-z16 mat-dialog">
-            <div class="dialog-title fx-ctr">
-                <h2 class="text-heading">Title</h2>
+                <div class="mat-dialog">
+                    <!-- title -->
+                    <h1 class="dialog-title">Dialog Title</h1>
 
-                <a class="dialog-close" data-ripple="true" style="display:none;">
-                    <i class="material-icons icon">clear</i>
-                </a>
+                    <!-- content -->
+                    <section class="dialog-content">
+                        <div class="dialog-text-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        </div>
+                    </section>
+
+                    <!-- action -->
+                    <footer class="dialog-action">
+                        <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
+                        <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+                    </footer>
+                </div>
             </div>
-
-            <div class="mat-devider"></div>
-
-            <div class="dialog-content padding-16-0">
-            </div>
+            
         </div>
     </div>
 
+<!-- devider -->
+    <div class="row padding-32-0"><div class="row mat-devider"></div></div>
 
-<script>
-    // dialog common
-        // open dialog
-            $('.nav-link[data-dialog]').on('click', function(){
-                dialogEnable($(this));
-            });
+<!-- Types -->
+    <div class="row demo-section">
+        <a class="width100 fx-ctr demo-toggle">
+            <span class="row padding-8-0 mat-headline4">Types</span>
+            <i class="mat-icon mat-elevation-z1" data-color="accent"></i>
+        </a>
         
-        // close dialog
-            $('.dialog-close').on('click', function(){
-                overlayClose();
-            });
-</script>
+        <a class="row padding-8-0" target="_blank">Material Design Guidelines</a>
+
+        <div class="demo-content row demo-button-section">
+            
+        </div>
+    </div>
+
+<!-- style -->
+    <style>
+        .demo-container{
+            transform: translate3d(0,0,0);
+        }
+    </style>
+
+<!-- script -->
+    <script>
+        //materialRipple();
+
+        // open dialog
+            
+
+
+        // demo panel toggle
+            var demotoggle = document.querySelectorAll('.demo-toggle');
+            for(var i = 0; i < demotoggle.length; i++){
+                demotoggle[i].onclick = function(){
+                    var sectionContainer = this.parentNode;
+                    if(sectionContainer.classList.contains('active')){
+                        sectionContainer.classList.remove('active');
+                    }
+                    else{
+                        sectionContainer.classList.add('active');
+                    }
+                }
+            }
+    </script>
+

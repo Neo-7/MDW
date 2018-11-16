@@ -1,6 +1,22 @@
     
-/* material dialog */
+// material dialog
+    .mat-overlay[data-dialogid]{
+        display: flex;
+        align-items: center;
+    }
+
     .mat-dialog{
+        min-width: 280px;
+        max-width: 80vw;
+        max-height: calc(100vh - 32px);
+        border-radius: 8px;
+        margin: 0 auto;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+
         position: relative;
         overflow: auto;
         -webkit-overflow-scrolling: touch;
@@ -8,6 +24,13 @@
         transition: transform 0.3s, opacity 0.3s;
         opacity: 0;
         transform: scale(0.8);
+
+        background: #fff;
+        color: rgba(0,0,0,0.87);
+
+        box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2), 
+                    0 16px 24px 2px rgba(0,0,0,0.14), 
+                    0 6px 30px 5px rgba(0,0,0,0.12);
     }
 
     .mat-overlay.opened .mat-dialog{
@@ -15,39 +38,34 @@
         opacity: 1;
     }
 
-    /* dialog title */
+    // dialog title
         .dialog-title{
-            min-height: 48px;
-        }
-
-        .dialog-title h2{
-            margin: 0;
-        }
-
-        .dialog-close {
-            position: absolute;
-            top: 4px;
-            right: 4px;
+            margin: 16px 24px;
+            font: 500 1.25rem/2rem 'Roboto',sans-serif;
+            letter-spacing: 0.009375rem;
         }
     
-    /* dialog content */
+    // dialog content
         .dialog-content{
+            //padding-top: 8px;
+            //padding-bottom: 8px;
             overflow: auto;
+            font: 400 1rem/1.75rem 'Roboto',sans-serif;
+            letter-spacing: 0.03125rem;
         }
 
+        .dialog-text-content{
+            padding: 0 24px;
+        }
 
-    @media screen and (max-width:839px){
-        .mat-dialog{
-            height: 100%;
-            width: 100%;
-        } 
-    }
+    // dialog action
+        .dialog-action {
+            text-align: right;
+            padding: 8px;
+        }
 
-    @media screen and (min-width:840px){
+    @media screen and (max-width:599px){
         .mat-dialog{
-            max-width: 80vw;
-            max-height: calc(100vh - 128px);
-            border-radius: 8px;
-            margin: 0 auto;
+            max-width: calc(100vh - 32px);
         }
     }

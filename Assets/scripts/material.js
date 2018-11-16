@@ -129,6 +129,34 @@
             eltar.classList.add('opened');
     }
 
+// material :: dialog
+    function dialog(thisTarget){
+        var eltar = document.querySelector('[data-dialogid=' + thisTarget.getAttribute('data-dialog') + ']'),
+            dialogTarget = eltar.children[0];
+            dialogOverlayPref = eltar.getAttribute('data-overlaytype');
+
+        // prepend overlay
+            var dialogOverlayBackdrop = document.createElement('div');
+                dialogOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop';
+                
+
+            eltar.insertBefore(dialogOverlayBackdrop, dialogTarget);
+
+        // enable | disable overlay
+            if( dialogOverlayPref != 'disabled'){
+                enableOverlayClose();
+            }
+            else{
+                // do nothing
+            }
+        
+        // remove body scroll
+            document.body.style.overflow = 'hidden';
+
+        // overlay menu open animation
+            eltar.classList.add('opened');
+    }
+
 // material :: overlay close
     // on backdrop click
         function enableOverlayClose(){
