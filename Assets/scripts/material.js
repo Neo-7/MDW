@@ -4,91 +4,109 @@
         materialRipple();
     }, false);
 
+    /*
     function materialRipple() {
         var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
 
          rippleEffect.forEach(function(element, index) {
             //console.log(index, element);
+            var ripState = element.getAttribute('data-rs');
+            if( ripState === null || ripState == 'false'){
+                element.setAttribute('data-rs', 'true');
 
-            element.addEventListener('click', function(e){
-                // background color
-                    var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                        eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-                        rippleColor;
-
-                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-                        rippleColor = eleRippleColor;
-                    }
-                    else{
-                        rippleColor = 'rgba(255,255,255)';
-                    }
-
-                // create ripple
-                    var ripple = document.createElement('div');
-                        ripple.className = 'ripple';
-
-                // ripple position
-                    var rect = this.getBoundingClientRect(),
-                        x = e.clientX - rect.left;
-                        y = e.clientY - rect.top;
-                    
-                    ripple.style.left = x + 'px';
-                    ripple.style.top  = y + 'px';
-                    ripple.style.backgroundColor = rippleColor;
-
-                // append ripple
-                    this.appendChild(ripple);
-
-                // remove ripple
-                    setTimeout(function() {
-                        ripple.parentNode.removeChild(ripple);
-                    }, 1400);
-            });
+                element.addEventListener('click', function(e){
+                    // background color
+                        var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+                            eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                            rippleColor;
+    
+                        if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
+                            rippleColor = eleRippleColor;
+                        }
+                        else{
+                            rippleColor = 'rgba(255,255,255)';
+                        }
+    
+                    // create ripple
+                        var ripple = document.createElement('div');
+                            ripple.className = 'ripple';
+    
+                    // ripple position
+                        var rect = this.getBoundingClientRect(),
+                            x = e.clientX - rect.left;
+                            y = e.clientY - rect.top;
+                        
+                        ripple.style.left = x + 'px';
+                        ripple.style.top  = y + 'px';
+                        ripple.style.backgroundColor = rippleColor;
+    
+                    // append ripple
+                        this.appendChild(ripple);
+    
+                    // remove ripple
+                        setTimeout(function() {
+                            ripple.parentNode.removeChild(ripple);
+                        }, 1400);
+                });
+            }
+            else{
+                // do nothing
+            }
          });
     }
+    */
 
-    /*
     function materialRipple(){
         var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
 
-        for (let i = 0; i < rippleEffect.length; i++) {
-            rippleEffect[i].addEventListener('click', function(e) {
-                // background color
-                    var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                        eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-                        rippleColor;
+        for (let i = 0, n=rippleEffect.length; i < n; i++) {
+            var ripState = rippleEffect[i].getAttribute('data-rs');
+            
+            if( ripState === null || ripState == 'false'){
+                rippleEffect[i].setAttribute('data-rs', 'true');
 
-                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-                        rippleColor = eleRippleColor;
-                    }
-                    else{
-                        rippleColor = 'rgba(255,255,255)';
-                    }
+                rippleEffect[i].addEventListener('click', function(e) {
+                    // background color
+                        var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+                            eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                            rippleColor;
 
-                // create ripple
-                    var ripple = document.createElement('div');
-                        ripple.className = 'ripple';
+                        if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
+                            rippleColor = eleRippleColor;
+                        }
+                        else{
+                            rippleColor = 'rgba(255,255,255)';
+                        }
 
-                // ripple position
-                    var rect = this.getBoundingClientRect(),
-                        x = e.clientX - rect.left;
-                        y = e.clientY - rect.top;
-                    
-                    ripple.style.left = x + 'px';
-                    ripple.style.top  = y + 'px';
-                    ripple.style.backgroundColor = rippleColor;
+                    // create ripple
+                        var ripple = document.createElement('div');
+                            ripple.className = 'ripple';
 
-                // append ripple
-                    this.appendChild(ripple);
+                    // ripple position
+                        var rect = this.getBoundingClientRect(),
+                            x = e.clientX - rect.left;
+                            y = e.clientY - rect.top;
+                        
+                        ripple.style.left = x + 'px';
+                        ripple.style.top  = y + 'px';
+                        ripple.style.backgroundColor = rippleColor;
 
-                // remove ripple
-                    setTimeout(function() {
-                        ripple.parentNode.removeChild(ripple);
-                    }, 1400);
-            }, false);
+                    // append ripple
+                        this.appendChild(ripple);
+
+                    // remove ripple
+                        setTimeout(function() {
+                            ripple.parentNode.removeChild(ripple);
+                        }, 1400);
+                }, false);
+
+                continue;
+            }
+            else{
+                // do nothing
+            }
         }
     }
-    */
 
 // material :: menu overlay
     function menu(thisTarget){
