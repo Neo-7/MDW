@@ -55,6 +55,10 @@
             border-bottom: 1px solid transparent;
         }
 
+        .mat-dialog section:first-child {
+            padding-top: 24px;
+        }
+
         .dialog-text-content{
             padding: 0 24px;
         }
