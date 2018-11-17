@@ -81,7 +81,7 @@
 
                     // trigger ripple effect again
                         setTimeout(function(){
-                            materialRipple();
+                            // materialRipple();
                         }, 300);
                         
                 // mobile side nav close
