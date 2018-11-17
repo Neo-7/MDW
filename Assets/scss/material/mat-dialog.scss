@@ -8,7 +8,7 @@
     .mat-dialog{
         min-width: 280px;
         max-width: 600px;
-        max-height: calc(100vh - 64px);
+        max-height: calc(100vh - 32px);
         border-radius: 8px;
         margin: 0 auto;
 
@@ -69,6 +69,11 @@
             padding: 8px;
         }
 
+    @media screen and (max-width:849px){
+        .mat-dialog{
+            max-height: calc(100vh - 88px);
+        }
+    }
     @media screen and (max-width:599px){
         .mat-dialog{
             max-width: calc(100vw - 32px);

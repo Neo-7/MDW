@@ -189,7 +189,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus { outline: 0; -
 
 .overlay-backdrop { opacity: 0; transition: 0.3s; }
 
-.overlay-backdrop:not(.backdrop-nocolor) { background: rgba(0, 0, 0, 0.12); }
+.overlay-backdrop:not(.backdrop-nocolor) { background: rgba(0, 0, 0, 0.3); }
 
 .mat-overlay.opened { z-index: 9999; opacity: 1; pointer-events: initial; }
 
@@ -361,7 +361,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .mat-overlay[data-dialogid] { display: flex; align-items: center; }
 
-.mat-dialog { min-width: 280px; max-width: 600px; max-height: calc(100vh - 64px); border-radius: 8px; margin: 0 auto; display: -webkit-box; display: -ms-flexbox; display: flex; flex-direction: column; position: relative; overflow: hidden; -webkit-overflow-scrolling: touch; transition: transform 0.3s, opacity 0.3s; opacity: 0; transform: scale(0.8); box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12); }
+.mat-dialog { min-width: 280px; max-width: 600px; max-height: calc(100vh - 32px); border-radius: 8px; margin: 0 auto; display: -webkit-box; display: -ms-flexbox; display: flex; flex-direction: column; position: relative; overflow: hidden; -webkit-overflow-scrolling: touch; transition: transform 0.3s, opacity 0.3s; opacity: 0; transform: scale(0.8); box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12); }
 
 .mat-overlay.opened .mat-dialog { transform: scale(1); opacity: 1; }
 
@@ -374,6 +374,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .dialog-text-content { padding: 0 24px; }
 
 .dialog-action { text-align: right; padding: 8px; }
+
+@media screen and (max-width: 849px) { .mat-dialog { max-height: calc(100vh - 88px); } }
 
 @media screen and (max-width: 599px) { .mat-dialog { max-width: calc(100vw - 32px); } }
 
