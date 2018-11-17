@@ -7,7 +7,7 @@
 
         <div class="row demo-container fx-ctr">
             
-            <div class="mat-overlay opened" data-dialogid="" data-overlaytype="disabled">
+            <div class="mat-overlay demoOpened" data-dialogid="" data-overlaytype="disabled">
                 <!--
                 <div class="hw100 fixed tl overlay-backdrop" data-overlaystatus="disabled"></div>
                 -->
@@ -69,8 +69,8 @@
 
             <!-- action -->
             <footer class="dialog-action">
-                <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
-                <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+                <button class="mat-button-text color-accent" data-ripple="true" onclick="overlayClose();">Cancel</button>
+                <button class="mat-button-text color-accent" data-ripple="true" onclick="overlayClose();">Accept</button>
             </footer>
         </div>
     </div>
@@ -90,8 +90,8 @@
 
             <!-- action -->
             <footer class="dialog-action">
-                <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
-                <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+                <button class="mat-button-text color-accent" data-ripple="true" onclick="overlayClose();">Cancel</button>
+                <button class="mat-button-text color-accent" data-ripple="true" onclick="overlayClose();">Accept</button>
             </footer>
         </div>
     </div>
@@ -117,8 +117,8 @@
 
             <!-- action -->
             <footer class="dialog-action">
-                <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
-                <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+                <button class="mat-button-text color-accent" data-ripple="true" onclick="overlayClose();">Cancel</button>
+                <button class="mat-button-text color-accent" data-ripple="true" onclick="overlayClose();">Accept</button>
             </footer>
         </div>
     </div>
@@ -128,6 +128,17 @@
     <style>
         .demo-container{
             transform: translate3d(0,0,0);
+        }
+
+        .mat-overlay.demoOpened {
+            z-index: 9999;
+            opacity: 1;
+            pointer-events: initial;
+        }
+
+        .mat-overlay.demoOpened .mat-dialog{
+            transform: scale(1);
+            opacity: 1;
         }
 
         @media screen and (max-width: 599px){
