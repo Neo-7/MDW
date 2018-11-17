@@ -113,7 +113,8 @@
 // material :: bottom sheet
     function bottomSheet(thisTarget){
         eltar = document.querySelector('[data-bottomsheetid=' + thisTarget.getAttribute('data-bottomsheet') + ']');
-        bstarget = eltar.children[0];
+        //bstarget = eltar.children[0];
+        bstarget = eltar.querySelector('.mat-bottomsheet');
 
         // prepend overlay
             var bsOverlayBackdrop = document.createElement('div');
@@ -132,8 +133,18 @@
 // material :: dialog
     function dialog(thisTarget){
         var eltar = document.querySelector('[data-dialogid=' + thisTarget.getAttribute('data-dialog') + ']'),
-            dialogTarget = eltar.children[0];
+            dialogTarget = eltar.querySelector('.mat-dialog');
+            dialogScrollContent = eltar.querySelector('.dialog-content');
             dialogOverlayPref = eltar.getAttribute('data-overlaytype');
+
+        // calculate height
+            if(dialogScrollContent.scrollHeight > dialogScrollContent.clientHeight){
+                dialogScrollContent.setAttribute('data-dialogscroll', 'true');
+            }
+            else{
+                dialogScrollContent.setAttribute('data-dialogscroll', 'false');
+            }
+            
 
         // prepend overlay
             var dialogOverlayBackdrop = document.createElement('div');
@@ -180,7 +191,7 @@
 
             setTimeout(function(){
                 var backdrop = document.querySelector('.overlay-backdrop');
-                
+
                 backdrop.nextElementSibling.removeAttribute('style');
                 backdrop.parentNode.removeChild(backdrop);
             }, 300);
@@ -190,7 +201,7 @@
     function tabNavigation(thisTarget){
         var tab = thisTarget.parentNode.parentNode.parentNode.parentNode,
             curTab = thisTarget.value,
-            tabContainer = tab.children[1],
+            tabContainer = tab.querySelector('.mat-tab-container'),
             tabChild = tabContainer.children;
 
         // tab change
@@ -212,9 +223,9 @@
         var panelContainer = thisTarget.parentNode.parentNode.parentNode,
             thisPanel = thisTarget.parentNode.parentNode.getAttribute('data-panelstatus'),
             panelType = panelContainer.getAttribute('data-paneltype'),
-            panelList = panelContainer.children,
+            panelList = panelContainer.querySelectorAll('.mat-panel'),
             panelContent = thisTarget.parentNode.nextElementSibling,
-            panelWrapper = panelContent.children[0];
+            panelWrapper = panelContent.querySelector('.panel-inner-wrapper');
 
         if( panelType == 'dependent'){
             if(thisPanel == 'expanded'){
@@ -224,7 +235,7 @@
             else{
                 for( var i = 0; i < panelList.length; i++){
                     panelList[i].setAttribute('data-panelstatus', 'condensed');
-                    panelList[i].children[1].style.height = 0 + "px";
+                    panelList[i].querySelector('.panel-content').style.height = 0 + "px";
                     thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'expanded');
                     panelContent.style.height = panelWrapper.clientHeight + "px";
                 }

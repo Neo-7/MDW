@@ -1,0 +1,20 @@
+    
+// material dialog
+    .mat-dialog{
+        background: $color-white;
+    }
+
+    // dialog title
+        .dialog-title{
+            color: $text-dark;
+        }
+    
+    // dialog content
+        .dialog-content{
+            color: $text-light;
+        }
+
+        .dialog-content[data-dialogscroll="true"] {
+            //border-color: lighten( $color-darker, 70% );
+            border-color: rgba($color-black,.12);
+        }

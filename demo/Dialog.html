@@ -12,7 +12,7 @@
                 <div class="hw100 fixed tl overlay-backdrop" data-overlaystatus="disabled"></div>
                 -->
 
-                <div class="mat-dialog">
+                <div class="mat-dialog demoDialog">
                     <!-- title -->
                     <h1 class="dialog-title">Dialog Title</h1>
 
@@ -47,9 +47,82 @@
         <a class="row padding-8-0" target="_blank">Material Design Guidelines</a>
 
         <div class="demo-content row demo-button-section">
-            
+            <div class="width100 padding-8-16 padding-xs-0">
+                <button class="mat-button-text color-accent" data-ripple="true" data-dialog="alert" onclick="dialog(this);">Alert</button>
+                <button class="mat-button-text color-accent" data-ripple="true" data-dialog="simple" onclick="dialog(this);">Simple</button>
+                <button class="mat-button-text color-accent" data-ripple="true" data-dialog="scrollable" onclick="dialog(this);">Scrollable</button>
+                <button class="mat-button-text color-accent" data-ripple="true">Accent</button>
+            </div>
         </div>
     </div>
+
+<!-- dialog contents -->
+    <!-- alert -->
+    <div class="mat-overlay" data-dialogid="alert">
+        <div class="mat-dialog">
+            <!-- content -->
+            <section class="dialog-content">
+                <div class="dialog-text-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </div>
+            </section>
+
+            <!-- action -->
+            <footer class="dialog-action">
+                <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
+                <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- simple dialog -->
+    <div class="mat-overlay" data-dialogid="simple">
+        <div class="mat-dialog">
+            <!-- title -->
+            <h1 class="dialog-title">Dialog Title</h1>
+
+            <!-- content -->
+            <section class="dialog-content">
+                <div class="dialog-text-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </div>
+            </section>
+
+            <!-- action -->
+            <footer class="dialog-action">
+                <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
+                <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- scrollable dialog -->
+    <div class="mat-overlay" data-dialogid="scrollable">
+        <div class="mat-dialog">
+            <!-- title -->
+            <h1 class="dialog-title">Dialog Title</h1>
+
+            <!-- content -->
+            <section class="dialog-content">
+                <div class="dialog-text-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque mi vitae posuere porttitor. Fusce hendrerit vitae nisl ut tincidunt. Donec congue dolor mollis malesuada congue. Donec venenatis mauris nec malesuada finibus. In pellentesque viverra ligula, vitae accumsan est dignissim vel. Donec dictum mauris non pulvinar vestibulum. Quisque dictum nisl dui, ac facilisis metus pellentesque non. Donec sodales ex nec lectus laoreet congue. Vestibulum eu sagittis nisl. Nullam nec mollis nulla. Vestibulum ac pellentesque est. Morbi varius nibh a euismod iaculis. Nam nec sodales neque, nec molestie ligula. Morbi commodo commodo turpis eu feugiat.
+                    <br><br>
+
+                    Donec tempus, quam id molestie semper, velit dolor porta ipsum, a luctus ligula nisl id nisl. Sed gravida, ipsum sed sollicitudin vestibulum, nisl nunc semper orci, eu dignissim ipsum sem sit amet massa. In ullamcorper, enim et sodales sollicitudin, magna tortor aliquam nulla, et tincidunt leo dui euismod ex. Nam vitae dapibus mauris, id venenatis est. Maecenas et tempor diam. Nullam placerat dolor nec nisl viverra lacinia. Maecenas quis risus ultrices libero ultrices facilisis in ac orci.
+                    <br><br>
+
+                    Nullam ullamcorper dolor tellus, non hendrerit urna molestie vitae. Curabitur in turpis tempus, interdum sapien vel, ornare turpis. Curabitur sit amet nulla eget felis laoreet sodales a pulvinar arcu. Nam luctus odio felis, vel dapibus nisi dignissim id. Quisque consectetur interdum sollicitudin. In sollicitudin ipsum felis, a rutrum mi sodales at. Praesent pulvinar, velit et placerat finibus, enim justo vehicula nisl, sed placerat turpis urna quis nunc. Pellentesque in sodales ligula, quis fringilla velit. Integer fringilla a tortor at consequat.
+                </div>
+            </section>
+
+            <!-- action -->
+            <footer class="dialog-action">
+                <button class="mat-button-text color-accent" data-ripple="true">Cancel</button>
+                <button class="mat-button-text color-accent" data-ripple="true">Accept</button>
+            </footer>
+        </div>
+    </div>
+
 
 <!-- style -->
     <style>
@@ -58,7 +131,7 @@
         }
 
         @media screen and (max-width: 599px){
-            .mat-dialog {
+            .mat-dialog.demoDialog {
                 max-width: calc(100% - 32px);
             }
         }
