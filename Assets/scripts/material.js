@@ -1,52 +1,53 @@
 
 // ripple
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     materialRipple();
-    // }, false);
+    document.addEventListener('DOMContentLoaded', function() {
+        materialRipple();
+    }, false);
 
-    // function materialRipple() {
-    //     var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
+    function materialRipple() {
+        var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
 
-    //      rippleEffect.forEach(function(element, index) {
-    //         //console.log(index, element);
+         rippleEffect.forEach(function(element, index) {
+            //console.log(index, element);
 
-    //         element.addEventListener('click', function(e){
-    //             // background color
-    //                 var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-    //                     eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-    //                     rippleColor;
+            element.addEventListener('click', function(e){
+                // background color
+                    var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+                        eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                        rippleColor;
 
-    //                 if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-    //                     rippleColor = eleRippleColor;
-    //                 }
-    //                 else{
-    //                     rippleColor = 'rgba(255,255,255)';
-    //                 }
+                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
+                        rippleColor = eleRippleColor;
+                    }
+                    else{
+                        rippleColor = 'rgba(255,255,255)';
+                    }
 
-    //             // create ripple
-    //                 var ripple = document.createElement('div');
-    //                     ripple.className = 'ripple';
+                // create ripple
+                    var ripple = document.createElement('div');
+                        ripple.className = 'ripple';
 
-    //             // ripple position
-    //                 var rect = this.getBoundingClientRect(),
-    //                     x = e.clientX - rect.left;
-    //                     y = e.clientY - rect.top;
+                // ripple position
+                    var rect = this.getBoundingClientRect(),
+                        x = e.clientX - rect.left;
+                        y = e.clientY - rect.top;
                     
-    //                 ripple.style.left = x + 'px';
-    //                 ripple.style.top  = y + 'px';
-    //                 ripple.style.backgroundColor = rippleColor;
+                    ripple.style.left = x + 'px';
+                    ripple.style.top  = y + 'px';
+                    ripple.style.backgroundColor = rippleColor;
 
-    //             // append ripple
-    //                 this.appendChild(ripple);
+                // append ripple
+                    this.appendChild(ripple);
 
-    //             // remove ripple
-    //                 setTimeout(function() {
-    //                     ripple.parentNode.removeChild(ripple);
-    //                 }, 1400);
-    //         });
-    //      });
-    // }
+                // remove ripple
+                    setTimeout(function() {
+                        ripple.parentNode.removeChild(ripple);
+                    }, 1400);
+            });
+         });
+    }
 
+    /*
     function materialRipple(){
         var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
 
@@ -87,6 +88,7 @@
             }, false);
         }
     }
+    */
 
 // material :: menu overlay
     function menu(thisTarget){
