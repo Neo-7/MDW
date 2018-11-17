@@ -1,14 +1,16 @@
 
 // ripple
     document.addEventListener('DOMContentLoaded', function() {
-        //materialRipple();
+        materialRipple();
     }, false);
 
-    function materialRipple(){
+    function materialRipple() {
         var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
 
-        for (let i = 0; i < rippleEffect.length; i++) {
-            rippleEffect[i].addEventListener('click', function(e) {
+         rippleEffect.forEach(function(element, index) {
+            //console.log(index, element);
+
+            element.onclick = function(e){
                 // background color
                     var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
                         eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
@@ -41,10 +43,10 @@
                     setTimeout(function() {
                         ripple.parentNode.removeChild(ripple);
                     }, 1400);
-            }, false);
-        }
+            }
+         });
     }
-
+    
 // material :: menu overlay
     function menu(thisTarget){
         // get x, y, height & width values

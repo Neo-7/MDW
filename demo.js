@@ -1,6 +1,6 @@
 
     // demo ripple
-        var rippleEffect = document.querySelectorAll('[data-demoripple="true"]');
+        var rippleEffect = document.querySelectorAll('[data-demoripplee="true"]');
 
         for (let i = 0; i < rippleEffect.length; i++) {
             rippleEffect[i].addEventListener('click', function(e) {
@@ -46,7 +46,7 @@
 
         for(var i = 0; i < sideNavigation.length; i++){
             //console.log(sideNavigation.length);
-            sideNavigation[i].onclick = function() {
+            sideNavigation[i].addEventListener('click', function() {
                 var navName = this.textContent,
                     navValue = this.getAttribute('data-id');
 
@@ -78,15 +78,10 @@
                     // xhttp.send();
                     
                     $('#middleContent').load('demo/' + navValue + '.html');
-
-                    // trigger ripple effect again
-                        setTimeout(function(){
-                            // materialRipple();
-                        }, 300);
                         
                 // mobile side nav close
                     navCtrl();
-            }
+            });
         }
 
 
