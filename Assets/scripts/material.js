@@ -17,7 +17,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
             if( ripState === null || ripState == 'false'){
                 rippleEffect[i].setAttribute('data-rs', 'true');
 
-                rippleEffect[i].addEventListener(endEvent, function(e) {
+                rippleEffect[i].addEventListener('click', function(e) {
                     // background color
                         var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
                             eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
@@ -36,14 +36,14 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 
                     // ripple position
                         var rect = this.getBoundingClientRect();
-                            if(isTouchSupported == true ){
-                                x = e.touches[0].clientX - rect.left;
-                                y = e.touches[0].clientY - rect.top;
-                            }
-                            else{
+                            // if(isTouchSupported == true ){
+                            //     x = e.touches[0].clientX - rect.left;
+                            //     y = e.touches[0].clientY - rect.top;
+                            // }
+                            // else{
                                 x = e.clientX - rect.left;
                                 y = e.clientY - rect.top;
-                            }
+                            // }
                         
                         ripple.style.left = x + 'px';
                         ripple.style.top  = y + 'px';
