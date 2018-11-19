@@ -1,89 +1,84 @@
+    document.addEventListener('DOMContentLoaded', function() {
+        // navigation
+            var sideNavigation = document.querySelectorAll('.sideNavigation a');
 
-    // demo ripple
-        var rippleEffect = document.querySelectorAll('[data-demoripplee="true"]');
+            for(var i = 0, n=sideNavigation.length; i < n; i++){
+                //console.log(sideNavigation.length);
+                sideNavigation[i].addEventListener("click", function() {
+                    var navName = this.textContent,
+                        navValue = this.getAttribute('data-id');
 
-        for (let i = 0; i < rippleEffect.length; i++) {
-            rippleEffect[i].addEventListener('click', function(e) {
-                // background color
-                    var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                        eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-                        rippleColor;
+                    // menu active state
+                        for(var i = 0; i < sideNavigation.length; i++){
+                            sideNavigation[i].classList.remove('active');
+                        }
 
-                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)'){
-                        rippleColor = eleRippleColor;
-                    }
-                    else{
-                        rippleColor = 'rgba(255,255,255)';
-                    }
+                        this.classList.add('active');
 
-                // create ripple
-                    var ripple = document.createElement('div');
-                        ripple.className = 'ripple';
+                    // screen title change
+                        document.getElementById('title').innerText = navName + ' - Material';
 
-                // ripple position
-                    var rect = this.getBoundingClientRect(),
-                        x = e.clientX - rect.left;
-                        y = e.clientY - rect.top;
-
-                    //console.log(e.clientX, rect.left);
-                    
-                    ripple.style.left = x + 'px';
-                    ripple.style.top  = y + 'px';
-                    ripple.style.backgroundColor = rippleColor;
-
-                // append ripple
-                    this.appendChild(ripple);
-
-                // remove ripple
-                    setTimeout(function() {
-                        ripple.parentNode.removeChild(ripple);
-                    }, 1400);
-            });
-        }
-
-    // navigation
-        var sideNavigation = document.querySelectorAll('.sideNavigation a');
-
-        for(var i = 0; i < sideNavigation.length; i++){
-            //console.log(sideNavigation.length);
-            sideNavigation[i].addEventListener('click', function() {
-                var navName = this.textContent,
-                    navValue = this.getAttribute('data-id');
-
-                // menu active state
-                    for(var i = 0; i < sideNavigation.length; i++){
-                        sideNavigation[i].classList.remove('active');
-                    }
-
-                    this.classList.add('active');
-
-                // screen title change
-                    document.getElementById('title').innerText = navName + ' - Material';
-
-                // bind page
-                    document.getElementById('SectionTitle').innerText = navName;
-                    
-                    // removed because no js runs inside
-                    
-                    // xhttp = new XMLHttpRequest();
-                    // var src = '' + sectionTarget + '/' + navValue + '.html';
-                    
-                    // xhttp.onreadystatechange = function () {
-                    //     if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    //         document.getElementById('middleContent').innerHTML = xhttp.responseText;
-                    //     }
-                    // }
-                    // xhttp.open("GET", src, true);
-                    // xhttp.setRequestHeader('Content-type', 'text/html');
-                    // xhttp.send();
-                    
-                    $('#middleContent').load('demo/' + navValue + '.html');
+                    // bind page
+                        document.getElementById('SectionTitle').innerText = navName;
                         
-                // mobile side nav close
-                    navCtrl();
-            });
-        }
+                        // removed because no js runs inside
+                        
+                        // xhttp = new XMLHttpRequest();
+                        // var src = '' + sectionTarget + '/' + navValue + '.html';
+                        
+                        // xhttp.onreadystatechange = function () {
+                        //     if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        //         document.getElementById('middleContent').innerHTML = xhttp.responseText;
+                        //     }
+                        // }
+                        // xhttp.open("GET", src, true);
+                        // xhttp.setRequestHeader('Content-type', 'text/html');
+                        // xhttp.send();
+                        
+                        $('#middleContent').load('demo/' + navValue + '.html');
+                            
+                    // mobile side nav close
+                        navCtrl();
+                }, false);
+            }
 
+        // page theme change
+            var themeLink = document.querySelectorAll('.pageTheme a');
+            var metaThemeColor = document.querySelector("meta[name=theme-color]");
+            var themeLinkID = document.getElementById('themeLink');
+
+            for(var i = 0; i < themeLink.length; i++){
+                themeLink[i].addEventListener("click", function(){
+                    var themeID = this.getAttribute('data-theme');
+                    var themeColor = this.getAttribute('data-themeColor');
+                    //backdrop.parentNode.removeChild(backdrop);
+                    
+                    // theme active
+                        for(var i = 0; i < themeLink.length; i++){
+                            themeLink[i].classList.remove('active');
+                        }
+
+                        this.classList.add('active');
+
+                    // css update
+                        if(themeID == 'dark'){
+                            themeLinkID.setAttribute('href', '');
+                        }
+                        else{
+                            themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+themeID+'.css');
+                        }
+
+                    // update theme color
+                        metaThemeColor.setAttribute("content", themeColor);
+
+                    // close menu
+                        overlayClose();
+
+                    // sessionStorage
+                        sessionStorage.setItem("theme", themeID);
+                });
+            }
+    }, false);
 
     // navigation control
         function navCtrl(){
@@ -115,75 +110,38 @@
             lastScrollTop = st;
         }
 
-    // page theme change
-        
+    // onpage load
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentTheme = sessionStorage.getItem("theme");
 
-        var themeLink = document.querySelectorAll('.pageTheme a');
-        var metaThemeColor = document.querySelector("meta[name=theme-color]");
-        var themeLinkID = document.getElementById('themeLink');
-
-        for(var i = 0; i < themeLink.length; i++){
-            themeLink[i].onclick = function(){
-                var themeID = this.getAttribute('data-theme');
-                var themeColor = this.getAttribute('data-themeColor');
-                //backdrop.parentNode.removeChild(backdrop);
+            if(sessionStorage.getItem("theme") === null){
+                // do nothing
+            }
+            else{
+                var themeID = document.querySelector('[data-theme='+currentTheme+']');
+                var themeColor = themeID.getAttribute('data-themeColor');
                 
                 // theme active
                     for(var i = 0; i < themeLink.length; i++){
                         themeLink[i].classList.remove('active');
                     }
 
-                    this.classList.add('active');
+                    themeID.classList.add('active');
 
                 // css update
-                    if(themeID == 'dark'){
+                    if(currentTheme == 'dark'){
                         themeLinkID.setAttribute('href', '');
                     }
                     else{
-                        themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+themeID+'.css');
+                        themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+currentTheme+'.css');
                     }
 
                 // update theme color
                     metaThemeColor.setAttribute("content", themeColor);
-
-                // close menu
-                    overlayClose();
-
-                // sessionStorage
-                    sessionStorage.setItem("theme", themeID);
             }
-        }
+        });
 
-        // onpage load
-            document.addEventListener('DOMContentLoaded', function() {
-                var currentTheme = sessionStorage.getItem("theme");
 
-                if(sessionStorage.getItem("theme") === null){
-                    // do nothing
-                }
-                else{
-                    var themeID = document.querySelector('[data-theme='+currentTheme+']');
-                    var themeColor = themeID.getAttribute('data-themeColor');
-                    
-                    // theme active
-                        for(var i = 0; i < themeLink.length; i++){
-                            themeLink[i].classList.remove('active');
-                        }
-
-                        themeID.classList.add('active');
-
-                    // css update
-                        if(currentTheme == 'dark'){
-                            themeLinkID.setAttribute('href', '');
-                        }
-                        else{
-                            themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+currentTheme+'.css');
-                        }
-
-                    // update theme color
-                        metaThemeColor.setAttribute("content", themeColor);
-                }
-            });
                
 /*
 
