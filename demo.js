@@ -5,7 +5,7 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
         var sideNavigation = document.querySelectorAll('.sideNavigation a');
 
         for(i = 0; i < sideNavigation.length; i++){
-            sideNavigation[i].addEventListener('click', function(e) {
+            sideNavigation[i].addEventListener('click', function() {
                 var navName = this.textContent,
                     navValue = this.getAttribute('data-id');
 
