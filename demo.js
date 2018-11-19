@@ -1,85 +1,85 @@
-    document.addEventListener('DOMContentLoaded', function() {
-        // navigation
-            var sideNavigation = document.querySelectorAll('.sideNavigation a');
+var isTouchSupported = 'ontouchstart' in document.documentElement;
+var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
 
-            for(var i = 0, n=sideNavigation.length; i < n; i++){
-                //console.log(sideNavigation.length);
-                sideNavigation[i].addEventListener("click", function() {
-                    var navName = this.textContent,
-                        navValue = this.getAttribute('data-id');
+    // navigation
+        var sideNavigation = document.querySelectorAll('.sideNavigation a');
 
-                    // menu active state
-                        for(var i = 0; i < sideNavigation.length; i++){
-                            sideNavigation[i].classList.remove('active');
-                        }
+        for(i = 0; i < sideNavigation.length; i++){
+            sideNavigation[i].addEventListener('click', function(e) {
+                var navName = this.textContent,
+                    navValue = this.getAttribute('data-id');
 
-                        this.classList.add('active');
+                // menu active state
+                    for(var i = 0; i < sideNavigation.length; i++){
+                        sideNavigation[i].classList.remove('active');
+                    }
 
-                    // screen title change
-                        document.getElementById('title').innerText = navName + ' - Material';
+                    this.classList.add('active');
 
-                    // bind page
-                        document.getElementById('SectionTitle').innerText = navName;
-                        
-                        // removed because no js runs inside
-                        
-                        // xhttp = new XMLHttpRequest();
-                        // var src = '' + sectionTarget + '/' + navValue + '.html';
-                        
-                        // xhttp.onreadystatechange = function () {
-                        //     if (xhttp.readyState == 4 && xhttp.status == 200) {
-                        //         document.getElementById('middleContent').innerHTML = xhttp.responseText;
-                        //     }
-                        // }
-                        // xhttp.open("GET", src, true);
-                        // xhttp.setRequestHeader('Content-type', 'text/html');
-                        // xhttp.send();
-                        
-                        $('#middleContent').load('demo/' + navValue + '.html');
-                            
-                    // mobile side nav close
-                        navCtrl();
-                }, false);
-            }
+                // screen title change
+                    document.getElementById('title').innerText = navName + ' - Material';
 
-        // page theme change
-            var themeLink = document.querySelectorAll('.pageTheme a');
-            var metaThemeColor = document.querySelector("meta[name=theme-color]");
-            var themeLinkID = document.getElementById('themeLink');
-
-            for(var i = 0; i < themeLink.length; i++){
-                themeLink[i].addEventListener("click", function(){
-                    var themeID = this.getAttribute('data-theme');
-                    var themeColor = this.getAttribute('data-themeColor');
-                    //backdrop.parentNode.removeChild(backdrop);
+                // bind page
+                    document.getElementById('SectionTitle').innerText = navName;
                     
-                    // theme active
-                        for(var i = 0; i < themeLink.length; i++){
-                            themeLink[i].classList.remove('active');
-                        }
+                    // removed because no js runs inside
+                    
+                    // xhttp = new XMLHttpRequest();
+                    // var src = 'demo/' + navValue + '.html';
+                    
+                    // xhttp.onreadystatechange = function () {
+                    //     if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    //         document.getElementById('middleContent').innerHTML = xhttp.responseText;
+                    //     }
+                    // }
+                    // xhttp.open("GET", src, true);
+                    // xhttp.setRequestHeader('Content-type', 'text/html');
+                    // xhttp.send();
+                    
+                    $('#middleContent').load('demo/' + navValue + '.html');
+                        
+                // mobile side nav close
+                    navCtrl();
+            }, false);
+        }
 
-                        this.classList.add('active');
+    // page theme change
+        var themeLink = document.querySelectorAll('.pageTheme a');
+        var metaThemeColor = document.querySelector("meta[name=theme-color]");
+        var themeLinkID = document.getElementById('themeLink');
 
-                    // css update
-                        if(themeID == 'dark'){
-                            themeLinkID.setAttribute('href', '');
-                        }
-                        else{
-                            themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+themeID+'.css');
-                        }
+        for(var i = 0; i < themeLink.length; i++){
+            themeLink[i].addEventListener("click", function(){
+                var themeID = this.getAttribute('data-theme');
+                var themeColor = this.getAttribute('data-themeColor');
+                //backdrop.parentNode.removeChild(backdrop);
+                
+                // theme active
+                    for(var i = 0; i < themeLink.length; i++){
+                        themeLink[i].classList.remove('active');
+                    }
 
-                    // update theme color
-                        metaThemeColor.setAttribute("content", themeColor);
+                    this.classList.add('active');
 
-                    // close menu
-                        overlayClose();
+                // css update
+                    if(themeID == 'dark'){
+                        themeLinkID.setAttribute('href', '');
+                    }
+                    else{
+                        themeLinkID.setAttribute('href', 'Assets/css/theme/theme-'+themeID+'.css');
+                    }
 
-                    // sessionStorage
-                        sessionStorage.setItem("theme", themeID);
-                });
-            }
-    }, false);
+                // update theme color
+                    metaThemeColor.setAttribute("content", themeColor);
 
+                // close menu
+                    overlayClose();
+
+                // sessionStorage
+                    sessionStorage.setItem("theme", themeID);
+            });
+        }
+        
     // navigation control
         function navCtrl(){
             var nav = document.getElementsByClassName('nav')[0].classList;

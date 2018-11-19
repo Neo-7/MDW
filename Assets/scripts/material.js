@@ -1,70 +1,70 @@
+var isTouchSupported = 'ontouchstart' in document.documentElement;
+var startEvent = isTouchSupported ? 'touchstart' : 'mousedown'; // other dclick events not working :: bug
+var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
+
+
 // ripple
     document.addEventListener('DOMContentLoaded', function() {
-        var isTouchSupported = 'ontouchstart' in document.documentElement;
-        var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            materialRipple();
-        }, false);
+        materialRipple();
+    }, false);
 
-        function materialRipple(){
-            var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
+    function materialRipple(){
+        var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
 
-            for (let i = 0, n=rippleEffect.length; i < n; i++) {
-                var ripState = rippleEffect[i].getAttribute('data-rs');
-                
-                if( ripState === null || ripState == 'false'){
-                    rippleEffect[i].setAttribute('data-rs', 'true');
+        for (i = 0; i < rippleEffect.length; i++) {
+            var ripState = rippleEffect[i].getAttribute('data-rs');
+            
+            if( ripState === null || ripState == 'false'){
+                rippleEffect[i].setAttribute('data-rs', 'true');
 
-                    rippleEffect[i].addEventListener(startEvent, function(e) {
-                        // background color
-                            var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                                eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
-                                rippleColor;
+                rippleEffect[i].addEventListener(endEvent, function(e) {
+                    // background color
+                        var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+                            eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                            rippleColor;
 
-                            if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
-                                rippleColor = eleRippleColor;
+                        if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
+                            rippleColor = eleRippleColor;
+                        }
+                        else{
+                            rippleColor = '#fff';
+                        }
+
+                    // create ripple
+                        var ripple = document.createElement('div');
+                            ripple.className = 'ripple';
+
+                    // ripple position
+                        var rect = this.getBoundingClientRect();
+                            if(isTouchSupported == true ){
+                                x = e.touches[0].clientX - rect.left;
+                                y = e.touches[0].clientY - rect.top;
                             }
                             else{
-                                rippleColor = '#fff';
+                                x = e.clientX - rect.left;
+                                y = e.clientY - rect.top;
                             }
+                        
+                        ripple.style.left = x + 'px';
+                        ripple.style.top  = y + 'px';
+                        ripple.style.backgroundColor = rippleColor;
 
-                        // create ripple
-                            var ripple = document.createElement('div');
-                                ripple.className = 'ripple';
+                    // append ripple
+                        this.appendChild(ripple);
 
-                        // ripple position
-                            var rect = this.getBoundingClientRect();
-                                if(isTouchSupported == true ){
-                                    x = e.touches[0].clientX - rect.left;
-                                    y = e.touches[0].clientY - rect.top;
-                                }
-                                else{
-                                    x = e.clientX - rect.left;
-                                    y = e.clientY - rect.top;
-                                }
-                            
-                            ripple.style.left = x + 'px';
-                            ripple.style.top  = y + 'px';
-                            ripple.style.backgroundColor = rippleColor;
+                    // remove ripple
+                        setTimeout(function() {
+                            ripple.parentNode.removeChild(ripple);
+                        }, 1400);
+                }, false);
 
-                        // append ripple
-                            this.appendChild(ripple);
-
-                        // remove ripple
-                            setTimeout(function() {
-                                ripple.parentNode.removeChild(ripple);
-                            }, 1400);
-                    }, false);
-
-                    continue;
-                }
-                else{
-                    // do nothing
-                }
+                continue;
+            }
+            else{
+                // do nothing
             }
         }
-    }, false);
+    }
 
 // material :: menu overlay
     function menu(thisTarget){
@@ -226,7 +226,7 @@
             tabChild = tabContainer.children;
 
         // tab change
-            for (i = 0, n=tabChild.length; i < n; i++) {
+            for (i = 0; i < tabChild.length; i++) {
                 if( tabChild[i].getAttribute('data-tabid') < curTab){
                     tabChild[i].setAttribute('data-tabstatus', 'prev');
                 }
@@ -254,7 +254,7 @@
                 panelContent.style.height = 0 + "px";
             }
             else{
-                for( var i = 0, n=panelList.length; i < n; i++){
+                for( var i = 0; i < panelList.length; i++){
                     panelList[i].setAttribute('data-panelstatus', 'condensed');
                     panelList[i].querySelector('.panel-content').style.height = 0 + "px";
                     thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'expanded');
