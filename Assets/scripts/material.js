@@ -218,7 +218,7 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
             tabChild = tabContainer.children;
 
         // tab change
-            for (i = 0; i < tabChild.length; i++) {
+            for (i = 0, n=tabChild.length; i < n; i++) {
                 if( tabChild[i].getAttribute('data-tabid') < curTab){
                     tabChild[i].setAttribute('data-tabstatus', 'prev');
                 }
@@ -246,7 +246,7 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                 panelContent.style.height = 0 + "px";
             }
             else{
-                for( var i = 0; i < panelList.length; i++){
+                for( var i = 0, n=panelList.length; i < n; i++){
                     panelList[i].setAttribute('data-panelstatus', 'condensed');
                     panelList[i].querySelector('.panel-content').style.height = 0 + "px";
                     thisTarget.parentNode.parentNode.setAttribute('data-panelstatus', 'expanded');
