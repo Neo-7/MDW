@@ -140,30 +140,3 @@
                     metaThemeColor.setAttribute("content", themeColor);
             }
         });
-
-
-               
-/*
-
-    // demo section
-        $('body').on('click', '.demo-toggle', function(){
-            var sectionContainer = $(this).parents('.demo-section');
-            if($(sectionContainer).hasClass('active')){
-                $(sectionContainer).classList.remove('active');
-            }
-            else{
-                $(sectionContainer).classList.add('active');
-            }
-        });
-
-    // code toggle
-        $('main').on('click', '.code-toggle', function(){
-            if($(this).parents('.mat-panel').attr('data-codeview') == 'true'){
-                $(this).parents('.mat-panel').attr('data-codeview', 'false');
-            }
-            else{
-                $(this).parents('.mat-panel').attr('data-codeview','true');
-            }
-        });
-*/
-
