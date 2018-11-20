@@ -17,7 +17,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
             if( ripState === null || ripState == 'false'){
                 rippleEffect[i].setAttribute('data-rs', 'true');
 
-                rippleEffect[i].addEventListener('click', function(e) {
+                rippleEffect[i].addEventListener(startEvent, function(e) {
                     // background color
                         var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
                             eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),

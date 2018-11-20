@@ -1,5 +1,5 @@
 
-/* Ripple effect */
+// Ripple effect
     [data-ripple="true"] {
         z-index: 1;
         position: relative;
@@ -8,10 +8,11 @@
 
     .ripple {
         position: absolute;
-        pointer-events: none;
+        //pointer-events: none;
         width: 12px;
         height: 12px;
         opacity: 0;
+        z-index: -1;
         border-radius: 100%;
         -webkit-animation: ripple 0.7s;
         animation: ripple 0.7s;
