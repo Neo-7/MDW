@@ -22,7 +22,7 @@
 
 <!-- Demo -->
     <div class="row demo-section">
-        <a class="width100 fx-ctr demo-toggle">
+        <a class="width100 fx-ctr demo-toggle" onclick="demoTogglePanel(this);">
             <span class="row padding-8-0 mat-headline4">Demo</span>
             <i class="mat-icon mat-elevation-z1" data-color="accent"></i>
         </a>
@@ -89,19 +89,3 @@
             </div>
         </div>
     </div>
-
-<!-- script -->
-    <script>
-        var demotoggle = document.querySelectorAll('.demo-toggle');
-        for(var i = 0; i < demotoggle.length; i++){
-            demotoggle[i].onclick = function(){
-                var sectionContainer = this.parentNode;
-                if(sectionContainer.classList.contains('active')){
-                    sectionContainer.classList.remove('active');
-                }
-                else{
-                    sectionContainer.classList.add('active');
-                }
-            }
-        }
-    </script>

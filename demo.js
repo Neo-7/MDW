@@ -22,21 +22,24 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                 // bind page
                     document.getElementById('SectionTitle').innerText = navName;
                     
-                    // removed because no js runs inside
+                    xhttp = new XMLHttpRequest();
+                    var src = 'demo/' + navValue + '.html';
                     
-                    // xhttp = new XMLHttpRequest();
-                    // var src = 'demo/' + navValue + '.html';
-                    
-                    // xhttp.onreadystatechange = function () {
-                    //     if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    //         document.getElementById('middleContent').innerHTML = xhttp.responseText;
-                    //     }
-                    // }
-                    // xhttp.open("GET", src, true);
-                    // xhttp.setRequestHeader('Content-type', 'text/html');
-                    // xhttp.send();
-                    
-                    $('#middleContent').load('demo/' + navValue + '.html');
+                    xhttp.onreadystatechange = function () {
+                        if (xhttp.readyState == 4 && xhttp.status == 200) {
+                            document.getElementById('middleContent').innerHTML = xhttp.responseText;
+                        }
+                    }
+                    xhttp.open("GET", src, true);
+                    xhttp.setRequestHeader('Content-type', 'text/html');
+                    xhttp.send();
+                
+                    setTimeout(function(){
+                        materialRipple();
+                    }, 30);
+
+                    // removed jquery load function
+                    // $('#middleContent').load('demo/' + navValue + '.html');
                         
                 // mobile side nav close
                     navCtrl();
@@ -44,6 +47,10 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
         }
 
     // page theme change
+        function openThemeSection(thisTarget){
+            menu(thisTarget);
+        }
+
         var themeLink = document.querySelectorAll('.pageTheme a');
         var metaThemeColor = document.querySelector("meta[name=theme-color]");
         var themeLinkID = document.getElementById('themeLink');
@@ -140,3 +147,31 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                     metaThemeColor.setAttribute("content", themeColor);
             }
         });
+
+
+    // demo pages
+        // demo panel toggle
+            function demoTogglePanel(thisTarget){
+                thisParent = thisTarget.parentNode;
+                if(thisParent.classList.contains('active')){
+                    thisParent.classList.remove('active');
+                }
+                else{
+                    thisParent.classList.add('active');
+                }
+            }
+
+        // BottomSheet
+            function openBS(thisTarget){
+                bottomSheet(thisTarget);
+            }
+
+        // expansion panel
+            function expansionPanel(thisTarget){
+                panelNavigation(thisTarget);
+            }
+
+        // tab
+        function tabs(thisTarget){
+            tabNavigation(thisTarget);
+        }
