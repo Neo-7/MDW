@@ -9,7 +9,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
     }, false);
 
     function materialRipple(){
-        var rippleEffect = document.querySelectorAll('[data-ripple="true"]');
+        var rippleEffect = document.querySelectorAll('.ripple');
 
         for (i = 0; i < rippleEffect.length; i++) {
             var ripState = rippleEffect[i].getAttribute('data-rs');
@@ -32,7 +32,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 
                     // create ripple
                         var ripple = document.createElement('div');
-                            ripple.className = 'ripple';
+                            ripple.className = 'mat-ripple';
 
                     // ripple position
                         var rect = this.getBoundingClientRect();

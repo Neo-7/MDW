@@ -1,12 +1,12 @@
 
 // Ripple effect
-    [data-ripple="true"] {
+    .ripple {
         z-index: 1;
         position: relative;
         overflow: hidden;
     }
 
-    .ripple {
+    .mat-ripple {
         position: absolute;
         //pointer-events: none;
         width: 12px;
