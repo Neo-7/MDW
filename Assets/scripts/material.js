@@ -1,5 +1,5 @@
 var isTouchSupported = 'ontouchstart' in document.documentElement;
-var startEvent = isTouchSupported ? 'touchstart' : 'mousedown'; // other dclick events not working :: bug
+var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
 var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 
 
