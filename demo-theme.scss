@@ -1,10 +1,10 @@
 
-/* reset */
+// reset
     header svg{
         fill: $color-white;
     }
 
-/* nav */
+// nav
     .nav-header{
         border-bottom: 1px solid rgba($color-white, 0.3);
     }
@@ -18,17 +18,36 @@
         color: $accent-color;
     }
 
-/* demo container */
+// demo :: theme
+    .colorGray{
+        border-color: $color-darker;
+    }
+
+    // active
+        a.active > .themecolor:before{
+            border-color: $color-white;
+        }
+        a.active > .dark.themecolor:before{
+            border-color: $color-dark;
+        }
+        a.active > .themecolor:after{
+            color: $color-dark;
+        }
+        a.active > .dark.themecolor:after{
+            color: $color-white;
+        }
+
+// demo container
     .demo-container{
         background-color: rgba($color-black,.07);
     }
 
-/* demo - doc */
+// demo - doc
     .demo-toggle i{
         background: #fff;
     }
     
-/* demo : card */
+// demo : card
     .demo-card{
         background: #fafafa;
     }

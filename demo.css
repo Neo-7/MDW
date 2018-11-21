@@ -303,15 +303,85 @@
 
 /* theme */
     .pageTheme{
+        width: 116px;
         max-height: inherit;
         overflow: auto;
     }
-    
+
     .pageTheme a{
         height: 56px;
-        width: 100%;
+        width: 56px;
         display: inline-block;
     }
+
+    .themecolor{
+        height: 34px;
+        width: 34px;
+        margin: 11px;
+        border-width: 8px;
+        border-style: solid;
+        border-radius: 6px;
+        transform: rotate(45deg);
+        position: relative;
+    }
+
+    .themecolor:before,
+    .themecolor:after{
+        height: 24px;
+        width: 24px;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+    }
+
+    .themecolor:before{
+        content: "";
+        border-width: 4px;
+        border-style: solid;
+        border-radius: 4px;
+    }
+
+    .colorIndigo{
+        border-color: #3F51B5;
+    }
+    .colorIndigo:before{
+        border-color: #C5CAE9;
+    }
+
+    .colorDeepPurple{
+        border-color: #673AB7;
+    }
+    .colorDeepPurple:before{
+        border-color: #D1C4E9;
+    }
+
+    .colorPink{
+        border-color: #E91E63;
+    }
+    .colorPink:before{
+        border-color: #F8BBD0;
+    }
+
+    .colorGray{
+        /*
+        border-color: #263238;
+        */
+    }
+    .colorGray:before{
+        border-color: #aaa;
+    }
+
+    /* active */
+        a.active > .themecolor:before{
+            box-shadow: 3px 2px 5px rgba(0,0,0,.3);
+        }
+        a.active > .dark.themecolor:before{
+            box-shadow: 3px 2px 5px rgba(0,0,0,.5);
+        }
+        a.active > .themecolor:after{
+            content: "done";
+            transform: rotate(-45deg);
+        }
 
 /* middle section */
     #SectionTitle{

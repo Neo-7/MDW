@@ -38,9 +38,9 @@
 <body onscroll="pageScroll();">
     <div id="container">
         <header class="fixed tl width100 fx-ctr padding-8-16" data-bg="primary">
-            <a class="hide-lg nav-control mat-subtitle2 ripple"  onclick="navCtrl();"><i class="material-icons icon">menu</i></a>
+            <a class="hide-lg nav-control ripple" onclick="navCtrl();"><i class="material-icons icon">menu</i></a>
 
-            <a class=""><i class="material-icons icon mat-subtitle2 ripple" >layers</i></a>
+            <a class=""><i class="material-icons icon ripple">layers</i></a>
 
             <span class="mat-body padding-0-16 hide-xs">MATERIAL DESIGN FOR THE WEB</span>
             
@@ -54,9 +54,21 @@
                 <div class="mat-overlay" data-menuid="themeMenu">
                     <div class="mat-menu mat-elevation-z2">
                         <div class="pageTheme white-bg">
-                            <a data-theme="dark" data-themeColor="#202020">White</a>
-                            <a data-theme="indigo" data-themeColor="#303F9F">Indigo</a>
-                            <a data-theme="pink" data-themeColor="#C2185B">Pink</a>
+                            <a class="ripple active" data-theme="dark" data-themeColor="#202020">
+                                <span class="themecolor material-icons colorGray"></span>
+                            </a>
+
+                            <a class="ripple" data-theme="indigo" data-themeColor="#303F9F">
+                                <span class="themecolor material-icons colorIndigo"></span>
+                            </a>
+
+                            <a class="ripple" data-theme="purple" data-themeColor="#C2185B">
+                                <span class="themecolor material-icons colorDeepPurple"></span>
+                            </a>
+
+                            <a class="ripple" data-theme="pink" data-themeColor="#C2185B">
+                                <span class="themecolor material-icons colorPink"></span>
+                            </a>
                         </div>
                     </div>
                 </div>

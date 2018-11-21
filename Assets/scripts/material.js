@@ -121,6 +121,8 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
             menutarget.style.top = ely + 'px';
             menutarget.style.left = elx + 'px';
             menutarget.style.bottom = ely2 + 'px';
+            menutarget.style.paddingTop = '8px';
+            menutarget.style.paddingBottom = '8px';
             menutarget.style.transformOrigin = transOrigin;
             menutarget.style.maxHeight = menuHeight + 'px';
 
