@@ -36,14 +36,14 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 
                     // ripple position
                         var rect = this.getBoundingClientRect();
-                            // if(isTouchSupported == true ){
-                            //     x = e.touches[0].clientX - rect.left;
-                            //     y = e.touches[0].clientY - rect.top;
-                            // }
-                            // else{
-                                x = e.clientX - rect.left;
-                                y = e.clientY - rect.top;
-                            // }
+                        if(isTouchSupported == true ){
+                            x = e.touches[0].clientX - rect.left;
+                            y = e.touches[0].clientY - rect.top;
+                        }
+                        else{
+                            x = e.clientX - rect.left;
+                            y = e.clientY - rect.top;
+                        }
                         
                         ripple.style.left = x + 'px';
                         ripple.style.top  = y + 'px';
