@@ -74,7 +74,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
     }
 
     function matRipple(rippleElem){
-         var rel = xxx;
+         var rel = rippleElem;
          console.log(rel);
     }
 
