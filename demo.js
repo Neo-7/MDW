@@ -172,6 +172,6 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
             }
 
         // tab
-        function tabs(thisTarget){
-            tabNavigation(thisTarget);
-        }
+            function tabs(thisTarget){
+                tabNavigation(thisTarget);
+            }

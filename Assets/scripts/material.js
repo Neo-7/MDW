@@ -136,21 +136,26 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 // material :: bottom sheet
     function bottomSheet(thisTarget){
         eltar = document.querySelector('[data-bottomsheetid=' + thisTarget.getAttribute('data-bottomsheet') + ']');
-        //bstarget = eltar.children[0];
-        bstarget = eltar.querySelector('.mat-bottomsheet');
 
-        // prepend overlay
-            var bsOverlayBackdrop = document.createElement('div');
-                bsOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop';
+        if(eltar !== null){
+            bstarget = eltar.querySelector('.mat-bottomsheet');
 
-            eltar.insertBefore(bsOverlayBackdrop, bstarget);
-            enableOverlayClose();
-        
-        // remove body scroll
-            document.body.style.overflow = 'hidden';
+            // prepend overlay
+                var bsOverlayBackdrop = document.createElement('div');
+                    bsOverlayBackdrop.className = 'hw100 fixed tl overlay-backdrop';
 
-        // overlay menu open animation
-            eltar.classList.add('opened');
+                eltar.insertBefore(bsOverlayBackdrop, bstarget);
+                enableOverlayClose();
+            
+            // remove body scroll
+                document.body.style.overflow = 'hidden';
+
+            // overlay menu open animation
+                eltar.classList.add('opened');
+        }
+        else{
+            // do nothing
+        }
     }
 
 // material :: dialog
