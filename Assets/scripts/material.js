@@ -76,7 +76,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                 elh = thisTarget.offsetHeight,
 
                 eltar = document.querySelector('[data-menuid=' + thisTarget.getAttribute('data-menu') + ']'),
-                menutarget = eltar.children[0],
+                menutarget = eltar.querySelector('.mat-menu'),
                 tarw = menutarget.offsetWidth,
                 tarh = menutarget.offsetHeight,
 
