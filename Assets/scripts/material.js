@@ -56,7 +56,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                         setTimeout(function() {
                             ripple.parentNode.removeChild(ripple);
                         }, 1400);
-                }, false);
+                }, { passive: true });
 
                 continue;
             }
