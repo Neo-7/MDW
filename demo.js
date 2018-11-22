@@ -36,7 +36,6 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                 
                     setTimeout(function(){
                         materialRipple();
-                        demoRipple();
                     }, 30);
 
                     // removed jquery load function

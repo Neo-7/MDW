@@ -6,10 +6,9 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 // ripple
     document.addEventListener('DOMContentLoaded', function() {
         materialRipple();
-        demoRipple();
     }, false);
 
-    function materialRipple(){
+    // function materialRipple(){
         // var rippleEffect = document.querySelectorAll('.ripple');
 
         // for (i = 0; i < rippleEffect.length; i++) {
@@ -65,99 +64,72 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
         //         // do nothing
         //     }
         // }
-    }
+    // }
 
     // testing
-    function demoRipple(){
-        Array.prototype.forEach.call(document.querySelectorAll('.ripple'), function(ripEff) {
-            var ripState = ripEff.getAttribute('data-rs');
-
-            if( ripState === null || ripState == 'false'){
-                ripEff.setAttribute('data-rs', 'true');
-                // create ripple
-                    var ripple = document.createElement('div');
-                        ripple.className = 'mat-ripple';
-                        
-                    ripEff.appendChild(ripple);
-
-                ripEff.addEventListener(startEvent, function(e) {
-                    //matRipStart(ripEff, e);
-                    // background color
-                        var eleRippleBG = window.getComputedStyle(ripEff).getPropertyValue('background-color'),
-                            eleRippleColor = window.getComputedStyle(ripEff).getPropertyValue('color'),
-                            rippleColor;
-
-                        if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
-                            rippleColor = eleRippleColor;
-                        }
-                        else{
-                            rippleColor = '#fff';
-                        }
-
-                    // ripple position
-                        var rect = ripEff.getBoundingClientRect();
-                        if(isTouchSupported == true ){
-                            x = e.touches[0].clientX - rect.left;
-                            y = e.touches[0].clientY - rect.top;
-                        }
-                        else{
-                            x = e.clientX - rect.left;
-                            y = e.clientY - rect.top;
-                        }
-                        
-                        ripple.style.left = x + 'px';
-                        ripple.style.top  = y + 'px';
-                        ripple.style.backgroundColor = rippleColor;
-                }, { passive: true });
-
-                ripEff.addEventListener(endEvent, function(e) {
-                    //matRippleEnd(ripEff);
-                }, { passive: true });
-
-            }
-            else{
-                // do nothing
-            }
+    function materialRipple(){
+        Array.prototype.forEach.call(document.querySelectorAll('.ripple'), function(rel) {
+            matRipple(rel);
         });
     }
 
-    // ripple start
-        function matRipStart(ripEff, e){
-            var ripple = ripEff.querySelector('.mat-ripple');
+    function matRipple(rippleElem){
+         var rel = xxx;
+         console.log(rel);
+    }
 
-            // background color
-                var eleRippleBG = window.getComputedStyle(ripEff).getPropertyValue('background-color'),
-                    eleRippleColor = window.getComputedStyle(ripEff).getPropertyValue('color'),
-                    rippleColor;
+    /*
+    function matRipple(eleR){
+        var ripState = elem.getAttribute('data-rs');
 
-                if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
-                    rippleColor = eleRippleColor;
-                }
-                else{
-                    rippleColor = '#fff';
-                }
+        if( ripState === null || ripState == 'false'){
+            elem.setAttribute('data-rs', 'true');
+            // create ripple
+                var ripple = document.createElement('div');
+                    ripple.className = 'mat-ripple';
+                    
+                elem.appendChild(ripple);
 
-            // ripple position
-                var rect = ripEff.getBoundingClientRect();
-                if(isTouchSupported == true ){
-                    x = e.touches[0].clientX - rect.left;
-                    y = e.touches[0].clientY - rect.top;
-                }
-                else{
-                    x = e.clientX - rect.left;
-                    y = e.clientY - rect.top;
-                }
-                
-                ripple.style.left = x + 'px';
-                ripple.style.top  = y + 'px';
-                ripple.style.backgroundColor = rippleColor;
+                elem.addEventListener(startEvent, function(e) {
+                //matRipStart(elem, e);
+                // background color
+                    var eleRippleBG = window.getComputedStyle(elem).getPropertyValue('background-color'),
+                        eleRippleColor = window.getComputedStyle(elem).getPropertyValue('color'),
+                        rippleColor;
+
+                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
+                        rippleColor = eleRippleColor;
+                    }
+                    else{
+                        rippleColor = '#fff';
+                    }
+
+                // ripple position
+                    var rect = elem.getBoundingClientRect();
+                    if(isTouchSupported == true ){
+                        x = e.touches[0].clientX - rect.left;
+                        y = e.touches[0].clientY - rect.top;
+                    }
+                    else{
+                        x = e.clientX - rect.left;
+                        y = e.clientY - rect.top;
+                    }
+                    
+                    ripple.style.left = x + 'px';
+                    ripple.style.top  = y + 'px';
+                    ripple.style.backgroundColor = rippleColor;
+            }, { passive: true });
+
+            elem.addEventListener(endEvent, function(e) {
+                //matRippleEnd(v);
+            }, { passive: true });
+
         }
-
-        function matRippleEnd(ripEff){
-            //var ripple = ripEff.querySelector('.mat-ripple');
-            
-            //ripple.parentNode.removeChild(ripple);
+        else{
+            // do nothing
         }
+    }
+    */
 
 
 
@@ -328,7 +300,10 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
             tabChild = tabContainer.children;
 
         // tab change
-            for (i = 0; i < tabChild.length; i++) {
+            var i;
+            var l = tabChild.length;
+            
+            for (i = 0; i < l; i++) {
                 if( tabChild[i].getAttribute('data-tabid') < curTab){
                     tabChild[i].setAttribute('data-tabstatus', 'prev');
                 }
