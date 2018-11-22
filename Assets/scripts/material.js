@@ -6,21 +6,85 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 // ripple
     document.addEventListener('DOMContentLoaded', function() {
         materialRipple();
+        demoRipple();
     }, false);
 
     function materialRipple(){
-        var rippleEffect = document.querySelectorAll('.ripple');
+        // var rippleEffect = document.querySelectorAll('.ripple');
 
-        for (i = 0; i < rippleEffect.length; i++) {
-            var ripState = rippleEffect[i].getAttribute('data-rs');
+        // for (i = 0; i < rippleEffect.length; i++) {
+        //     var ripState = rippleEffect[i].getAttribute('data-rs');
             
-            if( ripState === null || ripState == 'false'){
-                rippleEffect[i].setAttribute('data-rs', 'true');
+        //     if( ripState === null || ripState == 'false'){
+        //         rippleEffect[i].setAttribute('data-rs', 'true');
 
-                rippleEffect[i].addEventListener(startEvent, function(e) {
+        //         rippleEffect[i].addEventListener(startEvent, function(e) {
+        //             // background color
+        //                 var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
+        //                     eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+        //                     rippleColor;
+
+        //                 if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
+        //                     rippleColor = eleRippleColor;
+        //                 }
+        //                 else{
+        //                     rippleColor = '#fff';
+        //                 }
+
+        //             // create ripple
+        //                 var ripple = document.createElement('div');
+        //                     ripple.className = 'mat-ripple';
+
+        //             // ripple position
+        //                 var rect = this.getBoundingClientRect();
+        //                 if(isTouchSupported == true ){
+        //                     x = e.touches[0].clientX - rect.left;
+        //                     y = e.touches[0].clientY - rect.top;
+        //                 }
+        //                 else{
+        //                     x = e.clientX - rect.left;
+        //                     y = e.clientY - rect.top;
+        //                 }
+                        
+        //                 ripple.style.left = x + 'px';
+        //                 ripple.style.top  = y + 'px';
+        //                 ripple.style.backgroundColor = rippleColor;
+
+        //             // append ripple
+        //                 this.appendChild(ripple);
+
+        //             // remove ripple
+        //                 setTimeout(function() {
+        //                     ripple.parentNode.removeChild(ripple);
+        //                 }, 1400);
+        //         }, { passive: true });
+
+        //         continue;
+        //     }
+        //     else{
+        //         // do nothing
+        //     }
+        // }
+    }
+
+    // testing
+    function demoRipple(){
+        Array.prototype.forEach.call(document.querySelectorAll('.ripple'), function(ripEff) {
+            var ripState = ripEff.getAttribute('data-rs');
+
+            if( ripState === null || ripState == 'false'){
+                ripEff.setAttribute('data-rs', 'true');
+                // create ripple
+                    var ripple = document.createElement('div');
+                        ripple.className = 'mat-ripple';
+                        
+                    ripEff.appendChild(ripple);
+
+                ripEff.addEventListener(startEvent, function(e) {
+                    //matRipStart(ripEff, e);
                     // background color
-                        var eleRippleBG = window.getComputedStyle(this).getPropertyValue('background-color'),
-                            eleRippleColor = window.getComputedStyle(this).getPropertyValue('color'),
+                        var eleRippleBG = window.getComputedStyle(ripEff).getPropertyValue('background-color'),
+                            eleRippleColor = window.getComputedStyle(ripEff).getPropertyValue('color'),
                             rippleColor;
 
                         if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
@@ -30,12 +94,8 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                             rippleColor = '#fff';
                         }
 
-                    // create ripple
-                        var ripple = document.createElement('div');
-                            ripple.className = 'mat-ripple';
-
                     // ripple position
-                        var rect = this.getBoundingClientRect();
+                        var rect = ripEff.getBoundingClientRect();
                         if(isTouchSupported == true ){
                             x = e.touches[0].clientX - rect.left;
                             y = e.touches[0].clientY - rect.top;
@@ -48,23 +108,58 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                         ripple.style.left = x + 'px';
                         ripple.style.top  = y + 'px';
                         ripple.style.backgroundColor = rippleColor;
-
-                    // append ripple
-                        this.appendChild(ripple);
-
-                    // remove ripple
-                        setTimeout(function() {
-                            ripple.parentNode.removeChild(ripple);
-                        }, 1400);
                 }, { passive: true });
 
-                continue;
+                ripEff.addEventListener(endEvent, function(e) {
+                    //matRippleEnd(ripEff);
+                }, { passive: true });
+
             }
             else{
                 // do nothing
             }
-        }
+        });
     }
+
+    // ripple start
+        function matRipStart(ripEff, e){
+            var ripple = ripEff.querySelector('.mat-ripple');
+
+            // background color
+                var eleRippleBG = window.getComputedStyle(ripEff).getPropertyValue('background-color'),
+                    eleRippleColor = window.getComputedStyle(ripEff).getPropertyValue('color'),
+                    rippleColor;
+
+                if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
+                    rippleColor = eleRippleColor;
+                }
+                else{
+                    rippleColor = '#fff';
+                }
+
+            // ripple position
+                var rect = ripEff.getBoundingClientRect();
+                if(isTouchSupported == true ){
+                    x = e.touches[0].clientX - rect.left;
+                    y = e.touches[0].clientY - rect.top;
+                }
+                else{
+                    x = e.clientX - rect.left;
+                    y = e.clientY - rect.top;
+                }
+                
+                ripple.style.left = x + 'px';
+                ripple.style.top  = y + 'px';
+                ripple.style.backgroundColor = rippleColor;
+        }
+
+        function matRippleEnd(ripEff){
+            //var ripple = ripEff.querySelector('.mat-ripple');
+            
+            //ripple.parentNode.removeChild(ripple);
+        }
+
+
 
 // material :: menu overlay
     function menu(thisTarget){
