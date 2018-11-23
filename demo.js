@@ -36,7 +36,7 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                 
                     setTimeout(function(){
                         materialRipple();
-                    }, 30);
+                    }, 300);
 
                     // removed jquery load function
                     // $('#middleContent').load('demo/' + navValue + '.html');
