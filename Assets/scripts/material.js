@@ -73,63 +73,75 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
         });
     }
 
-    function matRipple(rippleElem){
-         var rel = rippleElem;
-         console.log(rel);
-    }
-
-    /*
     function matRipple(eleR){
-        var ripState = elem.getAttribute('data-rs');
+        var ripState = eleR.getAttribute('data-rs'),
+            eleWidth = eleR.offsetWidth,
+            eleHeight = eleR.offsetHeight,
+            rElemHW = 0;
 
         if( ripState === null || ripState == 'false'){
-            elem.setAttribute('data-rs', 'true');
+            // set data attr to ripple parent element
+                eleR.setAttribute('data-rs', 'true');
+        
+            // calculate ripple height & width
+                if(eleWidth >= eleHeight){
+                    rElemHW = eleWidth * Math.sqrt(2);
+                }
+                else if( eleWidth <= eleHeight){
+                    rElemHW = eleHeight * Math.sqrt(2);
+                }
+
+                console.log(rElemHW);
+            
             // create ripple
                 var ripple = document.createElement('div');
-                    ripple.className = 'mat-ripple';
-                    
-                elem.appendChild(ripple);
+                    ripple.className = 'mat-ripple';   
+                eleR.appendChild(ripple);
 
-                elem.addEventListener(startEvent, function(e) {
-                //matRipStart(elem, e);
-                // background color
-                    var eleRippleBG = window.getComputedStyle(elem).getPropertyValue('background-color'),
-                        eleRippleColor = window.getComputedStyle(elem).getPropertyValue('color'),
-                        rippleColor;
+            // on start
+                eleR.addEventListener(startEvent, function(e) {
+                    // background color
+                        var eleRippleBG = window.getComputedStyle(eleR).getPropertyValue('background-color'),
+                            eleRippleColor = window.getComputedStyle(eleR).getPropertyValue('color'),
+                            rippleColor;
 
-                    if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
-                        rippleColor = eleRippleColor;
-                    }
-                    else{
-                        rippleColor = '#fff';
-                    }
+                        if(eleRippleBG == 'rgba(0, 0, 0, 0)' || eleRippleBG == 'rgb(255, 255, 255)' || eleRippleBG == 'transparent'){
+                            rippleColor = eleRippleColor;
+                        }
+                        else{
+                            rippleColor = '#fff';
+                        }
 
-                // ripple position
-                    var rect = elem.getBoundingClientRect();
-                    if(isTouchSupported == true ){
-                        x = e.touches[0].clientX - rect.left;
-                        y = e.touches[0].clientY - rect.top;
-                    }
-                    else{
-                        x = e.clientX - rect.left;
-                        y = e.clientY - rect.top;
-                    }
-                    
-                    ripple.style.left = x + 'px';
-                    ripple.style.top  = y + 'px';
-                    ripple.style.backgroundColor = rippleColor;
-            }, { passive: true });
+                    // ripple position
+                        var rect = eleR.getBoundingClientRect();
+                        if(isTouchSupported == true ){
+                            x = rElemHW / 2 - (e.touches[0].clientX - rect.left);
+                            y = rElemHW / 2 - (e.touches[0].clientY - rect.top);
+                        }
+                        else{
+                            x = rElemHW / 2 - (e.clientX - rect.left);
+                            y = rElemHW / 2 - (e.clientY - rect.top);
+                        }
+                        
+                        ripple.style.height = rElemHW + 'px';
+                        ripple.style.width  = rElemHW + 'px';
+                        ripple.style.left = -x + 'px';
+                        ripple.style.top  = -y + 'px';
+                        ripple.style.backgroundColor = rippleColor;
+                        ripple.classList.add('expanded');
+                }, { passive: true });
 
-            elem.addEventListener(endEvent, function(e) {
-                //matRippleEnd(v);
-            }, { passive: true });
-
+            // on end
+                eleR.addEventListener(endEvent, function(e) {
+                    setTimeout(function(){
+                        ripple.classList.remove('expanded');
+                    }, 500);
+                }, { passive: true });
         }
         else{
             // do nothing
         }
     }
-    */
 
 
 
