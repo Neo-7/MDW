@@ -127,13 +127,22 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                         ripple.style.top  = -y + 'px';
                         ripple.style.backgroundColor = rippleColor;
                         ripple.classList.add('expanded');
+
+                        setTimeout(function(){
+                            ripple.classList.remove('expanded');
+                        }, 500);
                 }, { passive: true });
 
             // on end
                 eleR.addEventListener(endEvent, function(e) {
-                    setTimeout(function(){
-                        ripple.classList.remove('expanded');
-                    }, 500);
+                    if(ripple.classList.contains('expanded')){
+                        setTimeout(function(){
+                            ripple.classList.remove('expanded');
+                        }, 500);
+                    }
+                    else{
+                        ripple.classList.remove('hold');
+                    }
                 }, { passive: true });
         }
         else{

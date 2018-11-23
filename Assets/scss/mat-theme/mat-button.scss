@@ -17,6 +17,84 @@
         background: rgba($color-black,.15);
     }
 
+// : hover
+    // color | border change
+    .mat-button-text:hover,
+    .mat-button-stroked:hover,
+    .mat-icon-button-mini:hover{
+        background-color: rgba($color-black, 0.04);
+    }
+
+    // bg
+    .mat-button-raised.color-primary:hover,
+    .mat-button-flat.color-primary:hover,
+    .mat-icon-button.color-primary:hover,
+    .mat-fab.color-primary:hover,
+    .mat-fab-mini.color-primary:hover{
+        background-color: lighten( $primary-color, 8% );
+    }
+
+    .mat-button-raised.color-accent:hover,
+    .mat-button-flat.color-accent:hover,
+    .mat-icon-button.color-accent:hover,
+    .mat-fab.color-accent:hover,
+    .mat-fab-mini.color-accent:hover{
+        background-color: lighten( $accent-color, 8% );
+    }
+
+    .mat-button-raised.color-warn:hover,
+    .mat-button-flat.color-warn:hover,
+    .mat-icon-button.color-warn:hover,
+    .mat-fab.color-warn:hover,
+    .mat-fab-mini.color-warn:hover{
+        background-color: lighten( $warn-color, 8% );
+    }
+
+// : focus
+    // color | border change
+    .mat-button-text.color-primary:focus,
+    .mat-button-stroked.color-primary:focus,
+    .mat-icon-button-mini.color-primary:focus{
+        background-color: lighten( $primary-color, 32% );
+    }
+
+    .mat-button-text.color-accent:focus,
+    .mat-button-stroked.color-accent:focus,
+    .mat-icon-button-mini.color-accent:focus{
+        background-color: lighten( $accent-color, 32% );
+    }
+
+    .mat-button-text.color-warn:focus,
+    .mat-button-stroked.color-warn:focus,
+    .mat-icon-button-mini.color-warn:focus{
+        background-color: lighten( $warn-color, 32% );
+    }
+
+    // bg
+    .mat-button-raised.color-primary:focus,
+    .mat-button-flat.color-primary:focus,
+    .mat-icon-button.color-primary:focus,
+    .mat-fab.color-primary:focus,
+    .mat-fab-mini.color-primary:focus{
+        background-color: lighten( $primary-color, 16% );
+    }
+
+    .mat-button-raised.color-accent:focus,
+    .mat-button-flat.color-accent:focus,
+    .mat-icon-button.color-accent:focus,
+    .mat-fab.color-accent:focus,
+    .mat-fab-mini.color-accent:focus{
+        background-color: lighten( $accent-color, 16% );
+    }
+
+    .mat-button-raised.color-warn:focus,
+    .mat-button-flat.color-warn:focus,
+    .mat-icon-button.color-warn:focus,
+    .mat-fab.color-warn:focus,
+    .mat-fab-mini.color-warn:focus{
+        background-color: lighten( $warn-color, 16% );
+    }
+
 
 // theme
     .mat-button-text,
@@ -34,21 +112,6 @@
         background: $color-white;
         color: $text-dark;
     }
-
-    //dark
-        // [data-theme="red"] .mat-button-text,
-        // [data-theme="red"] .mat-button-stroked,
-        // [data-theme="red"] .mat-icon-button-mini {
-        //     background: none;
-        //     color: rgba(255, 255, 255, 0.7);
-        // }
-
-        // [data-theme="red"] .mat-button-raised,
-        // [data-theme="red"] .mat-button-flat,
-        // [data-theme="red"] .mat-icon-button{
-        //     background: #424242;
-        //     color: rgba(255, 255, 255, 0.7);
-        // }
 
     // bg change
     .mat-button-raised.color-primary,
@@ -75,7 +138,7 @@
     .mat-fab.color-warn,
     .mat-fab-mini.color-warn{
         background-color: $warn-color;
-        color: $color-white;
+        color: $warn-text;
     }
 
     // color | border change

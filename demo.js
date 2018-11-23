@@ -38,8 +38,6 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                     xhttp.setRequestHeader('Content-type', 'text/html');
                     xhttp.send();
                 
-                    
-
                     // removed jquery load function
                     // $('#middleContent').load('demo/' + navValue + '.html');
                         

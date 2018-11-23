@@ -20,60 +20,77 @@
                 animation-fill-mode: forwards;
     }
 
-    .mat-ripple:not(.expanded){
-        -webkit-animation: rippleHide 0.1s;
-                animation: rippleHide 0.1s;
+    .mat-ripple.hold{
+        -webkit-animation: rippleHold 0.1s;
+                animation: rippleHold 0.1s;
                 animation-fill-mode: forwards;
     }
 
-    @-webkit-keyframes rippleShow {  
-        0% {
-            opacity: 0;
-            transform: scale(0.1);
-        }
-        100% {
-            opacity: 0.4;
-            transform: scale(2);
-        }
+    .mat-ripple:not(.expanded):not(.hold){
+        -webkit-animation: rippleHide 0.2s;
+                animation: rippleHide 0.2s;
+                animation-fill-mode: forwards;
     }
 
-    @keyframes rippleShow { 
-        0% {
-            opacity: 0;
-            transform: scale(0.1);
+    // ripple show
+        @-webkit-keyframes rippleShow {  
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+            90% {
+                opacity: 0.16;
+                transform: scale(2);
+            }
+            100% {
+                opacity: 0.16;
+                transform: scale(3);
+            }
         }
-        100% {
-            opacity: 0.4;
-            transform: scale(2);
-        }
-    }
 
-    @-webkit-keyframes rippleHide {  
-        0% {
-            opacity: 0.4;
-            transform: scale(2);
+        @keyframes rippleShow { 
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+            90% {
+                opacity: 0.16;
+                transform: scale(2);
+            }
+            100% {
+                opacity: 0.16;
+                transform: scale(3);
+            }
         }
-        90%{
-            opacity: 0;
-            transform: scale(2);
-        }
-        100% {
-            opacity: 0;
-            transform: scale(0.1);
-        }
-    }
 
-    @keyframes rippleHide { 
-        0% {
-            opacity: 0.4;
-            transform: scale(2);
+    // ripple hide
+        @-webkit-keyframes rippleHide {  
+            0% {
+                opacity: 0.16;
+                transform: scale(3);
+            }
+            90%{
+                opacity: 0;
+                transform: scale(3);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
         }
-        90%{
-            opacity: 0;
-            transform: scale(2);
+
+        @keyframes rippleHide { 
+            0% {
+                opacity: 0.16;
+                transform: scale(3);
+            }
+            90%{
+                opacity: 0;
+                transform: scale(3);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
         }
-        100% {
-            opacity: 0;
-            transform: scale(0.1);
-        }
-    }
+

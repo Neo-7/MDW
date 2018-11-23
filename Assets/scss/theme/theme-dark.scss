@@ -21,6 +21,7 @@
     $accent-light: lighten( $accent-color, 20% );
 
     $warn-color: #f44336;
+    $warn-text: $color-white;
 
 // this theme
     [data-bg="primary"]{
