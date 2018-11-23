@@ -15,8 +15,8 @@
     }
 
     .mat-ripple.expanded{
-        -webkit-animation: rippleShow 0.4s;
-                animation: rippleShow 0.4s;
+        -webkit-animation: rippleShow 0.7s;
+                animation: rippleShow 0.7s;
                 animation-fill-mode: forwards;
     }
 
@@ -29,51 +29,51 @@
     @-webkit-keyframes rippleShow {  
         0% {
             opacity: 0;
-            transform: scale(0.2);
+            transform: scale(0.1);
         }
         100% {
             opacity: 0.4;
-            transform: scale(1.4);
+            transform: scale(2);
         }
     }
 
     @keyframes rippleShow { 
         0% {
             opacity: 0;
-            transform: scale(0.2);
+            transform: scale(0.1);
         }
         100% {
             opacity: 0.4;
-            transform: scale(1.4);
+            transform: scale(2);
         }
     }
 
     @-webkit-keyframes rippleHide {  
         0% {
             opacity: 0.4;
-            transform: scale(1.4);
+            transform: scale(2);
         }
         90%{
             opacity: 0;
-            transform: scale(1.4);
+            transform: scale(2);
         }
         100% {
             opacity: 0;
-            transform: scale(0.2);
+            transform: scale(0.1);
         }
     }
 
     @keyframes rippleHide { 
         0% {
             opacity: 0.4;
-            transform: scale(1.4);
+            transform: scale(2);
         }
         90%{
             opacity: 0;
-            transform: scale(1.4);
+            transform: scale(2);
         }
         100% {
             opacity: 0;
-            transform: scale(0.2);
+            transform: scale(0.1);
         }
     }

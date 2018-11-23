@@ -91,7 +91,7 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                     rElemHW = eleHeight * Math.sqrt(2);
                 }
 
-                console.log(rElemHW);
+                console.log(eleHeight, rElemHW);
             
             // create ripple
                 var ripple = document.createElement('div');
