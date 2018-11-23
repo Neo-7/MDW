@@ -28,15 +28,17 @@ var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
                     xhttp.onreadystatechange = function () {
                         if (xhttp.readyState == 4 && xhttp.status == 200) {
                             document.getElementById('middleContent').innerHTML = xhttp.responseText;
+
+                            setTimeout(function(){
+                                materialRipple();
+                            }, 300);
                         }
                     }
                     xhttp.open("GET", src, true);
                     xhttp.setRequestHeader('Content-type', 'text/html');
                     xhttp.send();
                 
-                    setTimeout(function(){
-                        materialRipple();
-                    }, 300);
+                    
 
                     // removed jquery load function
                     // $('#middleContent').load('demo/' + navValue + '.html');
