@@ -79,16 +79,17 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
             eleHeight = eleR.offsetHeight,
             rElemHW = 0;
 
+
         if( ripState === null || ripState == 'false'){
             // set data attr to ripple parent element
                 eleR.setAttribute('data-rs', 'true');
         
             // calculate ripple height & width
                 if(eleWidth >= eleHeight){
-                    rElemHW = eleWidth * Math.sqrt(2);
+                    rElemHW = eleWidth// * Math.sqrt(2);
                 }
-                else if( eleWidth <= eleHeight){
-                    rElemHW = eleHeight * Math.sqrt(2);
+                else{
+                    rElemHW = eleHeight// * Math.sqrt(2);
                 }
             
             // create ripple
@@ -127,22 +128,13 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
                         ripple.style.top  = -y + 'px';
                         ripple.style.backgroundColor = rippleColor;
                         ripple.classList.add('expanded');
-
-                        setTimeout(function(){
-                            ripple.classList.remove('expanded');
-                        }, 500);
                 }, { passive: true });
 
             // on end
                 eleR.addEventListener(endEvent, function(e) {
-                    if(ripple.classList.contains('expanded')){
-                        setTimeout(function(){
-                            ripple.classList.remove('expanded');
-                        }, 500);
-                    }
-                    else{
-                        ripple.classList.remove('hold');
-                    }
+                    setTimeout(function(){
+                        ripple.classList.remove('expanded');
+                    }, 450);
                 }, { passive: true });
         }
         else{
