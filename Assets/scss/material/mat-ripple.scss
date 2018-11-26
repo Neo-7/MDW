@@ -32,9 +32,13 @@
                 opacity: 0;
                 transform: scale(0.1);
             }
+            90% {
+                opacity: 0.18;
+                transform: scale(2);
+            }
             100% {
                 opacity: 0.2;
-                transform: scale(2);
+                transform: scale(3);
             }
         }
 
@@ -43,9 +47,13 @@
                 opacity: 0;
                 transform: scale(0.1);
             }
+            90% {
+                opacity: 0.18;
+                transform: scale(2);
+            }
             100% {
                 opacity: 0.2;
-                transform: scale(2);
+                transform: scale(3);
             }
         }
 
@@ -53,11 +61,11 @@
         @-webkit-keyframes rippleHide {  
             0% {
                 opacity: 0.2;
-                transform: scale(2);
+                transform: scale(3);
             }
             90%{
                 opacity: 0;
-                transform: scale(2);
+                transform: scale(3);
             }
             100% {
                 opacity: 0;
@@ -68,11 +76,11 @@
         @keyframes rippleHide { 
             0% {
                 opacity: 0.2;
-                transform: scale(2);
+                transform: scale(3);
             }
             90%{
                 opacity: 0;
-                transform: scale(2);
+                transform: scale(3);
             }
             100% {
                 opacity: 0;

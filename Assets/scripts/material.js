@@ -75,22 +75,12 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 
     function matRipple(eleR){
         var ripState = eleR.getAttribute('data-rs'),
-            eleWidth = eleR.offsetWidth,
-            eleHeight = eleR.offsetHeight,
             rElemHW = 0;
 
 
         if( ripState === null || ripState == 'false'){
             // set data attr to ripple parent element
                 eleR.setAttribute('data-rs', 'true');
-        
-            // calculate ripple height & width
-                if(eleWidth >= eleHeight){
-                    rElemHW = eleWidth// * Math.sqrt(2);
-                }
-                else{
-                    rElemHW = eleHeight// * Math.sqrt(2);
-                }
             
             // create ripple
                 var ripple = document.createElement('div');
@@ -99,6 +89,17 @@ var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
 
             // on start
                 eleR.addEventListener(startEvent, function(e) {
+                    // calculate ripple height & width
+                        var eleWidth = eleR.offsetWidth,
+                            eleHeight = eleR.offsetHeight;
+
+                        if(eleWidth >= eleHeight){
+                            rElemHW = eleWidth;
+                        }
+                        else{
+                            rElemHW = eleHeight;
+                        }
+
                     // background color
                         var eleRippleBG = window.getComputedStyle(eleR).getPropertyValue('background-color'),
                             eleRippleColor = window.getComputedStyle(eleR).getPropertyValue('color'),
